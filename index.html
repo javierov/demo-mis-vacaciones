@@ -485,7 +485,7 @@ const C={
  Barcelona:{c:"var(--bcn2)",s1:"#c4e4f2",s2:"#2c5f8a",slug:"barcelona",f:"barcelona"},
  Praga:{c:"var(--prg)",s1:"#e6d8f2",s2:"#43356a",slug:"praga",f:"praga-azul"}};
 /* ciudades: nombre, noches, etiqueta corta, fechas largas, texto de la tarjeta */
-const STOPS=[["Madrid",2,"18 – 20","18 – 20 de noviembre","2 noches"],["Barcelona",4,"20 – 24","20 – 24 de noviembre","4 noches"],["Praga",1,"25 – 26","25 – 26 de noviembre","1 noche (por confirmar)"]];
+const STOPS=[["Madrid",2,"18 – 20","18 – 20 de noviembre","2 noches"],["Barcelona",5,"20 – 25","20 – 25 de noviembre","5 noches"],["Praga",1,"25 – 26","25 – 26 de noviembre","1 noche"]];
 const map=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
 const route=q=>"https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(q);
 /* días: cada plan = [icono, texto, búsqueda en Maps, etiqueta, ciudad] */
@@ -533,25 +533,25 @@ const DAYS=[
   ["🥐","De camino a Montjuïc, L'Atelier (calle Viladomat): elegida la mejor pastelería de Cataluña.","L'Atelier Barcelona Viladomat 140",0,"Barcelona"],
   ["🖼️","CaixaForum, en Montjuïc: exposiciones en una antigua fábrica modernista. Abre los lunes, cuando muchos museos cierran.","CaixaForum Barcelona",0,"Barcelona"],
   ["🍸","Noche de pintxos en la calle Blai (Poble-sec): baratos y con mucho ambiente.","Carrer de Blai Barcelona",0,"Barcelona"]]},
- {d:24,c:"Barcelona",cs:["Barcelona"],t:"Último día en Barcelona",w:"Desayuno en Escribà y salida (por confirmar)",it:[
+ {d:24,c:"Barcelona",cs:["Barcelona"],t:"Último día en Barcelona",w:"Pastelerías de la zona alta y noche tranquila",it:[
   ["🥐","Desayuno dulce en Escribà, la pastelería modernista de La Rambla.","Escribà La Rambla Barcelona",0,"Barcelona"],
-  ["🥐","Si queda tiempo: mañana de pastelerías en la zona alta (Foix de Sarrià, Baixas y Oriol Balaguer), en los trenes FGC desde plaza Catalunya.","Foix de Sarrià Major de Sarrià 57",0,"Barcelona"],
-  ["🧳","Salida de Barcelona: día y hora por confirmar. Al aeropuerto: Aerobús desde plaza Catalunya (unos 35 min) o metro L9.","Aeropuerto de Barcelona-El Prat",4,"Barcelona"]]},
- {d:25,c:"Praga",cs:["Praga"],t:"Praga: Ciudad Vieja y barrio judío",w:"Reloj Astronómico, Josefov y moda en el UPM",it:[
-  ["✈️","Vuelo a Praga (hora por confirmar). Del aeropuerto al centro: trolebús 59 hasta Nádraží Veleslavín y metro A, con un billete de 90 minutos (50 coronas; 46 en la app PID Lítačka).","Nádraží Veleslavín",4,"Praga"],
+  ["🥐","Mañana de pastelerías en la zona alta: Foix de Sarrià, Baixas y Oriol Balaguer, cerca entre sí. Se llega en los trenes FGC desde plaza Catalunya.","Foix de Sarrià Major de Sarrià 57",0,"Barcelona"],
+  ["🚶","Tarde libre para lo que quedó pendiente: Passeig de Gràcia, el Born o la Barceloneta.","Platja de la Barceloneta",0,"Barcelona"],
+  ["🧳","Noche tranquila y maleta hecha: mañana vuela temprano a Praga. Al aeropuerto: Aerobús desde plaza Catalunya (unos 35 min) o metro L9.","Aeropuerto de Barcelona-El Prat",0,"Barcelona"]]},
+ {d:25,c:"Praga",cs:["Barcelona","Praga"],t:"Praga: Ciudad Vieja y barrio judío",w:"Reloj Astronómico, Josefov y moda en el UPM",it:[
+  ["✈️","Vuelo temprano de Barcelona a Praga; llegada hacia las 10:00. Del aeropuerto al centro: trolebús 59 hasta Nádraží Veleslavín y metro A, con un billete de 90 minutos (50 coronas; 46 en la app PID Lítačka).","Nádraží Veleslavín",4,"Praga"],
   ["⛪","Plaza de la Ciudad Vieja y el Reloj Astronómico, que se mueve a cada hora en punto.","Staroměstské náměstí Praha",0,"Praga"],
   ["🏛️","Barrio judío (Josefov): sinagogas y el antiguo cementerio, con entrada conjunta. Cierra los sábados.","Jewish Museum in Prague",1,"Praga"],
   ["👗","Museo de Artes Decorativas (UPM), a un paso: textiles y moda, vidrio y joyas. De miércoles a domingo, de 10:00 a 18:00; entrada 350 coronas.","Uměleckoprůmyslové museum v Praze",1,"Praga"],
   ["🥐","Merienda en la Cukrárna Myšák (Vodičkova 31), pastelería de 1911.","Cukrárna Myšák Praha",0,"Praga"],
   ["🎄","Mercadillo de Navidad de Náměstí Republiky: abre justo el 25 de noviembre (10:00–20:00).","Náměstí Republiky Praha",0,"Praga"],
   ["🍸","Noche: el Puente de Carlos iluminado y una cerveza checa en el centro.","Karlův most",0,"Praga"]]},
- {d:26,c:"Praga",cs:["Praga"],t:"El Castillo, Malá Strana y vintage",w:"Castillo temprano, cafés históricos y mercadillo",it:[
+ {d:26,c:"Praga",cs:["Praga"],t:"El Castillo, Malá Strana y salida",w:"Mañana completa y salida a Viena a las 16:45",it:[
   ["🏰","Castillo de Praga temprano, antes de que se llene: catedral de San Vito y el Callejón del Oro (con entrada).","Pražský hrad",1,"Praga"],
   ["🚶","Bajada por la calle Nerudova hasta Malá Strana y el Puente de Carlos de día.","Nerudova Praha",0,"Praga"],
-  ["☕","Café Savoy (Vítězná 5), café clásico junto a Malá Strana: desayuno o una tarta.","Café Savoy Praha",0,"Praga"],
-  ["👗","Vintage en el centro: Quasimodo Vintage Fashion (Vladislavova 17), en un patio, y Laly (Štupartská 3).","Quasimodo Vintage Fashion Praha",0,"Praga"],
-  ["🎄","Mercadillo de Navidad de Náměstí Míru, en Vinohrady (abierto desde el 20 de noviembre, 10:00–19:00).","Náměstí Míru Praha",0,"Praga"],
-  ["🧳","Regreso: día y hora por confirmar.","",4,"Praga"]]}];
+  ["☕","Café Savoy (Vítězná 5), café clásico junto a Malá Strana: un café y una tarta.","Café Savoy Praha",0,"Praga"],
+  ["👗","Vintage antes de comer: Laly (Štupartská 3), en la Ciudad Vieja, o Quasimodo (Vladislavova 17).","Laly vintage Štupartská 3 Praha",0,"Praga"],
+  ["🧳","Salida a Viena a las 16:45. Si es avión: estar en el aeropuerto hacia las 15:00 y salir del centro sobre las 14:00 (trolebús 59 + metro A, unos 40 min). Si es tren: sale de la estación central (Praha hlavní nádraží).","Letiště Václava Havla Praha",4,"Praga"]]}];
 const TAG=["","Con entrada","Reservar ya","Comprar billete","Por confirmar"];
 
 /* dónde comer: nombre, ciudad, tipo, precio, nota, búsqueda, barrio */
