@@ -1,5 +1,5 @@
 /* Mis Vacaciones: guarda la app en el móvil para usarla sin internet */
-const V = "mv-mis-vacaciones-v2"; /* solo borra sus propias copias: en github.io todas las apps comparten el mismo sitio */
+const V = "mv-mis-vacaciones-v3"; /* solo borra sus propias copias: en github.io todas las apps comparten el mismo sitio */
 const FILES = ["./", "index.html", "manifest.json", "icono.png", "icono-192.png", "favicon-32.png", "apple-touch-icon.png",
   "fotos/madrid.jpg", "fotos/barcelona.jpg", "fotos/praga.jpg"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
