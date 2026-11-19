@@ -1,11 +1,13 @@
 /* Mis Vacaciones: guarda la app en el móvil para usarla sin internet */
-const V = "mv-mis-vacaciones-v4"; /* solo borra sus propias copias: en github.io todas las apps comparten el mismo sitio */
+const V = "mv-mis-vacaciones-v5", T = "mv-mis-vacaciones-mapa"; /* solo borra sus propias copias: en github.io todas las apps comparten el mismo sitio */
 const FILES = ["./", "index.html", "manifest.json", "icono.png", "icono-192.png", "favicon-32.png", "apple-touch-icon.png",
   "fotos/madrid.jpg", "fotos/barcelona.jpg", "fotos/praga-azul.jpg"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(FILES.map(f => new Request(f, { cache: "reload" })))).then(() => self.skipWaiting())); });
-self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith("mv-") && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
+self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith("mv-") && k !== V && k !== T).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {
   const r = e.request; if (r.method !== "GET") return;
+  /* calles del mapa: se guardan al verlas, para que sirvan después sin señal */
+  if (/tile\.openstreetmap\.org/.test(r.url)) { e.respondWith(caches.open(T).then(c => c.match(r.url).then(m => m || fetch(r).then(res => { if (res.ok) c.put(r.url, res.clone()); return res; })))); return; }
   const font = /fonts\.(googleapis|gstatic)\.com/.test(r.url);
   if (new URL(r.url).origin !== location.origin && !font) return;
   /* página: primero la red (para recibir cambios), si no hay conexión, la copia guardada */
