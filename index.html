@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b0c0f">
+<title>Mis Vacaciones</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icono-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Mis Vacaciones">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday, app de viaje «Mis Vacaciones», elegante y nocturna
+   IDEA una app de viaje real: menú arriba, fotos grandes, todo con filetes finos sobre negro
+   PICTURE el carrusel de ciudades con fotos grandes y flechas
+   COLOUR negro, grises y azules grisáceos; un color apagado por ciudad
+   TYPE Plus Jakarta Sans
+   LAYOUT columna de 520px; móvil: menú, título, subtítulo, carrusel, hoy, días */
+:root{color-scheme:dark;--bg:#0b0c0f;--ink:#eef1f5;--soft:#a2abba;--mute:#727b8b;--line:rgb(200 212 230/.16);--line2:rgb(200 212 230/.32);--steel:#8fa3bf;--steel2:#c3d0e2;--fill:#13161c;--fill2:#1a1f27;--top:rgb(11 12 15/.94);--band:#151920;--tile:#171b22;--title:#b5cbf0;--btn:#dfe6ef;--btnInk:#0b0c0f;--onAcc:#0b0c0f;--flipA:#252a33;--flipB:#1b1f27;--flipInk:#f3f5f8;--flipLine:rgb(0 0 0/.75);--sec1:#141a24;--sec2:#0e1117;--ft1:#1b2639;--ft2:#0f141d;--ftInk:#fff;--ftSoft:#b9c6da;--wc1:#24395f;--wc2:#121b2e;--ok:#9fd3a8;--pen:#e8c48a;--mad:#cf7a66;--flo:#86a882;--ven:#6fa8bd;--par:#a197d4;--bcn:#d4b26a;--rom:#d6889a;--lis:#d98a62;--naz:#5aa6c8;--fat:#d4b26a;--opo:#7f9be0}
+html[data-theme="luminoso"]{color-scheme:light;--plane:#e5402b;--bg:#f7f7f5;--ink:#111214;--soft:#4f5258;--mute:#85888e;--line:rgb(17 18 20/.12);--line2:rgb(17 18 20/.26);--steel:#111214;--steel2:#111214;--fill:#ffffff;--fill2:#ececea;--top:rgb(247 247 245/.94);--band:#efefec;--tile:#ffffff;--title:#111214;--btn:#111214;--btnInk:#ffffff;--onAcc:#ffffff;--flipA:#ffffff;--flipB:#efefec;--flipInk:#e5402b;--flipLine:rgb(17 18 20/.15);--sec1:#ffffff;--sec2:#f1f1ee;--ft1:#e9e9e6;--ft2:#f8f8f6;--ftInk:#111214;--ftSoft:#4f5258;--wc1:#2b2d31;--wc2:#111214;--ok:#1f8a4c;--pen:#e5402b}
+html[data-theme="cobalto"]{color-scheme:light;--plane:#e5402b;--bg:#f6f7fb;--ink:#14213d;--soft:#4b5672;--mute:#7c8499;--line:rgb(28 63 160/.14);--line2:rgb(28 63 160/.30);--steel:#1c3fa0;--steel2:#1c3fa0;--fill:#ffffff;--fill2:#eaeef8;--top:rgb(246 247 251/.94);--band:#e9eefa;--tile:#ffffff;--title:#1c3fa0;--btn:#1c3fa0;--btnInk:#ffffff;--onAcc:#ffffff;--flipA:#ffffff;--flipB:#eef1f8;--flipInk:#e5402b;--flipLine:rgb(28 63 160/.18);--sec1:#ffffff;--sec2:#eef2fb;--ft1:#dce6fa;--ft2:#f3f6fd;--ftInk:#14213d;--ftSoft:#4b5672;--wc1:#3a5fd0;--wc2:#1c3fa0;--ok:#1f8a4c;--pen:#e5402b}
+html[data-theme="sepia"]{color-scheme:light;--plane:#b08a3e;--bg:#f3ead8;--ink:#3b2b1c;--soft:#6d5a44;--mute:#9a8669;--line:rgb(90 64 36/.16);--line2:rgb(90 64 36/.32);--steel:#7a4e2a;--steel2:#7a4e2a;--fill:#faf4e7;--fill2:#ebdfc6;--top:rgb(243 234 216/.94);--band:#ebdec4;--tile:#faf4e7;--title:#6b4423;--btn:#6b4423;--btnInk:#ffffff;--onAcc:#ffffff;--flipA:#fbf6ea;--flipB:#ecdfc5;--flipInk:#b08a3e;--flipLine:rgb(90 64 36/.2);--sec1:#faf4e7;--sec2:#efe3cb;--ft1:#e7d6b5;--ft2:#f6eedd;--ftInk:#3b2b1c;--ftSoft:#6d5a44;--wc1:#8a5a33;--wc2:#5e3a1d;--ok:#5f7a2e;--pen:#b0602a}
+html[data-theme="mar"]{color-scheme:light;--plane:#0b5ea8;--bg:#f4f8fb;--ink:#0f2a3f;--soft:#4a6276;--mute:#7f93a3;--line:rgb(11 94 168/.14);--line2:rgb(11 94 168/.30);--steel:#0b5ea8;--steel2:#0b5ea8;--fill:#ffffff;--fill2:#e6f0f8;--top:rgb(244 248 251/.94);--band:#e3eef8;--tile:#ffffff;--title:#0b5ea8;--btn:#0b5ea8;--btnInk:#ffffff;--onAcc:#ffffff;--flipA:#ffffff;--flipB:#e8f1f9;--flipInk:#0b5ea8;--flipLine:rgb(11 94 168/.18);--sec1:#ffffff;--sec2:#eaf3fa;--ft1:#cfe4f5;--ft2:#f1f7fc;--ftInk:#0f2a3f;--ftSoft:#4a6276;--wc1:#2b86d0;--wc2:#0b5ea8;--ok:#1f8a6c;--pen:#d9822b}
+html[data-theme="atardecer"]{color-scheme:dark;--plane:#f7b896;--bg:#1e1424;--ink:#fbeff0;--soft:#d1b6c2;--mute:#9c8494;--line:rgb(255 190 170/.16);--line2:rgb(255 190 170/.32);--steel:#f2a68a;--steel2:#f7b896;--fill:#281b30;--fill2:#33223b;--top:rgb(30 20 36/.94);--band:#2c1d34;--tile:#2e1f36;--title:#f7b896;--btn:#f7b896;--btnInk:#1e1424;--onAcc:#1e1424;--flipA:#3a2643;--flipB:#2e1e36;--flipInk:#ffd7c2;--flipLine:rgb(0 0 0/.5);--sec1:#2d1d34;--sec2:#1f1426;--ft1:#4a2b4a;--ft2:#221628;--ftInk:#ffffff;--ftSoft:#e3c3cf;--wc1:#8c4a6e;--wc2:#4a2346;--ok:#a8d8a0;--pen:#f7b896}
+html[data-theme="nordico"]{color-scheme:light;--plane:#c8322f;--bg:#eef0f2;--ink:#1d2329;--soft:#55606b;--mute:#8a939c;--line:rgb(29 35 41/.12);--line2:rgb(29 35 41/.26);--steel:#c8322f;--steel2:#c8322f;--fill:#fafbfc;--fill2:#e2e5e9;--top:rgb(238 240 242/.94);--band:#e3e6ea;--tile:#fafbfc;--title:#1d2329;--btn:#1d2329;--btnInk:#ffffff;--onAcc:#ffffff;--flipA:#ffffff;--flipB:#e8ebee;--flipInk:#c8322f;--flipLine:rgb(29 35 41/.15);--sec1:#fafbfc;--sec2:#e9ecef;--ft1:#dde3ea;--ft2:#f4f6f8;--ftInk:#1d2329;--ftSoft:#55606b;--wc1:#5d6b7a;--wc2:#343d47;--ok:#2f7d4f;--pen:#c8322f}
+html[data-theme="contraste"]{color-scheme:dark;--plane:#ffd400;--bg:#000000;--ink:#ffffff;--soft:#e6e6e6;--mute:#c4c4c4;--line:rgb(255 255 255/.38);--line2:rgb(255 255 255/.72);--steel:#ffd400;--steel2:#ffd400;--fill:#0d0d0d;--fill2:#1c1c1c;--top:rgb(0 0 0/.96);--band:#151515;--tile:#0d0d0d;--title:#ffffff;--btn:#ffd400;--btnInk:#000000;--onAcc:#000000;--flipA:#1e1e1e;--flipB:#0d0d0d;--flipInk:#ffffff;--flipLine:#000000;--sec1:#111111;--sec2:#000000;--ft1:#1a1a1a;--ft2:#000000;--ftInk:#ffffff;--ftSoft:#e6e6e6;--wc1:#202020;--wc2:#000000;--ok:#7dff9a;--pen:#ffd400}
+html[data-theme="rosa"]{color-scheme:light;--plane:#c94f7c;--bg:#fcf1f4;--ink:#3d1e2b;--soft:#7a5363;--mute:#a8899a;--line:rgb(201 79 124/.15);--line2:rgb(201 79 124/.32);--steel:#c94f7c;--steel2:#c94f7c;--fill:#fff8fa;--fill2:#f6e1e8;--top:rgb(252 241 244/.94);--band:#f8e3ea;--tile:#fff8fa;--title:#c94f7c;--btn:#c94f7c;--btnInk:#ffffff;--onAcc:#ffffff;--flipA:#ffffff;--flipB:#f7e4eb;--flipInk:#c94f7c;--flipLine:rgb(201 79 124/.18);--sec1:#fff8fa;--sec2:#f8e6ec;--ft1:#f5d3de;--ft2:#fdf3f6;--ftInk:#3d1e2b;--ftSoft:#7a5363;--wc1:#d9729a;--wc2:#a83c66;--ok:#3f8f5e;--pen:#c94f7c}
+html[data-theme="morado"]{color-scheme:dark;--plane:#c4b2ff;--bg:#17122a;--ink:#f1edff;--soft:#b9b0d9;--mute:#8a82ab;--line:rgb(180 160 255/.18);--line2:rgb(180 160 255/.34);--steel:#b39dff;--steel2:#c4b2ff;--fill:#1f1838;--fill2:#2a2148;--top:rgb(23 18 42/.94);--band:#221a3d;--tile:#231b40;--title:#c4b2ff;--btn:#c4b2ff;--btnInk:#17122a;--onAcc:#17122a;--flipA:#30265a;--flipB:#251d48;--flipInk:#ffffff;--flipLine:rgb(0 0 0/.5);--sec1:#221a3e;--sec2:#16112a;--ft1:#3a2b6e;--ft2:#18132e;--ftInk:#ffffff;--ftSoft:#cfc6f0;--wc1:#6b4fd1;--wc2:#3a2780;--ok:#9fe0b0;--pen:#ffb86b}
+html[data-theme="calido"]{color-scheme:light;--bg:#f6efe3;--ink:#3a2a1e;--soft:#6e5a48;--mute:#9a8774;--line:rgb(122 90 60/.16);--line2:rgb(122 90 60/.32);--steel:#c2603b;--steel2:#c2603b;--fill:#fbf6ee;--fill2:#efe5d5;--top:rgb(246 239 227/.94);--band:#efe3cf;--tile:#fbf6ee;--title:#c2603b;--btn:#c2603b;--btnInk:#ffffff;--onAcc:#ffffff;--flipA:#fffaf2;--flipB:#f0e5d3;--flipInk:#7a8b4a;--flipLine:rgb(122 90 60/.22);--sec1:#fbf6ee;--sec2:#f1e5d2;--ft1:#efd9bf;--ft2:#f8efe3;--ftInk:#3a2a1e;--ftSoft:#6e5a48;--wc1:#cf7a52;--wc2:#9e4a2c;--ok:#5f7a2e;--pen:#c2603b}
+html[data-theme="natura"]{color-scheme:dark;--bg:#111d17;--ink:#eef3ea;--soft:#adbcaa;--mute:#7f8f7d;--line:rgb(156 195 213/.16);--line2:rgb(156 195 213/.32);--steel:#9cc3d5;--steel2:#9cc3d5;--fill:#17271e;--fill2:#1e3226;--top:rgb(17 29 23/.94);--band:#1b2e23;--tile:#1c3125;--title:#9cc3d5;--btn:#9cc3d5;--btnInk:#111d17;--onAcc:#111d17;--flipA:#2b4535;--flipB:#213829;--flipInk:#f2efe6;--flipLine:rgb(0 0 0/.5);--sec1:#1b3024;--sec2:#13221a;--ft1:#2d4e3a;--ft2:#14261c;--ftInk:#fff;--ftSoft:#c3d3c0;--wc1:#3e6b48;--wc2:#22402b;--ok:#a6d49a;--pen:#d2ad7a}
+body{background:var(--bg);color:var(--ink);transition:background .3s,color .3s}
+.hs{position:relative}.thb{position:absolute;right:0;bottom:0;display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line2);background:var(--fill);color:var(--soft);border-radius:999px;padding:4px 10px;font:inherit;font-size:11.5px;font-weight:600;cursor:pointer}
+.ths{position:fixed;inset:0;z-index:60;background:rgb(0 0 0/.45);display:flex;align-items:flex-end}.ths[hidden]{display:none}
+.thsb{width:100%;max-width:640px;margin:0 auto;background:var(--bg);color:var(--ink);border:1px solid var(--line2);border-bottom:0;border-radius:22px 22px 0 0;padding:14px 0 calc(18px + env(safe-area-inset-bottom));animation:thup .25s ease}
+@keyframes thup{from{transform:translateY(40px);opacity:0}}
+.thh{display:flex;align-items:center;justify-content:space-between;padding:0 18px 10px}.thh b{font-size:16px}
+.thx{width:34px;height:34px;border-radius:50%;border:1px solid var(--line2);background:var(--fill);color:var(--ink);font-size:14px;cursor:pointer}
+.thc{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 6px;scrollbar-width:none}.thc::-webkit-scrollbar{display:none}.tcard{flex:none;width:calc((100% - 16px)/3);scroll-snap-align:start}
+.thrw{display:grid;grid-template-columns:34px minmax(0,1fr) 34px;align-items:center;gap:4px;padding:0 6px}.tha{width:34px;height:34px;border-radius:50%;border:1px solid var(--line2);background:var(--fill);color:var(--ink);font-size:24px;line-height:1;display:grid;place-items:center;cursor:pointer;padding:0 0 2px}.tha:disabled{opacity:.25;cursor:default}
+.thd{display:flex;justify-content:center;gap:6px;padding-top:8px}.thd i{width:6px;height:6px;border-radius:50%;background:var(--line2)}.thd i.on{width:16px;border-radius:3px;background:var(--steel2)}.thc::-webkit-scrollbar{display:none}
+.tcard{text-align:center;border:1px solid var(--line2);background:var(--fill);color:var(--ink);border-radius:14px;padding:5px;font:inherit;cursor:pointer}
+.tcard[aria-pressed="true"]{border-color:var(--steel2);box-shadow:0 0 0 1.5px var(--steel2)}
+.tcard b{display:block;font-size:clamp(8.5px,2.45vw,11.5px);line-height:1.2;margin:7px 0 0;font-weight:700;letter-spacing:-.015em}.tcard small{display:none}
+.tp{display:block;position:relative;height:64px;border-radius:11px;background:var(--a);border:1px solid rgb(128 128 128/.25);overflow:hidden}
+.tp i{position:absolute;display:block;border-radius:4px}
+.tp i:nth-child(1){left:9px;top:10px;width:58%;height:12px;background:var(--c)}
+.tp i:nth-child(2){left:9px;top:30px;width:40%;height:6px;background:var(--c);opacity:.45}
+.tp i:nth-child(3){left:9px;right:9px;bottom:9px;height:20px;background:var(--b);border-left:4px solid var(--d)}
+*{box-sizing:border-box;min-width:0}
+html{-webkit-tap-highlight-color:transparent;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Plus Jakarta Sans",system-ui,sans-serif;overflow-x:clip}
+button{font:inherit;color:inherit}
+img{max-width:100%}
+a{color:var(--steel2)}
+section[hidden],[hidden]{display:none!important}
+.app{max-width:520px;margin:0 auto;padding:0 0 calc(32px + env(safe-area-inset-bottom))}
+.ft{position:relative;overflow:hidden;display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;margin:30px 20px 0;border:1px solid var(--line);border-radius:14px;padding:7px 12px;background:linear-gradient(180deg,var(--ft1),var(--ft2));width:calc(100% - 40px);text-align:left;cursor:pointer;color:var(--ink)}
+.ft::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% 0%,rgb(200 215 240/.10),transparent 50%);pointer-events:none}
+.ft>*{position:relative}
+.ft .wi2{width:30px;height:30px;color:var(--steel2)}
+.ft .t2,.ft .hl2{color:var(--ftSoft)!important}
+.ft b{color:var(--ftInk)}
+.ft b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ft .t2{display:block;font-size:12px;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ft .hl2{font-size:13.5px;color:var(--soft);white-space:nowrap}
+.ft .now{font-size:18px;font-weight:300;letter-spacing:-.02em;margin-right:4px}
+.pad{padding:0 20px}
+/* menú superior */
+.top{position:sticky;top:0;z-index:20;background:var(--top);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:env(safe-area-inset-top) 12px 0}
+.top nav{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;padding:7px 4px}
+.top button{display:flex;flex-direction:column;align-items:center;gap:1px;border:0;background:none;color:var(--soft);font-size:11.5px;font-weight:600;border-radius:12px;padding:6px 0 5px;cursor:pointer}
+.top button svg{width:20px;height:20px}
+.top button[aria-selected=true]{background:var(--fill2);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line2)}
+/* foto o ilustración */
+.ph{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--s1),var(--s2))}
+.ph>svg{position:absolute;inset:0;width:100%;height:100%}
+.ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s}
+.ph>img.ok{opacity:1}
+.scrim::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgb(0 0 0/0) 45%,rgb(0 0 0/.7))}
+/* banner */
+.bnr{position:relative;height:50px;margin:12px 20px 0;border-radius:14px;overflow:hidden;background:#1b2230;border:1px solid var(--line)}
+.bnr .bs{position:absolute;inset:0;opacity:0;animation:bf 16s infinite}.bnr .bs>.ph{position:absolute;inset:0}.bnr .bs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bnr .bs:nth-child(2){animation-delay:4s}.bnr .bs:nth-child(3){animation-delay:8s}.bnr .bs:nth-child(4){animation-delay:12s}
+@keyframes bf{0%{opacity:0;transform:scale(1.12)}6%{opacity:1}25%{opacity:1}31%{opacity:0;transform:scale(1)}100%{opacity:0}}
+@keyframes pv{0%,19%{left:0%}25%,44%{left:33.33%}50%,69%{left:66.67%}75%,94%{left:100%}100%{left:0%}}
+.cn:nth-of-type(2){animation-delay:4s}.cn:nth-of-type(3){animation-delay:8s}.cn:nth-of-type(4){animation-delay:12s}
+@keyframes bt{0%{opacity:0;transform:translateX(10px)}6%{opacity:1}25%{opacity:1;transform:none}31%{opacity:0}100%{opacity:0}}
+.bnr::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgb(20 28 44/.78),rgb(20 28 44/.5))}
+.rt{position:absolute;z-index:3;left:16px;right:16px;bottom:6px;height:14px}
+.rt::before{content:"";position:absolute;left:0;right:0;top:6px;border-top:1.5px dashed rgb(255 255 255/.6)}
+.rt span{position:absolute;top:2px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#0b0c0f;border:2px solid #c3d0e2}
+.pl{position:absolute;top:-5px;width:24px;height:24px;margin-left:-12px;border-radius:50%;background:var(--plane,var(--steel2));display:grid;place-items:center;color:var(--onAcc);animation:pv 16s infinite}
+.pl svg{width:14px;height:14px}
+.cn{position:absolute;z-index:2;right:12px;top:2px;font-size:38px;font-weight:800;letter-spacing:-.03em;line-height:1;color:rgb(255 255 255/.17);white-space:nowrap;opacity:0;animation:bt 16s infinite}
+.bcd{display:none;position:absolute;z-index:2;right:8px;top:50%;transform:translateY(-50%);border:1px solid rgb(255 255 255/.35);background:rgb(11 12 15/.55);color:#fff;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:600;white-space:nowrap}
+.bcd b{color:var(--steel2)}
+@media (prefers-reduced-motion:reduce){.bnr .bs,.pl,.cn,.ctr .dg span{animation:none}.cn:first-of-type{opacity:1}.bnr .bs:first-child{opacity:1}.pl{left:0}}
+/* inicio */
+.hh{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start;padding:20px 20px 0}
+.ctr{text-align:center;padding-top:0;grid-row:1;grid-column:2}
+.hh .brand{grid-column:1}
+.hs{grid-column:1/-1;margin-top:0}
+.sub{white-space:normal}
+.ctr .dg{display:flex;gap:3px;justify-content:center;perspective:300px}
+.ctr .dg span{position:relative;font-size:25px;width:1.08em;height:1.52em;display:grid;place-items:center;border-radius:5px;background:linear-gradient(180deg,var(--flipA) 0 50%,var(--flipB) 50%);border:1px solid var(--line2);color:var(--flipInk);font-weight:700;line-height:1;font-variant-numeric:tabular-nums;box-shadow:inset 0 1px 0 rgb(255 255 255/.07),0 2px 4px rgb(0 0 0/.5);transform-origin:50% 50%;animation:fl .7s cubic-bezier(.3,.6,.3,1) both}
+.ctr .dg span:nth-child(2){animation-delay:.12s}.ctr .dg span:nth-child(3){animation-delay:.24s}
+.ctr .dg span::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--flipLine)}
+.ctr .dg span::before{content:"";position:absolute;top:50%;width:3px;height:6px;margin-top:-3px;left:-2px;border-radius:1px;background:var(--line2)}
+.ctr .dg em{align-self:flex-end;font-style:normal;font-size:13px;color:var(--soft);margin-left:2px}
+.ctr small{display:block;font-size:10.5px;color:var(--soft);margin-top:3px;line-height:1.15;white-space:nowrap}
+@keyframes fl{0%{transform:rotateX(-90deg);opacity:.3}60%{transform:rotateX(12deg)}100%{transform:none;opacity:1}}
+.brand{font-size:30px;font-weight:800;letter-spacing:-.035em;line-height:.98;color:var(--title);margin:0;white-space:nowrap;min-width:0;overflow:hidden}
+.sub{margin:6px 0 0;font-size:13px;color:var(--ink)}
+.sub2{margin:1px 0 0;font-size:12.5px;color:var(--soft);padding-right:104px}
+.cdp{flex:none;margin-top:6px;border:1px solid var(--line2);border-radius:999px;padding:4px 11px;font-size:13px;font-weight:600;white-space:nowrap;color:var(--soft)}
+.cdp b{color:var(--steel2)}
+.carw{position:relative;margin-top:16px}
+.car{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 20px;padding:0 20px 2px;scrollbar-width:none}
+.car::-webkit-scrollbar{display:none}
+.cc{flex:none;position:relative;width:min(58%,250px);aspect-ratio:4/5;border-radius:24px;scroll-snap-align:start;border:1px solid var(--line);overflow:hidden;padding:0;cursor:pointer;text-align:left;background:#111}
+.cc>.ph{position:absolute;inset:0}
+.cc .n{position:absolute;z-index:2;top:12px;left:12px;background:rgb(11 12 15/.6);backdrop-filter:blur(4px);border:1px solid rgb(255 255 255/.25);color:#fff;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700}
+.cc .tx{position:absolute;z-index:2;left:16px;right:16px;bottom:16px;color:#fff}
+.cc .tx b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.05}
+.cc .tx span{display:block;font-size:14px;opacity:.9;margin-top:3px}
+.arr{position:absolute;z-index:4;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgb(11 12 15/.55);backdrop-filter:blur(4px);border:1px solid rgb(255 255 255/.35);color:#fff;display:grid;place-items:center;cursor:pointer;padding:0}
+.arr svg{width:18px;height:18px}
+.arr.l{left:10px}.arr.r{right:10px}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--line2);transition:background .2s,width .2s}
+.dots i.on{background:var(--steel2);width:16px;border-radius:3px}
+h2{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:17px;font-weight:700;letter-spacing:-.01em;margin:26px 0 10px}
+h2 button{flex:none;border:0;background:none;color:var(--steel2);font-size:14px;font-weight:600;cursor:pointer;padding:0}
+.box{border:1px solid var(--line);border-radius:20px;padding:14px 14px}
+.bh{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-size:16px;font-weight:700}
+.box>.bh{margin:-14px -14px 12px;padding:10px 14px;background:var(--band);border-bottom:1px solid var(--line);border-radius:19px 19px 0 0}
+.bi{width:30px;height:30px;border-radius:50%;border:1px solid var(--line2);color:var(--steel2);display:grid;place-items:center;flex:none}
+.bi svg{width:16px;height:16px}
+.btn{border:0;border-radius:999px;background:var(--btn);color:var(--btnInk);font-weight:700;font-size:15px;min-height:44px;padding:0 18px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line2)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.note{color:var(--soft);font-size:14px;margin:0}
+.ic{width:36px;height:36px;border-radius:12px;border:1px solid var(--line);color:var(--steel2);display:grid;place-items:center;flex:none}
+.ic svg{width:18px;height:18px}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.list li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:center;font-size:15px}
+.chk{display:flex;gap:12px;align-items:center;min-height:44px;border-bottom:1px solid var(--line);cursor:pointer}
+.chk:last-child{border:0}
+.chk input{appearance:none;width:22px;height:22px;border-radius:7px;border:1.5px solid var(--line2);flex:none;display:grid;place-items:center;cursor:pointer;margin:0}
+.chk input:checked{background:var(--steel2);border-color:var(--steel2)}
+.chk input:checked::after{content:"";width:6px;height:11px;border:solid var(--onAcc);border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.chk:has(input:checked) span{text-decoration:line-through;color:var(--mute)}
+.bar{height:6px;border-radius:3px;background:var(--fill2);overflow:hidden;margin:6px 0 4px}
+.bar i{display:block;height:100%;background:var(--steel2);border-radius:3px;transition:width .3s}
+.rows{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:60px minmax(0,1fr) 20px;gap:14px;align-items:center;border:1px solid var(--line);background:none;border-radius:20px;padding:9px 12px 9px 9px;width:100%;text-align:left;cursor:pointer}
+.row>.ph{width:60px;height:60px;border-radius:14px}
+.row b{display:block;font-weight:700;line-height:1.25}
+.row small{display:block;color:var(--soft);font-size:13.5px}
+.row .dt{display:block;color:var(--steel2);font-size:12.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row>svg{width:18px;height:18px;color:var(--mute)}
+.exc{display:flex;gap:12px;overflow-x:auto;padding:0 20px 4px;scrollbar-width:none;align-items:flex-start}
+.exc::-webkit-scrollbar{display:none}
+.ex{flex:none;width:160px;border:0;padding:0;background:none;text-align:left;cursor:pointer;display:flex;flex-direction:column;align-self:flex-start}
+.ex>.ph{height:112px;border-radius:18px;border:1px solid var(--line)}
+.ex b{display:block;margin-top:8px;font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ex small{display:block;color:var(--soft);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* ciudad */
+.hero{height:min(46vh,400px)}
+.hero .back{position:absolute;z-index:3;top:14px;left:14px;width:42px;height:42px;border-radius:50%;background:rgb(11 12 15/.55);backdrop-filter:blur(4px);border:1px solid rgb(255 255 255/.35);color:#fff;display:grid;place-items:center;cursor:pointer;padding:0}
+.hero .back svg{width:20px;height:20px}
+.hero .tx{position:absolute;z-index:2;left:20px;right:20px;bottom:40px;color:#fff}
+.hero .tx b{display:block;font-size:clamp(32px,10vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.hero .tx span{display:block;margin-top:6px;font-size:14.5px;opacity:.92}
+.sheet{position:relative;z-index:3;margin-top:-24px;background:var(--bg);border-radius:24px 24px 0 0;border-top:1px solid var(--line);padding:16px 20px 0}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.stats div{border:1px solid var(--line);border-radius:16px;padding:9px 12px}
+.stats small{display:block;color:var(--soft);font-size:12.5px}
+.stats b{font-size:19px;color:var(--steel2)}
+.day{border:1px solid var(--line);border-radius:20px;margin-bottom:10px;overflow:hidden}
+.day.open{border-color:var(--line2)}
+.day>button{display:grid;grid-template-columns:50px minmax(0,1fr) 20px;gap:12px;align-items:center;width:100%;border:0;background:none;padding:10px 12px;text-align:left;cursor:pointer}
+.db{width:50px;height:54px;border-radius:14px;border:1px solid var(--line2);background:var(--tile);display:grid;place-items:center;align-content:center;line-height:1}
+.db b{font-size:21px;font-weight:800;color:var(--steel2)}
+.db small{font-size:11.5px;color:var(--soft);margin-top:2px}
+.day .t b{display:block;font-weight:700;line-height:1.25}
+.day .t small{color:var(--soft);font-size:13.5px}
+.day.today .db{background:var(--steel2);border-color:var(--steel2)}.day.today .db b,.day.today .db small{color:var(--onAcc)}
+.chev{width:18px;height:18px;color:var(--mute);transition:transform .25s}
+.day.open .chev{transform:rotate(90deg)}
+.det{display:none;padding:2px 14px 14px}
+.day.open .det{display:block}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.steps li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start}
+.steps .tx{padding-top:6px;font-size:15px}
+.adr{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;margin-top:3px;color:var(--soft);font-size:13px}
+.adr svg{width:13px;height:13px;flex:none}
+.adr a{font-weight:700;text-decoration:none;color:var(--steel2)}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--steel2);border:1px solid var(--line2);border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:1px;white-space:nowrap}
+.dnav{display:flex;justify-content:space-between;gap:8px;margin-top:14px}
+.dnav button{border:0;border-radius:999px;background:none;box-shadow:inset 0 0 0 1px var(--line2);color:var(--ink);font-weight:600;font-size:14px;min-height:40px;padding:0 14px;cursor:pointer}
+.dnav button:disabled{visibility:hidden}
+/* lugar especial */
+.sec{margin-top:14px;border:1px solid var(--line2);border-radius:18px;padding:14px;background:linear-gradient(135deg,var(--sec1),var(--sec2))}
+.sec .k{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--steel2)}
+.sec .k svg{width:16px;height:16px}
+.sec h3{font-size:18px;font-weight:700;margin:6px 0 4px;line-height:1.25}
+.sec p{margin:0 0 8px;color:var(--soft);font-size:14.5px}
+.sec .lock{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px}
+.sec .lock p{margin:0}
+.sec .btn{min-height:38px;font-size:14px;padding:0 14px;flex:none}
+.sec .txt{display:none}
+.sec .simg{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;margin:0 0 10px;border:1px solid var(--line)}
+.sec.open .lock{display:none}
+.sec.open .txt{display:block;animation:rv .4s ease-out}
+@keyframes rv{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+/* secretos */
+.sgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sc{border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.sc>.ph{height:100px}
+.sc .d{position:absolute;z-index:2;left:10px;top:10px;background:rgb(11 12 15/.6);border:1px solid rgb(255 255 255/.25);color:#fff;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:700}
+.sc .bd{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.sc b{font-weight:700;line-height:1.25;font-size:15px}
+.sc p{margin:0;font-size:13.5px;color:var(--soft)}
+.sc .open-b{margin-top:auto;border:0;border-radius:999px;background:none;box-shadow:inset 0 0 0 1px var(--line2);color:var(--ink);font-weight:600;font-size:13.5px;min-height:38px;cursor:pointer}
+.sc.lockd .ph>img,.sc.lockd .ph>svg{filter:blur(6px) saturate(.5) brightness(.7)}
+.lk2{position:absolute;z-index:2;inset:0;display:grid;place-items:center;color:#fff}
+.lk2 svg{width:26px;height:26px}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:12px 20px 2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;border:0;box-shadow:inset 0 0 0 1px var(--line2);background:none;border-radius:999px;padding:6px 14px;font-weight:600;font-size:13.5px;cursor:pointer;white-space:nowrap}
+.chips button.on{background:var(--btn);color:var(--btnInk);box-shadow:none}
+/* páginas */
+.ptl{padding:18px 20px 0}
+.ptl h1{margin:0;font-size:clamp(24px,7vw,30px);font-weight:800;letter-spacing:-.025em;color:var(--steel)}
+.ptl p{margin:4px 0 0;font-size:13.5px;color:var(--ink)}
+.blk{margin-top:14px}
+.res{list-style:none;margin:0;padding:0}
+.res li{border-bottom:1px solid var(--line);padding:10px 0}
+.res li:last-child{border:0;padding-bottom:0}
+.res .rw{display:grid;grid-template-columns:32px minmax(0,1fr);gap:10px;align-items:center;cursor:pointer}
+.res .ic{width:32px;height:32px;border-radius:10px}.res .ic svg{width:16px;height:16px}
+.res .ln{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:13px;color:var(--soft)}
+.rg{font-size:12.5px;font-weight:700;color:var(--mute);margin:12px 0 0;text-transform:uppercase;letter-spacing:.04em}
+.rg:first-child{margin-top:0}
+.res small{display:block;color:var(--soft);font-size:13px}
+.res .cod{display:block;color:var(--steel2);font-size:13px;font-weight:600}
+.res .ed{display:flex;gap:8px;margin:8px 0 0 42px}
+.st{font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 8px;white-space:nowrap;border:1px solid}
+.st.ok{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,transparent)}.st.pen{color:var(--pen);border-color:color-mix(in srgb,var(--pen) 45%,transparent)}
+.legs{list-style:none;margin:0;padding:0}
+.legs li{display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+.legs li:last-child{border:0;padding-bottom:0}
+.legs small{display:block;color:var(--soft);font-size:13px}
+.legs .w{color:var(--steel2);font-weight:700;font-size:13.5px;white-space:nowrap}
+/* tiempo estilo app del tiempo */
+.wxs{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:0 16px 4px;scrollbar-width:none;scroll-padding:0 16px}
+.wxs::-webkit-scrollbar{display:none}
+.wc{flex:none;width:86%;scroll-snap-align:start;border-radius:20px;padding:14px 16px 12px;background:linear-gradient(180deg,var(--wc1),var(--wc2) 78%);border:1px solid rgb(255 255 255/.14);color:#fff;position:relative;overflow:hidden}
+.wc::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 18%,rgb(255 255 255/.12),transparent 45%);pointer-events:none}
+.wc .cty{display:flex;align-items:center;gap:6px;font-weight:700;font-size:16px}
+.wc .cty svg{width:16px;height:16px}
+.wc .when{font-size:12.5px;opacity:.8}
+.wc .mid{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:6px 0 2px}
+.wc .tmp{font-size:58px;font-weight:300;letter-spacing:-.04em;line-height:1}
+.wc .wi{width:58px;height:58px}
+.wc .cond{font-size:15px;font-weight:600}
+.wc .hl{font-size:14px;opacity:.9;margin-top:2px}
+.wc .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-top:12px;padding-top:10px;border-top:1px solid rgb(255 255 255/.15);font-size:11.5px;line-height:1.25;text-align:center;opacity:.92}
+.wc .grid3 b{display:block;font-size:14px;white-space:nowrap}
+.wc a{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:#cfe0ff;text-decoration:none}
+.phr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.phr>div{border:1px solid var(--line);border-radius:16px;padding:12px}
+.phr h3{margin:0 0 8px;font-size:16px;display:flex;gap:8px;align-items:center}
+.phr h3 i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.phr dl{margin:0;display:grid;gap:6px}
+.phr dt{font-weight:700;font-size:14px}
+.phr dd{margin:0;color:var(--soft);font-size:13px}
+.docs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.docs>div{border:1px solid var(--line);border-radius:16px;padding:12px;font-size:14px}
+.docs p{margin:0}
+.big{font-size:38px;font-weight:800;letter-spacing:-.03em;color:var(--steel2);line-height:1}
+/* moneda */
+.fx{display:grid;gap:8px}
+.fx label{display:grid;grid-template-columns:56px minmax(0,1fr);align-items:center;gap:10px;border:1px solid var(--line2);border-radius:14px;padding:0 0 0 12px;background:var(--fill)}
+.fx label:focus-within{border-color:var(--steel2)}
+.fx label b{font-size:14px;color:var(--steel2)}
+.fx label b small{display:block;font-size:11px;color:var(--soft);font-weight:500}
+.fx input{border:0!important;background:none!important;font-size:20px!important;font-weight:700;text-align:right;padding-right:14px!important}
+.fxq{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.fxq button{border:0;box-shadow:inset 0 0 0 1px var(--line2);background:none;border-radius:999px;padding:5px 12px;font-size:13.5px;font-weight:600;cursor:pointer}
+/* gastos */
+input[type=text],input[type=number],input[type=time],select{font:16px "Plus Jakarta Sans",sans-serif;color:var(--ink);background:var(--fill);border:1px solid var(--line2);border-radius:14px;padding:11px 13px;min-height:48px;width:100%}
+input:focus,select:focus{outline:none;border-color:var(--steel2)}
+input::placeholder{color:var(--mute)}
+.dch{display:flex;gap:6px;overflow-x:auto;margin:0 -16px 6px;padding:2px 16px 6px;scrollbar-width:none;scroll-snap-type:x proximity}
+.dch::-webkit-scrollbar{display:none}
+.dch button{flex:none;scroll-snap-align:start;border:0;box-shadow:inset 0 0 0 1px var(--line);border-radius:14px;background:none;min-width:50px;padding:6px 8px 5px;line-height:1.1;cursor:pointer;text-align:center}
+.dch button b{display:block;font-size:16px}
+.dch button small{display:block;font-size:11px;color:var(--soft)}
+.dch button i{display:block;width:6px;height:6px;border-radius:50%;background:var(--c);margin:4px auto 0}
+.dch button.on{background:var(--btn);color:var(--btnInk);box-shadow:none}.dch button.on small{color:var(--btnInk);opacity:.7}
+.gtop{display:grid;grid-template-columns:128px minmax(0,1fr);gap:16px;align-items:center}
+.donut{width:128px;height:128px;border-radius:50%;display:grid;place-items:center}
+.donut>div{width:94px;height:94px;border-radius:50%;background:var(--bg);display:grid;place-items:center;text-align:center;line-height:1.15}
+.donut b{font-size:17px;font-weight:800;display:block}
+.donut small{font-size:12px;color:var(--soft)}
+.gl{display:grid;gap:5px}
+.gl p{margin:0;display:grid;grid-template-columns:9px minmax(0,1fr) auto;gap:8px;align-items:center;font-size:14px}
+.gl i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.big2{font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.meter{position:relative;height:10px;border-radius:5px;background:var(--fill2);margin:10px 0 4px}
+.meter i{display:block;height:100%;border-radius:5px;background:#8fbf98;transition:width .3s}
+.meter i.mid{background:#e8c48a}.meter i.hi{background:#e08a74}
+.meter em{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--soft)}
+.mlab{display:flex;justify-content:space-between;font-size:12px;color:var(--mute)}
+.gform{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.gform .full{grid-column:1/-1}
+.cats{display:flex;gap:6px;flex-wrap:wrap;grid-column:1/-1}
+.cats label{cursor:pointer;position:relative}
+.cats input{position:absolute;opacity:0;pointer-events:none}
+.cats span{display:inline-flex;align-items:center;gap:5px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line2);padding:6px 11px;font-size:13px;font-weight:600}
+.cats span svg{width:14px;height:14px}
+.cats input:checked+span{background:var(--btn);color:var(--btnInk);box-shadow:none}
+.cats input:focus-visible+span{outline:2px solid var(--steel2)}
+.two{display:flex;gap:8px;grid-column:1/-1}
+.two .btn{flex:1}
+.glist{display:grid;gap:8px}
+.gh{font-size:12.5px;font-weight:700;color:var(--soft);margin:8px 0 0}
+.gi{display:grid;grid-template-columns:34px minmax(0,1fr) max-content;gap:10px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:8px 8px 8px 10px;cursor:pointer;background:none;text-align:left;width:100%}
+.gi.ed{border-color:var(--steel2)}
+.gi .ic{width:34px;height:34px;border-radius:11px;color:var(--c);border-color:color-mix(in srgb,var(--c) 45%,transparent)}
+.gi b{font-weight:700;font-size:14.5px}
+.gi small{display:block;color:var(--soft);font-size:12.5px}
+.gi .amt{font-weight:700;white-space:nowrap}
+.gi .del{border:0;background:none;color:var(--mute);font-size:19px;min-height:34px;cursor:pointer;padding:0}
+.empty{text-align:center;padding:18px 10px;color:var(--soft);border:1px dashed var(--line2);border-radius:16px;font-size:14px}
+:focus-visible{outline:2px solid var(--steel2);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.sec.open .txt{animation:none}}
+@media(min-width:600px){.cc{width:220px}.wc{width:60%}}
+@media(max-width:360px){.phr,.docs{grid-template-columns:minmax(0,1fr)}.gtop{grid-template-columns:minmax(0,1fr)}.donut{margin:0 auto}}
+/* mis vacaciones: 4 pestañas, banner de 2 ciudades, comer, tiempo */
+:root{--bcn2:#6fa8bd;--prg:#a78bd4}
+.top nav{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bnr .bs{animation:bf3 12s infinite}.bnr .bs:nth-child(2){animation-delay:4s}.bnr .bs:nth-child(3){animation-delay:8s}
+@keyframes bf3{0%{opacity:0;transform:scale(1.12)}6%{opacity:1}33%{opacity:1}39%{opacity:0;transform:scale(1)}100%{opacity:0}}
+@keyframes bf2{0%{opacity:0;transform:scale(1.12)}8%{opacity:1}50%{opacity:1}58%{opacity:0;transform:scale(1)}100%{opacity:0}}
+.pl{animation:pv2 12s infinite}
+@keyframes pv2{0%,42%{left:0%}50%,92%{left:100%}100%{left:0%}}
+.cn{animation:bt3 12s infinite}.cn:nth-of-type(2){animation-delay:4s}.cn:nth-of-type(3){animation-delay:8s}
+@keyframes bt3{0%{opacity:0;transform:translateX(10px)}6%{opacity:1}33%{opacity:1;transform:none}39%{opacity:0}100%{opacity:0}}
+@keyframes bt2{0%{opacity:0;transform:translateX(10px)}8%{opacity:1}50%{opacity:1;transform:none}58%{opacity:0}100%{opacity:0}}
+.steps li.cty{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:var(--soft);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.steps li.cty i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.tag.pc{color:var(--pen);border-color:color-mix(in srgb,var(--pen) 45%,transparent)}
+.hw{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:center;width:100%;margin-top:12px;border:1px solid var(--line);border-radius:14px;background:var(--fill);padding:8px 12px;text-align:left;font-size:13.5px;color:var(--soft);cursor:pointer}
+.hw svg{width:22px;height:22px;color:var(--steel2)}.hw b{color:var(--ink)}
+.wc .wtip{display:grid;grid-template-columns:20px minmax(0,1fr);gap:8px;align-items:start;margin:10px 0 0;font-size:14px;line-height:1.35}
+.wc .wtip svg{width:20px;height:20px}
+.wl{display:grid;gap:8px}
+.wr{display:grid;grid-template-columns:50px minmax(0,1fr) auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:8px 10px}
+.wr.today{border-color:var(--steel2)}.wr.today .db{background:var(--steel2);border-color:var(--steel2)}.wr.today .db b,.wr.today .db small{color:var(--onAcc)}
+.wr .wt b{display:block;font-weight:700;font-size:14.5px;line-height:1.25}.wr .wt small{display:block;color:var(--soft);font-size:12.5px;line-height:1.3}
+.wv2{display:grid;justify-items:end;text-align:right;line-height:1.15}.wv2>svg{width:24px;height:24px;color:var(--steel2)}.wv2 b{font-size:17px}.wv2 small{font-size:12px;color:var(--soft);white-space:nowrap}.wv2 small svg{width:11px;height:11px;vertical-align:-1px}
+.rcity{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--soft);text-transform:uppercase;letter-spacing:.05em;margin:18px 0 -4px}
+.rcity:first-child{margin-top:4px}.rcity i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.rw2{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:10px;align-items:center}
+.rw2 b{display:block;font-weight:700;font-size:15px;line-height:1.3}
+.rw2 .pr{color:var(--steel2);font-weight:700}
+.rw2 small{margin-top:2px}
+.rw2 .go{width:44px;height:44px;border-radius:14px;border:1px solid var(--line2);display:grid;place-items:center;color:var(--steel2)}.rw2 .go svg{width:18px;height:18px}
+button.ft{font:inherit}
+.hs{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:6px 10px}.hs .thb{position:static;margin-left:auto;flex:none}.sub2{padding-right:0}
+#nowbox{margin-top:18px}#nowbox:empty{display:none}#nowbox .box{margin-bottom:0!important}
+.hoy{border-color:var(--line2)}.hoy>.bh{font-size:15px;padding:8px 14px;margin-bottom:10px}.hoy .bi{width:26px;height:26px}
+.hoy .ht{margin:0 0 8px;font-weight:700;font-size:16.5px;line-height:1.25}
+.hoy .list{gap:8px}.hoy .list li{grid-template-columns:30px minmax(0,1fr);gap:10px;font-size:14px;line-height:1.35}
+.hoy .list .ic{width:30px;height:30px;border-radius:10px}.hoy .list .ic svg{width:16px;height:16px}
+.hoy .list li>span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.hoy .hw{margin-top:10px;padding:6px 10px}
+.hoy .acts{flex-wrap:nowrap;margin-top:10px}.hoy .btn{flex:1 1 auto;min-height:42px;font-size:14.5px;padding:0 12px;white-space:nowrap}
+.tight .bnr{display:none}
+.hoy .acts{flex-wrap:wrap}
+.rtip{display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;margin:12px 0 0;font-size:13.5px;line-height:1.4}.rtip svg{width:18px;height:18px;margin-top:1px}
+.list small.sm{color:var(--soft);font-size:13.5px;line-height:1.4}
+#cstay .box{margin-bottom:12px}
+</style>
+</head>
+<body>
+<header class="top"><nav role="tablist" id="nav">
+  <button role="tab" data-go="" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Viaje</button>
+  <button role="tab" data-go="comer" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v18M5 3v5a2 2 0 0 0 4 0V3M17 21V3c-2 1-3 4-3 7h3"/></svg>Comer</button>
+  <button role="tab" data-go="moda" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5a2 2 0 1 1 2-2M12 6.5V8L3 15a1.5 1.5 0 0 0 1 2.7h16a1.5 1.5 0 0 0 1-2.7l-9-7"/></svg>Moda</button>
+  <button role="tab" data-go="tiempo" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v1.5M5.6 5.6l1 1M3 12h1.5M18.4 5.6l-1 1"/><path d="M8.5 11a4 4 0 0 1 7.3-2"/><path d="M8 20h9a3.5 3.5 0 0 0 .5-7 5 5 0 0 0-9.6 1A3 3 0 0 0 8 20z"/></svg>Tiempo</button>
+  <button role="tab" data-go="gastos" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18M16 15h2"/></svg>Gastos</button>
+</nav></header>
+
+<div class="app">
+<section id="s-viaje">
+  <div class="bnr" aria-hidden="true" id="bnr"></div>
+  <div class="hh"><h1 class="brand">Mis Vacaciones</h1><div class="ctr" id="count" hidden></div><div class="hs"><div><p class="sub">Madrid · Barcelona · Praga</p><p class="sub2">18 – 26 de noviembre de 2026</p></div><button type="button" class="thb" id="thOpen" aria-haspopup="dialog" aria-controls="thSheet"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.8 1.6-1.6 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.7-1.6 1.6-1.6H16a5 5 0 0 0 5-5c0-4-4-7.4-9-7.4Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10.5" cy="7.5" r="1"/><circle cx="15" cy="7.5" r="1"/></svg>Estilo app</button></div></div>
+  <div class="carw"><div class="car" id="car"></div>
+    <button type="button" class="arr l" id="arrL" aria-label="Ciudad anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button type="button" class="arr r" id="arrR" aria-label="Ciudad siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+  <div class="dots" id="dots" aria-hidden="true"></div>
+  <div class="pad" id="nowbox"></div>
+  <div class="pad">
+    <h2><span id="nxt-h">Día a día</span><button type="button" data-go="comer">Dónde comer</button></h2>
+    <div class="rows" id="next"></div>
+  </div>
+</section>
+
+<section id="s-city" hidden>
+  <div class="ph scrim hero" id="hero"></div>
+  <div class="sheet">
+    <div class="stats" id="stats"></div>
+    <div id="cstay"></div>
+    <h2>Día a día</h2>
+    <div id="cdays"></div>
+  </div>
+</section>
+
+<section id="s-comer" hidden>
+  <div class="ptl"><h1>Dónde comer</h1><p>Comida de calle, dulces y tapas, a precio medio.</p></div>
+  <div class="chips" id="rchips"></div>
+  <div class="pad"><div id="rlist"></div>
+    <p class="note" style="margin-top:14px;font-size:13px">€ menos de 10 € por persona · €€ entre 10 y 25 €. Los horarios cambian: mejor mirarlos en Google Maps antes de ir.</p></div>
+</section>
+
+<section id="s-moda" hidden>
+  <div class="ptl"><h1>Moda y vintage</h1><p>Museos de moda, mercadillos y tiendas de ropa antigua.</p></div>
+  <div class="chips" id="mchips"></div>
+  <div class="pad"><div id="mlist"></div>
+    <p class="note" style="margin-top:14px;font-size:13px">Los horarios de las tiendas cambian: mejor mirarlos en Google Maps antes de ir.</p></div>
+</section>
+
+<section id="s-tiempo" hidden>
+  <div class="ptl"><h1>El tiempo</h1><p>La previsión de cada día y qué ponerse.</p></div>
+  <div class="pad">
+    <div id="wxtoday"></div>
+    <div class="box blk"><h3 class="bh"><span class="bi"><i data-ic="cal"></i></span>Día a día</h3><div class="wl" id="wl"></div><p class="note" id="wxsrc" style="margin-top:10px;font-size:13px"></p></div>
+    <div class="box blk"><h3 class="bh"><span class="bi"><i data-ic="case"></i></span>Para todo el viaje</h3><ul class="list" id="ropa"></ul></div>
+  </div>
+</section>
+
+<section id="s-gastos" hidden>
+  <div class="ptl"><h1>Gastos del viaje</h1><p>Tu presupuesto: menos de 50 € al día por persona, sin el alojamiento.</p></div>
+  <div class="pad">
+    <div class="box blk"><h3 class="bh"><span class="bi"><i data-ic="chart"></i></span>Resumen</h3>
+      <div class="dch" id="dch" aria-label="Elegir día"></div>
+      <div id="gsumm"></div>
+    </div>
+    <div class="box blk"><h3 class="bh"><span class="bi"><i data-ic="plus"></i></span><span id="gf-h">Nuevo gasto</span></h3>
+      <form id="gform" class="gform" autocomplete="off">
+        <input class="full" type="text" id="gc" placeholder="Qué fue (cena, metro…)" aria-label="Concepto">
+        <input type="number" id="gi" placeholder="Importe €" inputmode="decimal" step="0.01" min="0" aria-label="Importe">
+        <input type="time" id="gt" aria-label="Hora">
+        <select class="full" id="gd" aria-label="Día"></select>
+        <div class="cats" id="gk" role="radiogroup" aria-label="Tipo de gasto"></div>
+        <div class="two"><button class="btn" type="submit" id="gsave">Añadir gasto</button><button class="btn ghost" type="button" id="gcancel" hidden>Cancelar</button><button class="btn ghost" type="button" id="gdel" hidden style="color:#e8a090">Borrar</button></div>
+      </form>
+    </div>
+    <div class="box blk"><h3 class="bh"><span class="bi"><i data-ic="list"></i></span><span id="gl-h">Movimientos</span></h3>
+      <div class="glist" id="glist"></div>
+      <div class="empty" id="gempty">Aún no hay gastos aquí. Toca uno para editarlo o borrarlo. Se guardan solo en este teléfono.</div>
+    </div>
+  </div>
+</section>
+<button type="button" class="ft" id="ft" data-go="tiempo" aria-label="Tiempo: ver la previsión"></button>
+</div>
+
+<script>
+{
+/* ---------- datos del viaje ---------- */
+const Y=2026,M=10,MES="noviembre",MC="nov";
+const C={
+ Madrid:{c:"var(--mad)",s1:"#ffd2a8",s2:"#9c3d2e",slug:"madrid",f:"madrid"},
+ Barcelona:{c:"var(--bcn2)",s1:"#c4e4f2",s2:"#2c5f8a",slug:"barcelona",f:"barcelona"},
+ Praga:{c:"var(--prg)",s1:"#e6d8f2",s2:"#43356a",slug:"praga",f:"praga"}};
+/* ciudades: nombre, noches, etiqueta corta, fechas largas, texto de la tarjeta */
+const STOPS=[["Madrid",2,"18 – 20","18 – 20 de noviembre","2 noches"],["Barcelona",4,"20 – 24","20 – 24 de noviembre","4 noches"],["Praga",1,"25 – 26","25 – 26 de noviembre","1 noche (por confirmar)"]];
+const map=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+const route=q=>"https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(q);
+/* días: cada plan = [icono, texto, búsqueda en Maps, etiqueta, ciudad] */
+const DAYS=[
+ {d:18,c:"Madrid",cs:["Madrid"],t:"Llegada y el Madrid de siempre",w:"Sol, Plaza Mayor y el Reina Sofía",it:[
+  ["🏨","Llegada por la mañana y maletas al alojamiento (ya reservado).","",0,"Madrid"],
+  ["🚶","Paseo por el centro: Puerta del Sol, Plaza Mayor y el Mercado de San Miguel (para mirar; comer ahí es caro).","Plaza Mayor Madrid",0,"Madrid"],
+  ["🥪","Almuerzo de calle: bocadillo de calamares en un bar junto a la Plaza Mayor.","Bar La Campana Madrid",0,"Madrid"],
+  ["🌅","Atardecer en el Templo de Debod, gratis. Anochece hacia las 17:50.","Templo de Debod Madrid",0,"Madrid"],
+  ["🖼️","Museo Reina Sofía y el Guernica de Picasso. Suele ser gratis de 19:00 a 21:00 (los martes cierra): mirar la web.","Museo Reina Sofía",0,"Madrid"],
+  ["🍸","Noche: cañas y tapas en Lavapiés, al lado del museo. Barato y con ambiente.","Calle Argumosa Madrid",0,"Madrid"]]},
+ {d:19,c:"Madrid",cs:["Madrid"],t:"El Prado, el Museo del Traje y Malasaña",w:"Último día en Madrid: arte, moda y vintage",it:[
+  ["🖼️","Museo del Prado por la mañana. Comprar la entrada en la web evita la cola.","Museo del Prado",1,"Madrid"],
+  ["👗","Museo del Traje (Moncloa): seis siglos de moda española. Hoy jueves abre hasta las 19:00 (el lunes cierra).","Museo del Traje Madrid",1,"Madrid"],
+  ["👗","Vintage en Malasaña: la calle Velarde está llena de tiendas de segunda mano; Magpie y Templo de Susu, muy cerca.","Calle de Velarde Madrid",0,"Madrid"],
+  ["🥐","Merienda: napolitana de chocolate en La Mallorquina, en la Puerta del Sol.","La Mallorquina Madrid",0,"Madrid"],
+  ["🍸","Noche de tapas y bares en Malasaña, que los jueves ya se llena.","Plaza del Dos de Mayo Madrid",0,"Madrid"],
+  ["🎫","Para mañana: confirmar el billete y la hora a Barcelona.","",4,"Madrid"]]},
+ {d:20,c:"Barcelona",cs:["Madrid","Barcelona"],t:"Rumbo a Barcelona y el Born",w:"Viaje temprano y tres pastelerías del Born",it:[
+  ["🚄","Viaje Madrid → Barcelona temprano (por confirmar). En tren, unas 2 h 45 min de Atocha a Sants.","Estación de Madrid Puerta de Atocha",4,"Madrid"],
+  ["🏨","Llegada y maletas al alojamiento (ya reservado).","",0,"Barcelona"],
+  ["🥐","Pastelería Hofmann, en el Born: su croissant de mascarpone es el clásico.","Pastisseria Hofmann Barcelona",0,"Barcelona"],
+  ["🥐","Bubó, a dos calles: pasteles que parecen joyas y chocolate de autor.","Bubó Born Caputxes 10 Barcelona",0,"Barcelona"],
+  ["⛪","Barrio Gótico a pie: la Catedral, la plaza de Sant Felip Neri y Santa Maria del Mar.","Basílica de Santa Maria del Mar Barcelona",0,"Barcelona"],
+  ["🥐","La Colmena, en la plaza de l'Àngel: la pastelería más antigua del barrio (1849).","La Colmena Plaça de l'Àngel Barcelona",0,"Barcelona"],
+  ["🖼️","Museo Picasso, en la calle Montcada. Mejor reservar hora en la web.","Museu Picasso Barcelona",1,"Barcelona"],
+  ["🍸","Noche de viernes en el Born: vermut o vino con tapas y bares de copas por el Passeig del Born.","Passeig del Born Barcelona",0,"Barcelona"]]},
+ {d:21,c:"Barcelona",cs:["Barcelona"],t:"Sábado de moda y mercadillos",w:"Els Encants, el Museu del Disseny y la Riera Baixa",it:[
+  ["👗","Els Encants (Glòries), el gran mercadillo de segunda mano: el sábado abre de 9:00 a 20:00. Ir temprano.","Mercat dels Encants Barcelona",0,"Barcelona"],
+  ["👗","Al lado, el Museu del Disseny: la sala «El cuerpo vestido» recorre cinco siglos de moda (1550–2015).","Museu del Disseny de Barcelona",1,"Barcelona"],
+  ["👗","Tarde en la Riera Baixa (Raval): los sábados las tiendas vintage sacan la ropa a la calle. Lullaby, en el número 22.","Carrer de la Riera Baixa Barcelona",0,"Barcelona"],
+  ["🥐","Chocolate con churros en la Granja La Pallaresa, en la calle Petritxol.","Granja La Pallaresa Barcelona",0,"Barcelona"],
+  ["🍸","Noche en el Raval o el Born, a un paso.","Rambla del Raval Barcelona",0,"Barcelona"]]},
+ {d:22,c:"Barcelona",cs:["Barcelona"],t:"Gaudí, Gràcia y los miradores",w:"Sagrada Família, vermut y los Búnkers",it:[
+  ["⛪","Sagrada Família. Reservar la entrada en la web oficial: se agota.","Sagrada Família",2,"Barcelona"],
+  ["🥐","De la Sagrada Família a Gràcia por el Passeig de Sant Joan: parada en la Pastisseria Carrió, premiada por sus panellets (mirar horario del domingo).","Pastisseria Carrió Passeig de Sant Joan Barcelona",0,"Barcelona"],
+  ["🚶","Paseo por Gràcia: plazas pequeñas, cafés y la Casa Vicens por fuera.","Plaça del Sol Barcelona",0,"Barcelona"],
+  ["🍽️","Vermut del domingo con tapas en una plaza de Gràcia, muy de aquí.","vermut Gràcia Barcelona",0,"Barcelona"],
+  ["🌅","Atardecer en los Búnkers del Carmel, gratis: toda la ciudad y el mar. Anochece hacia las 17:25.","Búnkers del Carmel Barcelona",0,"Barcelona"],
+  ["🍸","Noche de domingo, más tranquila: una copa en las plazas de Gràcia.","Plaça de la Virreina Barcelona",0,"Barcelona"]]},
+ {d:23,c:"Barcelona",cs:["Barcelona"],t:"Mercado, modernismo y pasteles",w:"La Boqueria, Passeig de Gràcia, Mauri y L'Atelier",it:[
+  ["🥪","Mercat de la Boqueria a primera hora, antes de que se llene: zumos, fruta y algo en la barra.","Mercat de la Boqueria",0,"Barcelona"],
+  ["🏛️","Passeig de Gràcia: Casa Batlló y La Pedrera. Por fuera, gratis; por dentro, con entrada.","Casa Batlló Barcelona",1,"Barcelona"],
+  ["🥐","Merienda en la Pastisseria Mauri, salón de té de 1929 en la Rambla de Catalunya, muy cerca.","Pastisseria Mauri Rambla de Catalunya 102",0,"Barcelona"],
+  ["🥐","De camino a Montjuïc, L'Atelier (calle Viladomat): elegida la mejor pastelería de Cataluña.","L'Atelier Barcelona Viladomat 140",0,"Barcelona"],
+  ["🖼️","CaixaForum, en Montjuïc: exposiciones en una antigua fábrica modernista. Abre los lunes, cuando muchos museos cierran.","CaixaForum Barcelona",0,"Barcelona"],
+  ["🍸","Noche de pintxos en la calle Blai (Poble-sec): baratos y con mucho ambiente.","Carrer de Blai Barcelona",0,"Barcelona"]]},
+ {d:24,c:"Barcelona",cs:["Barcelona"],t:"Último día en Barcelona",w:"Desayuno en Escribà y salida (por confirmar)",it:[
+  ["🥐","Desayuno dulce en Escribà, la pastelería modernista de La Rambla.","Escribà La Rambla Barcelona",0,"Barcelona"],
+  ["🥐","Si queda tiempo: mañana de pastelerías en la zona alta (Foix de Sarrià, Baixas y Oriol Balaguer), en los trenes FGC desde plaza Catalunya.","Foix de Sarrià Major de Sarrià 57",0,"Barcelona"],
+  ["🧳","Salida de Barcelona: día y hora por confirmar. Al aeropuerto: Aerobús desde plaza Catalunya (unos 35 min) o metro L9.","Aeropuerto de Barcelona-El Prat",4,"Barcelona"]]},
+ {d:25,c:"Praga",cs:["Praga"],t:"Praga: Ciudad Vieja y barrio judío",w:"Reloj Astronómico, Josefov y moda en el UPM",it:[
+  ["✈️","Vuelo a Praga (hora por confirmar). Del aeropuerto al centro: trolebús 59 hasta Nádraží Veleslavín y metro A, con un billete de 90 minutos (50 coronas; 46 en la app PID Lítačka).","Nádraží Veleslavín",4,"Praga"],
+  ["⛪","Plaza de la Ciudad Vieja y el Reloj Astronómico, que se mueve a cada hora en punto.","Staroměstské náměstí Praha",0,"Praga"],
+  ["🏛️","Barrio judío (Josefov): sinagogas y el antiguo cementerio, con entrada conjunta. Cierra los sábados.","Jewish Museum in Prague",1,"Praga"],
+  ["👗","Museo de Artes Decorativas (UPM), a un paso: textiles y moda, vidrio y joyas. De miércoles a domingo, de 10:00 a 18:00; entrada 350 coronas.","Uměleckoprůmyslové museum v Praze",1,"Praga"],
+  ["🥐","Merienda en la Cukrárna Myšák (Vodičkova 31), pastelería de 1911.","Cukrárna Myšák Praha",0,"Praga"],
+  ["🎄","Mercadillo de Navidad de Náměstí Republiky: abre justo el 25 de noviembre (10:00–20:00).","Náměstí Republiky Praha",0,"Praga"],
+  ["🍸","Noche: el Puente de Carlos iluminado y una cerveza checa en el centro.","Karlův most",0,"Praga"]]},
+ {d:26,c:"Praga",cs:["Praga"],t:"El Castillo, Malá Strana y vintage",w:"Castillo temprano, cafés históricos y mercadillo",it:[
+  ["🏰","Castillo de Praga temprano, antes de que se llene: catedral de San Vito y el Callejón del Oro (con entrada).","Pražský hrad",1,"Praga"],
+  ["🚶","Bajada por la calle Nerudova hasta Malá Strana y el Puente de Carlos de día.","Nerudova Praha",0,"Praga"],
+  ["☕","Café Savoy (Vítězná 5), café clásico junto a Malá Strana: desayuno o una tarta.","Café Savoy Praha",0,"Praga"],
+  ["👗","Vintage en el centro: Quasimodo Vintage Fashion (Vladislavova 17), en un patio, y Laly (Štupartská 3).","Quasimodo Vintage Fashion Praha",0,"Praga"],
+  ["🎄","Mercadillo de Navidad de Náměstí Míru, en Vinohrady (abierto desde el 20 de noviembre, 10:00–19:00).","Náměstí Míru Praha",0,"Praga"],
+  ["🧳","Regreso: día y hora por confirmar.","",4,"Praga"]]}];
+const TAG=["","Con entrada","Reservar ya","Comprar billete","Por confirmar"];
+
+/* dónde comer: nombre, ciudad, tipo, precio, nota, búsqueda, barrio */
+const R=[
+ ["Bar La Campana","Madrid","calle","€","El bocadillo de calamares de toda la vida, al lado de la Plaza Mayor.","Bar La Campana Madrid","Plaza Mayor"],
+ ["Casa Labra","Madrid","calle","€","Tajada de bacalao frito y croquetas, de pie en la barra. Abierta desde 1860.","Casa Labra Madrid","Sol"],
+ ["Mercado de San Fernando","Madrid","calle","€","Mercado de barrio con puestos para picar y comer barato.","Mercado de San Fernando Madrid","Lavapiés"],
+ ["Chocolatería San Ginés","Madrid","dulce","€","Chocolate con churros o porras, hasta muy tarde.","Chocolatería San Ginés","Sol"],
+ ["La Mallorquina","Madrid","dulce","€","Napolitanas de chocolate en plena Puerta del Sol.","La Mallorquina Madrid","Sol"],
+ ["Antigua Pastelería del Pozo","Madrid","dulce","€","La pastelería más antigua de Madrid: hojaldres y bartolillos.","Antigua Pastelería del Pozo Madrid","Sol"],
+ ["Calle de la Cava Baja","Madrid","tapas","€€","Una calle entera de tabernas para ir de bar en bar.","Cava Baja Madrid","La Latina"],
+ ["Calle Argumosa","Madrid","tapas","€","Terrazas y bares baratos, a cinco minutos del Reina Sofía.","Calle Argumosa Madrid","Lavapiés"],
+ ["Mercat de la Boqueria","Barcelona","calle","€","Fruta, zumos y barras para comer algo. Mejor por la mañana; cierra el domingo.","Mercat de la Boqueria","La Rambla"],
+ ["La Cova Fumada","Barcelona","calle","€","Aquí nació la bomba, la croqueta de patata con salsa picante. Se llena: ir pronto.","La Cova Fumada Barcelona","Barceloneta"],
+ ["Pastisseria Hofmann","Barcelona","dulce","€€","Su croissant de mascarpone es famoso. Para llevar y comer paseando.","Pastisseria Hofmann Barcelona","El Born"],
+ ["Escribà","Barcelona","dulce","€","Pastelería histórica en un edificio modernista de La Rambla.","Escribà La Rambla Barcelona","La Rambla"],
+ ["Granja La Pallaresa","Barcelona","dulce","€","Chocolate espeso con churros o melindros, en la calle Petritxol.","Granja La Pallaresa Barcelona","Barrio Gótico"],
+ ["Bubó","Barcelona","dulce","€€","Pasteles que parecen joyas y chocolate de autor, de Carles Mampel. A dos calles de Santa Maria del Mar.","Bubó Born Caputxes 10 Barcelona","El Born"],
+ ["La Colmena","Barcelona","dulce","€","De 1849 y con la fachada dorada de siempre: dulces catalanes clásicos. Abre todos los días.","La Colmena Plaça de l'Àngel Barcelona","Barrio Gótico"],
+ ["L'Atelier","Barcelona","dulce","€€","Escuela y pastelería, elegida la mejor de Cataluña en los premios Fava de Cacau. Pastelería fina de inspiración francesa.","L'Atelier Barcelona Viladomat 140","Eixample"],
+ ["Pastisseria Mauri","Barcelona","dulce","€€","Salón de té de 1929 en la Rambla de Catalunya, con el interior antiguo intacto. Para sentarse a merendar.","Pastisseria Mauri Rambla de Catalunya 102","Eixample"],
+ ["Pastisseria Carrió","Barcelona","dulce","€","Pastelería de barrio premiada por sus panellets y su roscón, en el Passeig de Sant Joan.","Pastisseria Carrió Passeig de Sant Joan Barcelona","Gràcia"],
+ ["Pastisseria Baixas","Barcelona","dulce","€€","Famosa por sus croissants, de receta traída de París. Segunda mejor de Cataluña en la Fava de Cacau.","Pastisseria Baixas Muntaner 331 Barcelona","Sant Gervasi"],
+ ["Oriol Balaguer","Barcelona","dulce","€€","El pastelero que hizo los postres de elBulli: chocolate, cruffins y panettone.","Oriol Balaguer Plaça Sant Gregori Taumaturg Barcelona","Sant Gervasi"],
+ ["Foix de Sarrià","Barcelona","dulce","€","Desde 1886, en un local modernista del barrio de Sarrià. Abre todos los días.","Foix de Sarrià Major de Sarrià 57","Sarrià"],
+ ["Carrer de Blai","Barcelona","tapas","€","Una calle de pintxos baratos, uno o dos euros cada uno.","Carrer de Blai Barcelona","Poble-sec"],
+ ["El Xampanyet","Barcelona","tapas","€€","Bar de cava y tapas de siempre, junto al Museo Picasso.","El Xampanyet Barcelona","El Born"],
+ ["Plazas de Gràcia","Barcelona","tapas","€","Vermut y tapas en la plaza del Sol y las de alrededor.","Plaça del Sol Barcelona","Gràcia"],
+ ["Cukrárna Myšák","Praga","dulce","€","Pastelería de 1911 con pasteles checos clásicos y desayunos. Abre todos los días.","Cukrárna Myšák Praha","Nové Město"],
+ ["Café Louvre","Praga","dulce","€€","Gran café abierto desde 1902 en la avenida Národní, a un paso del Teatro Nacional.","Café Louvre Praha","Nové Město"],
+ ["Café Savoy","Praga","dulce","€€","Café clásico en el lado de Malá Strana; su strudel de manzana tiene fama.","Café Savoy Praha","Malá Strana"],
+ ["Erhartova cukrárna","Praga","dulce","€","Pastelería retro con tradición desde 1937, en Letná y en Vinohrady.","Erhartova cukrárna Praha","Letná"],
+ ["Mercadillo de Náměstí Míru","Praga","calle","€","Puestos de Navidad con comida y vino caliente, desde el 20 de noviembre.","Náměstí Míru Praha","Vinohrady"],
+ ["Lokál Dlouhááá","Praga","tapas","€","Cervecería checa con cocina típica, en el centro.","Lokál Dlouhá Praha","Staré Město"]];
+/* moda y vintage: nombre, ciudad, tipo, nota, búsqueda, barrio */
+const MO=[
+ ["Museo del Traje","Madrid","museo","Seis siglos de moda española. De martes a sábado, de 9:30 a 19:00; domingo, de 10:00 a 15:00; lunes cerrado.","Museo del Traje Madrid","Moncloa"],
+ ["Calle Velarde","Madrid","tienda","La calle de la ropa vintage y de segunda mano de Madrid.","Calle de Velarde Madrid","Malasaña"],
+ ["Magpie Vintage","Madrid","tienda","Una de las tiendas vintage de referencia de la ciudad.","Magpie Vintage Madrid","Malasaña"],
+ ["Templo de Susu","Madrid","tienda","Tienda vintage muy conocida del barrio, en la calle Espíritu Santo 1.","Templo de Susu Madrid","Malasaña"],
+ ["Museu del Disseny","Barcelona","museo","Moda, diseño y artes decorativas. La sala «El cuerpo vestido» va de 1550 a 2015.","Museu del Disseny de Barcelona","Glòries"],
+ ["Els Encants","Barcelona","mercado","El mercadillo de segunda mano más grande de la ciudad. Lunes, miércoles, viernes y sábado, de 9:00 a 20:00.","Mercat dels Encants Barcelona","Glòries"],
+ ["Riera Baixa","Barcelona","mercado","Calle de tiendas vintage del Raval; los sábados sacan la ropa a la calle.","Carrer de la Riera Baixa Barcelona","El Raval"],
+ ["Lullaby Vintage","Barcelona","tienda","Ropa y complementos vintage elegidos por décadas, en la Riera Baixa 22.","Lullaby Vintage Riera Baixa 22 Barcelona","El Raval"],
+ ["Flamingos Vintage Kilo","Barcelona","tienda","Ropa vintage que se paga al peso.","Flamingos Vintage Kilo Barcelona","El Raval"],
+ ["Mahalo Vintage","Barcelona","tienda","Tienda vintage en la plaza del Diamant, en Gràcia (y otra en la calle Comtal).","Mahalo Vintage Plaça del Diamant Barcelona","Gràcia"],
+ ["Museo de Artes Decorativas (UPM)","Praga","museo","Textiles y moda, vidrio, joyas. Martes de 10:00 a 20:00; de miércoles a domingo, de 10:00 a 18:00; lunes cerrado. Entrada 350 coronas.","Uměleckoprůmyslové museum v Praze","Josefov"],
+ ["Mercadillo de Náměstí Republiky","Praga","mercado","Mercado de Navidad pequeño, de artesanía y comida. Del 25 de noviembre al 24 de diciembre, de 10:00 a 20:00.","Náměstí Republiky Praha","Staré Město"],
+ ["Mercadillo de Náměstí Míru","Praga","mercado","Mercado de Navidad frente a la iglesia de Santa Ludmila. Desde el 20 de noviembre, de 10:00 a 19:00.","Náměstí Míru Praha","Vinohrady"],
+ ["Quasimodo Vintage Fashion","Praga","tienda","Ropa vintage y de segunda mano con muchos complementos, escondida en un patio (Vladislavova 17).","Quasimodo Vintage Fashion Praha","Nové Město"],
+ ["Laly","Praga","tienda","Boutique de la Ciudad Vieja con vintage elegido a mano (Štupartská 3).","Laly vintage Štupartská 3 Praha","Staré Město"],
+ ["Kuzmarkt","Praga","tienda","Tienda vintage y de segunda mano en Letná, el barrio más bohemio.","Kuzmarkt Praha","Letná"]];
+const MT={museo:["Museos de moda","hanger"],mercado:["Mercadillos","bag"],tienda:["Tiendas vintage","shirt"]};
+const MNOTE={Madrid:"El Rastro solo abre los domingos y esta vez no coincide.",Praga:"El gran mercado de Navidad de la Plaza de la Ciudad Vieja abre el 28 de noviembre, después de tu viaje: los de Náměstí Republiky y Náměstí Míru ya estarán abiertos."};
+const RT={dulce:["Pastelerías y dulces","cake"],calle:["De calle","food"],tapas:["Tapas y noche","moon"]};
+
+const STAY=[
+ ["Staré Město (Ciudad Vieja)","La mejor opción para la primera vez: todo a pie, desde la Plaza de la Ciudad Vieja al barrio judío y el UPM. Más caro y con más turistas."],
+ ["Malá Strana","Debajo del castillo, más tranquila y bonita por la noche. Se cruza a la Ciudad Vieja por el Puente de Carlos en unos 20 minutos."],
+ ["Nové Město (Ciudad Nueva)","Práctica y bien comunicada, algo más barata; aquí están Myšák y la plaza Náměstí Republiky."],
+ ["Vinohrady","Barrio residencial y elegante, con tiendas vintage y el mercadillo de Náměstí Míru. Hoteles de 60 a 90 € la noche, a pocos minutos en tranvía o metro."]];
+const PRAC=[["info","Moneda: corona checa (CZK). 1 € son unas 23–25 coronas; casi todo se paga con tarjeta."],["train","Aeropuerto: trolebús 59 + metro A (billete de 90 min, 50 coronas) o el Airport Express a la estación central (200 coronas)."],["shirt","Hace frío de verdad: abrigo de invierno, gorro, bufanda y guantes."]];
+const P={plane:'<path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>',train:'<rect x="5" y="3" width="14" height="14" rx="4"/><path d="M5 10h14M9 21l1.5-4M15 21l-1.5-4"/><circle cx="9" cy="13.5" r=".8"/><circle cx="15" cy="13.5" r=".8"/>',walk:'<circle cx="13" cy="4" r="2"/><path d="M9 21l3-7 3 3v5M7 12l4-4h3l2 4 2 1M11 8l1 6"/>',bed:'<path d="M3 19V7M3 15h18v4M21 15v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="12" r="2"/>',art:'<path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.8 2-1.9 0-1.4-1.1-1.6-1.1-2.7 0-1 .8-1.6 1.8-1.6H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/>',cake:'<path d="M4 20h16v-7H4zM4 16c2 1.2 4 1.2 6 0s4-1.2 6 0 3 1.2 4 0M12 13V9M12 4c1 1 1 2.2 0 3-1-.8-1-2 0-3"/>',info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',castle:'<path d="M3 21h18M5 21V10M9.5 21V10M14.5 21V10M19 21V10M3 10l9-6 9 6z"/>',bag:'<path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/>',food:'<path d="M7 3v18M5 3v5a2 2 0 0 0 4 0V3M17 21V3c-2 1-3 4-3 7h3"/>',sun:'<path d="M3 18h18M7 18a5 5 0 0 1 10 0M12 6v3M5 10l2 2M19 10l-2 2M3 14h2M19 14h2"/>',moon:'<path d="M20 14A8 8 0 1 1 10 4a6 6 0 0 0 10 10z"/>',heart:'<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>',case:'<rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5h6v2M4 12h16"/>',church:'<path d="M12 2v5M10 4h4M6 21V12l6-5 6 5v9zM10 21v-4a2 2 0 0 1 4 0v4"/>',tree:'<path d="M12 21v-6M7 15h10l-5-12z"/><path d="M8.5 11h7"/>',cup:'<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/>',pin:'<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',back:'<path d="M15 5l-7 7 7 7"/>',chev:'<path d="M9 6l6 6-6 6"/>',go:'<path d="M3 11l18-8-8 18-2-8z"/>',cal:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',drop:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',shirt:'<path d="M8 3l-5 3 2 5 3-1v11h8V10l3 1 2-5-5-3a4 4 0 0 1-8 0z"/>',umb:'<path d="M3 12a9 9 0 0 1 18 0zM12 12v7a2 2 0 0 1-4 0M12 3v0"/>',shoe:'<path d="M3 17v-6l5 1 3-4 3 3c2 1 5 1.5 7 2.5V17zM3 17h18v2H3z"/>'};
+Object.assign(P,{hanger:'<path d="M12 6.5a2 2 0 1 1 2-2M12 6.5V8L3 15a1.5 1.5 0 0 0 1 2.7h16a1.5 1.5 0 0 0 1-2.7l-9-7"/>',ticket:'<path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M13 6v12"/>',cloud:'<path d="M7 18h10a4 4 0 0 0 .6-8A6 6 0 0 0 6 11a3.5 3.5 0 0 0 1 7z"/>',rain:'<path d="M7 14h10a4 4 0 0 0 .6-8A6 6 0 0 0 6 7a3.5 3.5 0 0 0 1 7zM8 18l-1 3M12 18l-1 3M16 18l-1 3"/>',fog:'<path d="M7 13h10a4 4 0 0 0 .6-8A6 6 0 0 0 6 6a3.5 3.5 0 0 0 1 7zM4 17h16M6 21h12"/>',sunny:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',psun:'<path d="M12 3v1.5M5.6 5.6l1 1M3 12h1.5M18.4 5.6l-1 1"/><path d="M8.5 11a4 4 0 0 1 7.3-2"/><path d="M8 20h9a3.5 3.5 0 0 0 .5-7 5 5 0 0 0-9.6 1A3 3 0 0 0 8 20z"/>',plus:'<circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/>',list:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',chart:'<circle cx="12" cy="12" r="9"/><path d="M12 3v9l6.4 6.4"/>'});
+const EM={"✈️":"plane","👗":"hanger","🎄":"tree","🏰":"castle","☕":"cup","🏨":"bed","🚶":"walk","🥪":"food","🌅":"sun","🖼️":"art","🍸":"moon","🌳":"tree","🥐":"cake","🍽️":"food","🍫":"cup","🎫":"ticket","🚄":"train","⛪":"church","🏛️":"castle","🧳":"case"};
+const ico=(k,w)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w||1.9}" stroke-linecap="round" stroke-linejoin="round">${P[k]||P.info}</svg>`;
+
+/* ilustraciones de cada ciudad (se ven mientras carga la foto o si falta) */
+const SKY={
+Praga:`<circle cx="500" cy="52" r="20" fill="#fff4e0" fill-opacity=".5"/><g fill="#231a3a" fill-opacity=".6"><path d="M0 200v-64q70-34 160-34t150 22 60 8v68z"/><path d="M30 112v-26h210v26z"/><path d="M60 86v-14h40v14zM190 86v-12h36v12z"/><path d="M134 86V40l9-30 9 30v46z"/><path d="M160 86V52l6-20 6 20v34z"/><path d="M400 200v-84l12-26 12 26v84zM436 200v-62h44v62zM488 200v-96l10-22 10 22v96zM520 200v-58h50v58z"/></g><g fill="#ffe7b8" fill-opacity=".5"><rect x="70" y="96" width="6" height="8"/><rect x="92" y="96" width="6" height="8"/><rect x="200" y="96" width="6" height="8"/><rect x="446" y="150" width="6" height="8"/><rect x="464" y="150" width="6" height="8"/></g><rect y="178" width="600" height="22" fill="#2a3f66" fill-opacity=".45"/><path d="M0 176h600v6H0z" fill="#1c1630" fill-opacity=".6"/><g fill="#2a3f66" fill-opacity=".7">${[30,110,190,270,350,430,510].map(x=>`<path d="M${x} 200v-12a22 14 0 0 1 44 0v12z"/>`).join("")}</g>`,
+Madrid:`<circle cx="480" cy="58" r="24" fill="#fff3d6" fill-opacity=".55"/><g fill="#4a1c14" fill-opacity=".55"><path d="M0 200v-60h40v-14h30v74zM78 200v-82h38v82zM122 200v-56h40v56zM300 200v-70h26v-10h22v80zM356 200v-58h44v58zM408 200v-76h30v76zM446 200v-50h50v50zM504 200v-68h40v68zM552 200v-48h48v48z"/><path d="M172 200v-80h104v80z"/><path d="M188 122q36-52 72 0z"/><rect x="220" y="62" width="8" height="12"/><circle cx="224" cy="58" r="6"/></g><g fill="#ffe7b8" fill-opacity=".55"><rect x="88" y="132" width="7" height="10"/><rect x="100" y="132" width="7" height="10"/><rect x="186" y="140" width="8" height="12"/><rect x="206" y="140" width="8" height="12"/><rect x="226" y="140" width="8" height="12"/><rect x="246" y="140" width="8" height="12"/><rect x="366" y="152" width="7" height="10"/><rect x="380" y="152" width="7" height="10"/><rect x="516" y="146" width="7" height="10"/></g><rect x="0" y="192" width="600" height="8" fill="#3a120c" fill-opacity=".35"/>`,
+Barcelona:`<circle cx="120" cy="56" r="22" fill="#fff4d8" fill-opacity=".55"/><path d="M0 200v-44q90-28 180-12t140 2 160-18 120 8v64z" fill="#183e5c" fill-opacity=".35"/><g fill="#1a2b40" fill-opacity=".6">${[[262,84],[284,60],[306,44],[328,60],[350,84]].map(([x,t])=>`<path d="M${x} 200V${t}l9-34 9 34V200z"/>`).join("")}<path d="M250 200v-70h130v70z"/><path d="M40 200v-40h50v40zM100 200v-52h36v52zM430 200v-48h40v48zM480 200v-60h34v60zM524 200v-40h50v40z"/></g><g fill="#ffe7b8" fill-opacity=".5"><rect x="270" y="150" width="6" height="10"/><rect x="292" y="140" width="6" height="12"/><rect x="314" y="134" width="6" height="12"/><rect x="336" y="140" width="6" height="12"/><rect x="110" y="166" width="6" height="8"/><rect x="492" y="160" width="6" height="8"/></g><rect y="186" width="600" height="14" fill="#1d4d73" fill-opacity=".5"/>`};
+const ph=(c,cls,extra)=>`<div class="ph ${cls||""}" style="--s1:${C[c].s1};--s2:${C[c].s2}"><svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true">${SKY[c]}</svg>${C[c].f?`<img src="fotos/${C[c].f}.jpg" alt="" loading="lazy">`:""}${extra||""}</div>`;
+function fixImgs(root){root.querySelectorAll(".ph img:not([data-k])").forEach(i=>{i.dataset.k=1;const ok=()=>i.naturalWidth?i.classList.add("ok"):i.remove();if(i.complete)ok();else{i.addEventListener("load",ok);i.addEventListener("error",()=>i.remove())}})}
+const WD=["dom","lun","mar","mié","jue","vie","sáb"],WDL=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+const wd=d=>WD[new Date(Y,M,d).getDay()],wdl=d=>WDL[new Date(Y,M,d).getDay()];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const LS=k=>{try{return JSON.parse(localStorage.getItem("mv-"+k))}catch(e){return null}};
+const SS=(k,v)=>{try{localStorage.setItem("mv-"+k,JSON.stringify(v))}catch(e){}};
+const $=id=>document.getElementById(id);
+const fmt=n=>n.toLocaleString("es-ES",{style:"currency",currency:"EUR"});
+const dayOf=d=>DAYS.find(x=>x.d===d);
+const dayCities=x=>x.cs.join(" → ");
+const iso=d=>`${Y}-${String(M+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+
+/* fecha: real o simulada con #prueba-20 */
+let SIM=0;try{SIM=+(sessionStorage.getItem("mv-sim")||0)}catch(e){}
+const start=new Date(Y,M,18),endT=new Date(Y,M,27);
+function T(){if(SIM)return{ph:"trip",d:SIM};const n=new Date();if(n<start)return{ph:"before",left:Math.ceil((start-n)/864e5)};if(n<endT)return{ph:"trip",d:n.getDate()};return{ph:"after"}}
+
+/* ---------- tiempo: previsión real (Open-Meteo) o valores normales de noviembre ---------- */
+const GEO={Madrid:[40.4168,-3.7038],Barcelona:[41.3874,2.1686],Praga:[50.0755,14.4378]};
+const NORM={Praga:{hi:5,lo:-1,code:3,pp:35,sr:"7:30",ss:"16:05"},Madrid:{hi:14,lo:5,code:2,pp:25,sr:"8:10",ss:"17:50"},Barcelona:{hi:17,lo:9,code:2,pp:25,sr:"7:45",ss:"17:25"}};
+const WMO=c=>c===0?["sunny","Despejado"]:c<=2?["psun","Algo nuboso"]:c===3?["cloud","Nublado"]:c<=48?["fog","Niebla"]:c<=57?["rain","Llovizna"]:c<=67?["rain","Lluvia"]:c<=77?["cloud","Nieve"]:c<=82?["rain","Chubascos"]:c<=86?["cloud","Nieve"]:["rain","Tormenta"];
+let WXD=LS("wxd");
+const wxCity=x=>x.cs[x.cs.length-1];
+function dayWx(x){const c=wxCity(x),r=WXD&&WXD[c]&&WXD[c][iso(x.d)];return r?{c,code:r[0],hi:Math.round(r[1]),lo:Math.round(r[2]),pp:r[3]==null?null:r[3],real:1}:{c,...NORM[c],real:0}}
+function ropa(w){const p=[];
+  if(w.lo<=5)p.push("Abrigo de invierno y bufanda: de noche hace frío");
+  else if(w.hi<=14)p.push("Chaqueta abrigada y ropa en capas");
+  else if(w.hi<=18)p.push("Chaqueta o jersey; por la noche, algo más de abrigo");
+  else p.push("Manga larga y una chaqueta fina para la noche");
+  if(w.pp!=null&&w.pp>=50)p.push("paraguas plegable");else if(w.pp!=null&&w.pp>=30)p.push("un paraguas pequeño por si acaso");
+  return p.join(" y ")+"."}
+function ropaC(w){const r=w.lo<=5?"Abrigo y bufanda":w.hi<=14?"Chaqueta abrigada":w.hi<=18?"Chaqueta o jersey":"Manga larga";return r+(w.pp!=null&&w.pp>=30?" · paraguas":"")}
+async function loadWx(){if(WXD&&Date.now()-WXD.at<2*3600e3)return;
+  try{const out={at:Date.now()};for(const c of Object.keys(GEO)){const [la,lo]=GEO[c];
+    const r=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Europe%2FMadrid&past_days=7&forecast_days=16`);
+    if(!r.ok)return;const j=await r.json(),dd=j.daily;out[c]={};dd.time.forEach((t,i)=>out[c][t]=[dd.weather_code[i],dd.temperature_2m_max[i],dd.temperature_2m_min[i],dd.precipitation_probability_max[i]])}
+    WXD=out;SS("wxd",WXD);refreshWx()}catch(e){}}
+function refreshWx(){if(!$("s-tiempo").hidden)renderWx();if(!$("s-viaje").hidden)renderHome()}
+function renderWx(){const t=T(),today=t.ph==="trip"?dayOf(t.d):DAYS[0];
+  const w=dayWx(today),[ic,txt]=WMO(w.code),n=NORM[w.c];
+  $("wxtoday").innerHTML=`<div class="wc" style="width:100%"><div class="cty">${ico("pin",2)}${w.c}</div><div class="when">${t.ph==="trip"?"Hoy, ":""}${wdl(today.d)} ${today.d} de ${MES}</div><div class="mid"><span class="tmp">${w.hi}°</span><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${P[ic]}</svg></div><div class="cond">${w.real?txt:"Lo normal en noviembre"}</div><div class="hl">↑ ${w.hi}° / ↓ ${w.lo}°${w.pp!=null?` · lluvia ${w.pp}%`:""}</div><p class="wtip">${ico("shirt",1.8)}<span>${ropa(w)}</span></p><div class="grid3"><span><b>${n.sr}</b>amanece</span><span><b>${n.ss}</b>anochece</span><span><b>${w.real?"Previsión":"Normal"}</b>${w.real?"real":"de noviembre"}</span></div></div>`;
+  $("wl").innerHTML=DAYS.map(x=>{const v=dayWx(x),[i2,t2]=WMO(v.code);return `<div class="wr${t.ph==="trip"&&t.d===x.d?" today":""}"><span class="db"><b>${x.d}</b><small>${wd(x.d)}</small></span><span class="wt"><b>${v.c}${v.real?` · ${t2}`:""}</b><small>${ropaC(v)}</small></span><span class="wv2">${ico(i2,1.7)}<b>${v.hi}°</b><small>${v.lo}°${v.pp!=null?` · ${ico("drop",2)}${v.pp}%`:""}</small></span></div>`}).join("");
+  const real=DAYS.some(x=>dayWx(x).real);
+  $("wxsrc").textContent=real?`Previsión actualizada a las ${new Date(WXD.at).toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"})}. Los días lejanos pueden cambiar.`:"Sin conexión: se muestran los valores normales de noviembre. Con internet aparece la previsión real.";
+  $("ropa").innerHTML=[["shirt","Ropa en capas: mañanas frescas, mediodías templados y noches frías."],["case","Una chaqueta de abrigo para salir de noche."],["shoe","Calzado cómodo: vas a caminar mucho, y hay calles de piedra en el Gótico."],["umb","Paraguas plegable en el bolso: en noviembre algún día llueve."],["hanger","Para Praga, ropa de invierno de verdad: abrigo, gorro, bufanda y guantes. Allí anochece hacia las 16:05."]].map(([i,tx])=>`<li><span class="ic">${ico(i)}</span><span>${tx}</span></li>`).join("")}
+
+/* ---------- banner ---------- */
+$("bnr").innerHTML=STOPS.map(([c])=>`<div class="bs">${ph(c)}</div>`).join("")+STOPS.map(([c])=>`<span class="cn">${c.toUpperCase()}</span>`).join("");
+
+/* ---------- inicio ---------- */
+/* «Hoy» entero en la primera pantalla: si no cabe, muestra menos planes (mínimo uno) */
+function fitHoy(){const sv=$("s-viaje"),car=$("car");if(sv.hidden||!car.children.length)return;const cs=[...car.children];
+  /* las tarjetas de las ciudades llenan lo que queda de la primera pantalla: así termina limpia, justo después de los puntos */
+  const fit=()=>{cs.forEach(c=>{c.style.height="";c.style.aspectRatio=""});const w=cs[0].offsetWidth,top=car.getBoundingClientRect().top+scrollY,dots=$("dots").hidden?0:$("dots").offsetHeight+10;
+    const z=parseFloat(getComputedStyle(document.documentElement).zoom)||1;return {w,av:(innerHeight-top-dots)/z-14}};
+  sv.classList.remove("tight");let {w,av}=fit();
+  if(av<150){sv.classList.add("tight");({w,av}=fit())}
+  const h=Math.round(Math.max(150,Math.min(av,w*1.6)));cs.forEach(c=>{c.style.aspectRatio="auto";c.style.height=h+"px"});carState()}
+window.mvFitHoy=fitHoy;addEventListener("resize",()=>requestAnimationFrame(fitHoy));
+function renderHome(){
+  const t=T();let h="";
+  if(t.ph==="trip"){const x=dayOf(t.d);if(x){const w=dayWx(x),[ic]=WMO(w.code);h=`<div class="box hoy"><h3 class="bh"><span class="bi">${ico("sunny",2)}</span>Hoy · ${wd(x.d)} ${x.d} · ${dayCities(x)}</h3>
+    <p class="ht">${esc(x.t)}</p><ul class="list">${x.it.slice(0,3).map(([i,tx])=>`<li><span class="ic">${ico(EM[i])}</span><span>${esc(tx)}</span></li>`).join("")}</ul>
+    <button type="button" class="hw" data-go="tiempo">${ico(ic,1.8)}<span><b>${w.hi}° / ${w.lo}°</b> · ${ropaC(w)}</span></button>
+    <div class="acts"><button class="btn" type="button" data-open="${x.cs[x.cs.length-1]}" data-day="${x.d}">Ver el día</button><button class="btn ghost" type="button" data-go="gastos">Anotar gasto</button></div></div>`}}
+  else if(t.ph==="after"){const tot=G.reduce((a,g)=>a+g.v,0);h=`<div class="box" style="margin-bottom:10px"><h3 class="bh"><span class="bi">${ico("heart",2)}</span>¡Buen regreso!</h3><p class="note">${tot?`Gastaste ${fmt(tot)} en todo el viaje. `:""}Aquí queda guardado el recuerdo.</p></div>`}
+  $("nowbox").innerHTML=h;requestAnimationFrame(fitHoy);
+  $("nxt-h").textContent=t.ph==="trip"?"Lo que viene":"Día a día";
+  const list=t.ph==="trip"?DAYS.filter(x=>x.d>t.d):DAYS;
+  $("next").innerHTML=list.map(x=>`<button type="button" class="row" data-open="${x.cs[x.cs.length-1]}" data-day="${x.d}">${ph(x.c)}<span><span class="dt">${wd(x.d)} ${x.d} ${MC} · ${dayCities(x)}</span><b>${esc(x.t)}</b><small>${esc(x.w)}</small></span>${ico("chev",2)}</button>`).join("")||`<p class="note">Último día del viaje.</p>`;
+  if(t.ph==="trip"&&!carMoved){const x=dayOf(t.d),k2=x?STOPS.findIndex(n=>n[0]===wxCity(x)):0,car=$("car");if(k2>0)requestAnimationFrame(()=>{car.scrollLeft=car.children[k2].offsetLeft-car.firstElementChild.offsetLeft;carState()})}
+}
+$("car").innerHTML=STOPS.map(([c,n,a,b,s])=>`<button type="button" class="cc" data-open="${c}" aria-label="${c}, ${b}">${ph(c,"scrim")}<span class="n">${a} ${MC}</span><span class="tx"><b>${c}</b><span>${s}</span></span></button>`).join("");
+$("dots").innerHTML=STOPS.map(()=>"<i></i>").join("");
+function carState(){const car=$("car"),cs=[...car.children],x=car.scrollLeft;let k=0,best=1e9;cs.forEach((c,i)=>{const dd=Math.abs(c.offsetLeft-car.firstElementChild.offsetLeft-x);if(dd<best){best=dd;k=i}});
+  $("dots").querySelectorAll("i").forEach((d,i)=>d.classList.toggle("on",i===k));$("arrL").hidden=x<8;$("arrR").hidden=x>car.scrollWidth-car.clientWidth-8;$("dots").hidden=car.scrollWidth<=car.clientWidth+8;return k}
+$("car").addEventListener("scroll",()=>requestAnimationFrame(carState),{passive:true});
+const step=dir=>{const car=$("car"),k=carState(),t=car.children[Math.max(0,Math.min(car.children.length-1,k+dir))];car.scrollTo({left:t.offsetLeft-car.firstElementChild.offsetLeft,behavior:"smooth"})};
+$("arrL").onclick=()=>{carMoved=true;step(-1)};$("arrR").onclick=()=>{carMoved=true;step(1)};
+new ResizeObserver(carState).observe($("car"));
+let carMoved=false;
+
+/* ---------- ciudad ---------- */
+const plan=([ic,tx,q,tg])=>`<li><span class="ic">${ico(EM[ic])}</span><span class="tx">${esc(tx)}${tg?`<span class="tag${tg===4?" pc":""}">${TAG[tg]}</span>`:""}${q?`<span class="adr">${ico("pin",2)}<a href="${route(q)}" target="_blank" rel="noopener">Cómo llegar</a></span>`:""}</span></li>`;
+function openCity(c,d){
+  const [,n,,b]=STOPS.find(x=>x[0]===c),days=DAYS.filter(x=>x.cs.includes(c)),t=T();
+  if(!d||!days.some(x=>x.d===d))d=t.ph==="trip"&&days.some(x=>x.d===t.d)?t.d:days[0].d;
+  $("hero").style.cssText=`--s1:${C[c].s1};--s2:${C[c].s2}`;
+  $("hero").innerHTML=`<svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true">${SKY[c]}</svg>${C[c].f?`<img src="fotos/${C[c].f}.jpg" alt="">`:""}<button type="button" class="back" id="back" aria-label="Volver">${ico("back",2.2)}</button><div class="tx"><b>${c}</b><span>${b} · ${n} noche${n===1?"":"s"}</span></div>`;
+  const its=days.flatMap(x=>x.it).filter(i=>i[4]===c);
+  $("stats").innerHTML=`<div><small>Noches</small><b>${n}</b></div><div><small>Planes</small><b>${its.length}</b></div><div><small>Comer</small><b>${R.filter(r=>r[1]===c).length}</b></div>`;
+  $("cstay").innerHTML=c==="Praga"?`<div class="box blk"><h3 class="bh"><span class="bi">${ico("bed",2)}</span>Dónde alojarse</h3><ul class="list">${STAY.map(([b,t],i)=>`<li><span class="ic">${ico(i?"pin":"heart")}</span><span><b>${b}</b>${i?"":" · la que te recomiendo"}<br><small class="sm">${t}</small></span></li>`).join("")}</ul></div><div class="box blk"><h3 class="bh"><span class="bi">${ico("info",2)}</span>Práctico</h3><ul class="list">${PRAC.map(([i,t])=>`<li><span class="ic">${ico(i)}</span><span>${t}</span></li>`).join("")}</ul></div>`:"";
+  $("cdays").innerHTML=days.map(x=>{const i=DAYS.indexOf(x),pv=DAYS[i-1],nx=DAYS[i+1];return `<article class="day${x.d===d?" open":""}${t.ph==="trip"&&t.d===x.d?" today":""}" id="d${x.d}"><button type="button" class="dh" aria-expanded="${x.d===d}"><span class="db"><b>${x.d}</b><small>${wd(x.d)}</small></span><span class="t"><b>${esc(x.t)}</b><small>${esc(x.w)}</small></span>${ico("chev",2.2).replace("<svg","<svg class=\"chev\"")}</button>
+  <div class="det"><ul class="steps">${x.it.map((it,j)=>{const nc=it[4]!==(x.it[j-1]||[])[4]&&x.cs.length>1;return (nc?`<li class="cty" style="--c:${C[it[4]].c}"><i></i>${it[4]}</li>`:"")+plan(it)}).join("")}</ul>
+  <div class="dnav"><button type="button" data-gd="${pv?pv.d:""}"${pv?"":" disabled"}>← ${pv?wd(pv.d)+" "+pv.d:""}</button><button type="button" data-gd="${nx?nx.d:""}"${nx?"":" disabled"}>${nx?wd(nx.d)+" "+nx.d:""} →</button></div></div></article>`}).join("");
+  if(d!==days[0].d)setTimeout(()=>{const el=$("d"+d);if(el)el.scrollIntoView({behavior:"smooth",block:"start"})},150);
+}
+$("s-city").addEventListener("click",e=>{
+  if(e.target.closest("#back")){if(inApp)history.back();else go("");return}
+  const g=e.target.closest("[data-gd]");if(g){const d=+g.dataset.gd,x=dayOf(d);if(!x)return;if($("d"+d)){$("d"+d).classList.add("open");$("d"+d).querySelector(".dh").setAttribute("aria-expanded","true");$("d"+d).scrollIntoView({behavior:"smooth",block:"start"})}else{pend=d;go(C[wxCity(x)].slug)}return}
+  const h=e.target.closest(".dh");if(h){const a=h.parentNode;a.classList.toggle("open");h.setAttribute("aria-expanded",a.classList.contains("open"))}});
+
+/* ---------- dónde comer ---------- */
+let rcity=null;
+function renderR(){if(rcity===null){const t=T(),x=t.ph==="trip"&&dayOf(t.d);rcity=x?wxCity(x):""}
+  $("rchips").innerHTML=[["","Todo"],...Object.keys(C).map(c=>[c,c])].map(([k,l])=>`<button type="button" data-rc="${k}" class="${rcity===k?"on":""}">${l}</button>`).join("");
+  const cities=rcity?[rcity]:Object.keys(C);
+  $("rlist").innerHTML=cities.map(c=>`${rcity?"":`<p class="rcity" style="--c:${C[c].c}"><i></i>${c}</p>`}`+Object.entries(RT).map(([k,[l,ic]])=>{const its=R.filter(r=>r[1]===c&&r[2]===k);return its.length?`<div class="box blk"><h3 class="bh"><span class="bi">${ico(ic,2)}</span>${l}</h3><ul class="res">${its.map(([n,,,pr,nt,q,ba])=>`<li><div class="rw2"><span><b>${esc(n)}</b><span class="ln">${esc(ba)} · <span class="pr">${pr}</span></span><small>${esc(nt)}</small></span><a class="go" href="${route(q)}" target="_blank" rel="noopener" aria-label="Cómo llegar a ${esc(n)}">${ico("go",2)}</a></div></li>`).join("")}</ul>${c==="Barcelona"&&k==="dulce"?`<p class="note rtip">${ico("info",2)}<span>Para una mañana solo de pastelerías: Foix, Baixas y Oriol Balaguer están en la zona alta (Sarrià y Sant Gervasi), cerca entre sí. Se llega en los trenes FGC desde plaza Catalunya.</span></p>`:""}</div>`:""}).join("")).join("")}
+$("rchips").onclick=e=>{const b=e.target.closest("[data-rc]");if(!b)return;rcity=b.dataset.rc;renderR()};
+
+/* ---------- moda y vintage ---------- */
+let mcity=null;
+function renderM(){if(mcity===null){const t=T(),x=t.ph==="trip"&&dayOf(t.d);mcity=x?wxCity(x):""}
+  $("mchips").innerHTML=[["","Todo"],...Object.keys(C).map(c=>[c,c])].map(([k,l])=>`<button type="button" data-mc="${k}" class="${mcity===k?"on":""}">${l}</button>`).join("");
+  const cities=mcity?[mcity]:Object.keys(C);
+  $("mlist").innerHTML=cities.map(c=>`${mcity?"":`<p class="rcity" style="--c:${C[c].c}"><i></i>${c}</p>`}`+Object.entries(MT).map(([k,[l,ic]])=>{const its=MO.filter(r=>r[1]===c&&r[2]===k);return its.length?`<div class="box blk"><h3 class="bh"><span class="bi">${ico(ic,2)}</span>${l}</h3><ul class="res">${its.map(([n,,,nt,q,ba])=>`<li><div class="rw2"><span><b>${esc(n)}</b><span class="ln">${esc(ba)}</span><small>${esc(nt)}</small></span><a class="go" href="${route(q)}" target="_blank" rel="noopener" aria-label="Cómo llegar a ${esc(n)}">${ico("go",2)}</a></div></li>`).join("")}</ul></div>`:""}).join("")+(MNOTE[c]?`<p class="note rtip">${ico("info",2)}<span>${MNOTE[c]}</span></p>`:"")).join("")}
+$("mchips").onclick=e=>{const b=e.target.closest("[data-mc]");if(!b)return;mcity=b.dataset.mc;renderM()};
+
+/* ---------- gastos ---------- */
+const BUD=50;
+const CATS=[["comida","Comida","food"],["transporte","Transporte","train"],["entradas","Entradas","ticket"],["compras","Compras","bag"],["noche","Noche","moon"],["otro","Otro","info"]];
+let G=(LS("gastos")||[]).map((g,i)=>({id:g.id||Date.now()+i,c:g.c||"Gasto",v:+g.v||0,d:g.d||0,h:g.h||"",k:g.k||"otro"}));
+let gsel=null,editId=null;
+const dcol=d=>{const x=dayOf(d);return x?C[x.c].c:"#8a92a0"};
+$("gd").innerHTML=DAYS.map(x=>`<option value="${x.d}">${wd(x.d)} ${x.d} ${MC} · ${dayCities(x)}</option>`).join("");
+$("gk").innerHTML=CATS.map(([k,l,ic],i)=>`<label><input type="radio" name="gk" value="${k}"${i?"":" checked"}><span>${ico(ic,2)}${l}</span></label>`).join("");
+function resetForm(){const t=T(),n=new Date();editId=null;$("gform").reset();$("gd").value=String(gsel||(t.ph==="trip"?t.d:18));$("gt").value=`${String(n.getHours()).padStart(2,"0")}:${String(n.getMinutes()).padStart(2,"0")}`;$("gsave").textContent="Añadir gasto";$("gcancel").hidden=true;$("gdel").hidden=true;$("gf-h").textContent="Nuevo gasto"}
+function renderG(){
+  if(gsel===null){const t=T();gsel=t.ph==="trip"?t.d:0}
+  const daySum=d=>G.filter(g=>g.d===d).reduce((a,g)=>a+g.v,0);
+  $("dch").innerHTML=`<button type="button" data-gs="0" class="${gsel?"":"on"}" style="--c:transparent"><b>Todo</b><small>viaje</small><i></i></button>`+DAYS.map(x=>`<button type="button" data-gs="${x.d}" class="${gsel===x.d?"on":""}" style="--c:${C[x.c].c}"><b>${x.d}</b><small>${wd(x.d)}</small><i></i></button>`).join("");
+  const tot=G.reduce((a,g)=>a+g.v,0),max=BUD*DAYS.length;
+  if(!gsel){const by=DAYS.map(x=>[x,daySum(x.d)]);
+    let acc=0;const stops=tot?by.map(([x,v])=>{const s=acc;acc+=v/tot*360;return `${C[x.c].c} ${s}deg ${acc}deg`}).join(","):"var(--fill2) 0deg 360deg";
+    $("gsumm").innerHTML=`<div class="gtop"><div class="donut" style="background:conic-gradient(${stops})"><div><span><b>${fmt(tot)}</b><small>en total</small></span></div></div><div><p style="margin:0 0 8px;font-size:14px"><b>${Math.round(tot/max*100)}%</b> <span style="color:var(--soft)">de ${fmt(max)} (${DAYS.length} días)</span></p><div class="gl">${by.map(([x,v])=>`<p style="--c:${C[x.c].c}"><i></i><span>${wd(x.d)} ${x.d} · ${x.cs.join(", ")}</span><b>${fmt(v)}</b></p>`).join("")}</div></div></div>`}
+  else{const v=daySum(gsel),x=dayOf(gsel),top=BUD*1.5,cl=v>BUD?"hi":v>BUD*.8?"mid":"",bc=CATS.map(([k,l])=>[l,G.filter(g=>g.d===gsel&&g.k===k).reduce((a,g)=>a+g.v,0)]).filter(r=>r[1]);
+    $("gsumm").innerHTML=`<p class="note">${wdl(gsel)} ${gsel} de ${MES} · ${dayCities(x)}</p><div class="big2">${fmt(v)}</div><div class="meter"><i class="${cl}" style="width:${Math.min(100,v/top*100)}%"></i><em style="left:${BUD/top*100}%"></em></div><div class="mlab"><span>0 €</span><span style="position:relative;left:${BUD/top*100-50}%">${BUD} €</span><span>${top} €</span></div><p class="note" style="margin-top:8px">${v>BUD?`Por encima de los ${BUD} € del día.`:v>BUD*.8?"Cerca del límite del día.":"Dentro de lo previsto."}${bc.length?" · "+bc.map(([l,a])=>`${l} ${fmt(a)}`).join(" · "):""}</p>`}
+  const list=G.filter(g=>!gsel||g.d===gsel).sort((a,b)=>(b.d-a.d)||(b.h>a.h?1:-1));
+  $("gl-h").textContent=gsel?`Movimientos del ${gsel} de ${MES}`:"Todos los movimientos";
+  let last=-1,html="";
+  for(const g of list){if(!gsel&&g.d!==last){last=g.d;const x=dayOf(g.d);html+=`<p class="gh">${x?`${wdl(g.d)} ${g.d} ${MC} · ${dayCities(x)}`:"Sin día"}</p>`}
+    const cat=CATS.find(c=>c[0]===g.k)||CATS[CATS.length-1];
+    html+=`<div class="gi${editId===g.id?" ed":""}" role="button" tabindex="0" data-ge="${g.id}" style="--c:${dcol(g.d)}"><span class="ic">${ico(cat[2],2)}</span><span><b>${esc(g.c)}</b><small>${g.c===cat[1]?"":cat[1]+" · "}${g.h||""}${g.d?"":" · sin día"}</small></span><span class="amt">${fmt(g.v)}</span></div>`}
+  $("glist").innerHTML=html;$("gempty").hidden=!!list.length;
+}
+$("dch").onclick=e=>{const b=e.target.closest("[data-gs]");if(!b)return;gsel=+b.dataset.gs;if(!editId)$("gd").value=String(gsel||$("gd").value);renderG()};
+$("gform").onsubmit=e=>{e.preventDefault();const v=parseFloat(String($("gi").value).replace(",","."));if(!(v>0)){$("gi").focus();return}
+  const rec={c:$("gc").value.trim()||(CATS.find(c=>c[0]===$("gform").gk.value)||CATS[CATS.length-1])[1],v,d:+$("gd").value,h:$("gt").value,k:$("gform").gk.value};
+  if(editId){Object.assign(G.find(g=>g.id===editId),rec)}else G.push({id:Date.now(),...rec});
+  SS("gastos",G);gsel=rec.d;resetForm();renderG()};
+$("gcancel").onclick=()=>{resetForm();renderG()};
+$("gdel").onclick=()=>{G=G.filter(g=>g.id!==editId);SS("gastos",G);resetForm();renderG()};
+$("glist").addEventListener("click",e=>{const r=e.target.closest("[data-ge]");if(r){const g=G.find(g=>g.id===+r.dataset.ge);editId=g.id;$("gc").value=g.c;$("gi").value=g.v;$("gd").value=String(g.d||18);$("gt").value=g.h;$("gform").gk.value=g.k;$("gsave").textContent="Guardar";$("gcancel").hidden=false;$("gdel").hidden=false;$("gf-h").textContent="Editar gasto";renderG();$("gform").scrollIntoView({behavior:"smooth",block:"center"})}});
+$("glist").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.closest("[data-ge]")){e.preventDefault();e.target.click()}});
+
+/* ---------- pie con el tiempo de ahora ---------- */
+function ftCity(){const t=T();if(t.ph==="trip"){const x=dayOf(t.d);if(x)return wxCity(x)}return "Madrid"}
+function drawFt(c,w){const n=NORM[c];let ic,txt,now,hi,lo,sub;
+  if(w){[ic,txt]=WMO(w.code);now=Math.round(w.t);hi=Math.round(w.hi);lo=Math.round(w.lo);const d=new Date(w.at);sub=`a las ${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}`}
+  else{[ic,txt]=WMO(n.code);now=null;hi=n.hi;lo=n.lo;sub="normal en noviembre"}
+  $("ft").innerHTML=`<svg class="wi2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${P[ic]}</svg><span><b>${now!==null?`<span class="now">${now}°</span>`:""}${c}</b><span class="t2">${txt} · ${sub}</span></span><span class="hl2">↑${hi}° ↓${lo}°</span>`}
+async function renderFt(){const c=ftCity(),key="wx-"+C[c].slug,old=LS(key);drawFt(c,old&&Date.now()-old.at<6*3600e3?old:null);
+  if(old&&Date.now()-old.at<30*60e3)return;
+  try{const [la,lo]=GEO[c],r=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=auto`);
+    if(!r.ok)return;const j=await r.json(),w={t:j.current.temperature_2m,code:j.current.weather_code,hi:j.daily.temperature_2m_max[0],lo:j.daily.temperature_2m_min[0],at:Date.now()};SS(key,w);if(ftCity()===c)drawFt(c,w)}catch(e){}}
+
+/* ---------- navegación con el botón atrás ---------- */
+let pend=0,inApp=false;
+const go=h=>{inApp=true;if(location.hash.slice(1)===h)route_();else location.hash=h};
+document.addEventListener("click",e=>{const o=e.target.closest("[data-open]");if(o&&o.dataset.open){pend=+o.dataset.day||0;go(C[o.dataset.open].slug);return}
+  const g=e.target.closest("[data-go]");if(g&&g.tagName==="BUTTON"){go(g.dataset.go)}});
+function show(id){document.querySelectorAll(".app>section").forEach(s=>s.hidden=s.id!=="s-"+id);const tab=id==="city"||id==="viaje"?"":id;document.querySelectorAll("#nav button").forEach(b=>b.setAttribute("aria-selected",b.dataset.go===tab?"true":"false"))}
+function route_(){
+  let h=decodeURIComponent(location.hash.slice(1));
+  const m=h.match(/^prueba-(\d+)$/);if(m){SIM=dayOf(+m[1])?+m[1]:0;try{SIM?sessionStorage.setItem("mv-sim",SIM):sessionStorage.removeItem("mv-sim")}catch(e){}gsel=null;rcity=null;mcity=null;history.replaceState(null,"",location.pathname+location.search);h="";resetForm()}
+  const city=Object.keys(C).find(c=>C[c].slug===h);
+  if(city){openCity(city,pend);pend=0;show("city");window.scrollTo({top:0});$("ft").hidden=false;renderFt();return}
+  const id=["comer","moda","tiempo","gastos"].includes(h)?h:"viaje";
+  show(id);window.scrollTo({top:0});
+  if(id==="viaje"){renderHome();requestAnimationFrame(()=>window.mvFitTitle&&window.mvFitTitle())}if(id==="gastos")renderG();if(id==="comer")renderR();if(id==="moda")renderM();if(id==="tiempo")renderWx();
+  requestAnimationFrame(carState);
+  $("ft").hidden=id!=="viaje";renderFt();
+}
+window.addEventListener("hashchange",route_);
+document.querySelectorAll("[data-ic]").forEach(e=>e.outerHTML=ico(e.dataset.ic,2));
+resetForm();route_();loadWx();fixImgs(document);new MutationObserver(()=>fixImgs(document)).observe(document.querySelector(".app"),{childList:true,subtree:true});
+
+/* sin conexión: solo en la web publicada */
+if("serviceWorker" in navigator&&/github\.io$|pages\.dev$/.test(location.hostname)){try{navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}}
+}
+</script>
+
+<script>
+/* título en una sola línea: ajusta el tamaño al hueco disponible */
+(function(){const t=document.querySelector(".brand");if(!t)return;
+function fit(){if(!t.clientWidth)return;t.style.fontSize="60px";const r=t.clientWidth/t.scrollWidth;t.style.fontSize=Math.max(20,Math.min(60,Math.floor(60*r*0.98)))+"px"}
+function align(){const d=document.querySelector("#count .dg");t.style.marginTop="0px";if(!d)return;const a=t.getBoundingClientRect(),b=d.getBoundingClientRect();
+/* centro de las letras (sin la parte que baja de la p) con el centro de las fichas */
+const cap=a.height*0.08;t.style.marginTop=Math.round(((b.top+b.height/2)-(a.top+a.height/2-cap))/ (parseFloat(getComputedStyle(document.documentElement).zoom)||1))+"px"}
+function balance(){const hh=t.parentElement,bn=document.querySelector(".bnr"),hs=document.querySelector(".hs"),d=document.querySelector("#count .dg");if(!bn||!hs||!d)return;
+const z=parseFloat(getComputedStyle(document.documentElement).zoom)||1;hh.style.paddingTop="";
+for(let i=0;i<2;i++){const r=t.getBoundingClientRect(),A=r.top-bn.getBoundingClientRect().bottom,B=hs.getBoundingClientRect().top-r.bottom;
+const p=parseFloat(getComputedStyle(hh).paddingTop)+(B-A)/z;hh.style.paddingTop=Math.max(6,Math.round(p))+"px"}
+const MIN=18;hs.style.marginTop="";const r=t.getBoundingClientRect(),A=(r.top-bn.getBoundingClientRect().bottom)/z,B=(hs.getBoundingClientRect().top-r.bottom)/z;
+if(A<MIN)hh.style.paddingTop=(parseFloat(hh.style.paddingTop)+MIN-A)+"px";if(B<MIN)hs.style.marginTop=(MIN-B)+"px"}
+function hang(){/* la etiqueta "días para el viaje" cuelga junto a la línea de ciudades, sin empujarla */
+const c=document.getElementById("count"),l=c&&c.querySelector("small"),hs=document.querySelector(".hs");if(!l||!hs)return;
+const z=parseFloat(getComputedStyle(document.documentElement).zoom)||1;c.style.marginBottom="";let sp=hs.querySelector(".hang");if(!sp){sp=document.createElement("span");sp.className="hang";hs.prepend(sp)}
+const L=l.getBoundingClientRect().height/z+3,W=c.getBoundingClientRect().width/z+10;c.style.marginBottom=(-L)+"px";sp.style.cssText=`float:right;width:${W}px;height:${L}px;margin-right:-0px`}
+function run(){if(!t.offsetParent)return;fit();align();hang();balance();window.mvFitHoy&&window.mvFitHoy()}
+window.mvFitTitle=run;
+run();addEventListener("resize",run);document.fonts&&document.fonts.ready.then(run);setTimeout(run,600)})();
+</script>
+<div class="ths" id="thSheet" role="dialog" aria-modal="true" aria-label="Elegir estilo de la app" hidden><div class="thsb"><div class="thh"><b>Estilo de la app</b><button type="button" class="thx" id="thClose" aria-label="Cerrar">✕</button></div><div class="thrw"><button type="button" class="tha l" aria-label="Anterior">‹</button><div class="thc">
+<button type="button" class="tcard" data-thm="noche" aria-label="Estilo Noche elegante" title="Noche elegante"><span class="tp" style="--a:#0b0c0f;--b:#151920;--c:#b5cbf0;--d:#eef1f5"><i></i><i></i><i></i></span></button>
+<button type="button" class="tcard" data-thm="luminoso" aria-label="Estilo Luminoso negro" title="Luminoso negro"><span class="tp" style="--a:#f7f7f5;--b:#efefec;--c:#111214;--d:#e5402b"><i></i><i></i><i></i></span></button>
+<button type="button" class="tcard" data-thm="cobalto" aria-label="Estilo Luminoso azul" title="Luminoso azul"><span class="tp" style="--a:#f6f7fb;--b:#e9eefa;--c:#1c3fa0;--d:#e5402b"><i></i><i></i><i></i></span></button>
+<button type="button" class="tcard" data-thm="calido" aria-label="Estilo Cálido mediterráneo" title="Cálido mediterráneo"><span class="tp" style="--a:#f6efe3;--b:#efe3cf;--c:#c2603b;--d:#7a8b4a"><i></i><i></i><i></i></span></button>
+<button type="button" class="tcard" data-thm="natura" aria-label="Estilo Naturaleza y aventura" title="Naturaleza y aventura"><span class="tp" style="--a:#111d17;--b:#3e6b48;--c:#9cc3d5;--d:#8a6a45"><i></i><i></i><i></i></span></button>
+<button type="button" class="tcard" data-thm="sepia" aria-label="Estilo Sepia vintage" title="Sepia vintage"><span class="tp" style="--a:#f3ead8;--b:#ebdfc6;--c:#6b4423;--d:#b08a3e"><i></i><i></i><i></i></span></button>
+<button type="button" class="tcard" data-thm="mar" aria-label="Estilo Mar Mediterráneo" title="Mar Mediterráneo"><span class="tp" style="--a:#f4f8fb;--b:#e6f0f8;--c:#0b5ea8;--d:#0b5ea8"><i></i><i></i><i></i></span></button>
+<button type="button" class="tcard" data-thm="atardecer" aria-label="Estilo Atardecer" title="Atardecer"><span class="tp" style="--a:#1e1424;--b:#33223b;--c:#f7b896;--d:#f7b896"><i></i><i></i><i></i></span></button>
+<button type="button" class="tcard" data-thm="nordico" aria-label="Estilo Invierno nórdico" title="Invierno nórdico"><span class="tp" style="--a:#eef0f2;--b:#e2e5e9;--c:#1d2329;--d:#c8322f"><i></i><i></i><i></i></span></button>
+<button type="button" class="tcard" data-thm="contraste" aria-label="Estilo Alto contraste" title="Alto contraste"><span class="tp" style="--a:#000000;--b:#1c1c1c;--c:#ffffff;--d:#ffd400"><i></i><i></i><i></i></span></button>
+<button type="button" class="tcard" data-thm="rosa" aria-label="Estilo Rosado lady" title="Rosado lady"><span class="tp" style="--a:#fcf1f4;--b:#f6e1e8;--c:#c94f7c;--d:#c94f7c"><i></i><i></i><i></i></span></button>
+<button type="button" class="tcard" data-thm="morado" aria-label="Estilo Morado inclusivo" title="Morado inclusivo"><span class="tp" style="--a:#17122a;--b:#2a2148;--c:#c4b2ff;--d:#c4b2ff"><i></i><i></i><i></i></span></button>
+</div><button type="button" class="tha r" aria-label="Siguiente">›</button></div><div class="thd" aria-hidden="true"></div></div></div>
+<script>
+/* estilo de la app: el del cuestionario por defecto; el viajero puede cambiarlo y queda guardado */
+(function(){const QUIZ="noche",K="mv-theme",TC={noche:"#0b0c0f",luminoso:"#f7f7f5",cobalto:"#f6f7fb",calido:"#f6efe3",natura:"#111d17",sepia:"#f3ead8",mar:"#f4f8fb",atardecer:"#1e1424",nordico:"#eef0f2",contraste:"#000000",rosa:"#fcf1f4",morado:"#17122a"};
+function set(t,save){if(!TC[t])t="noche";document.documentElement.dataset.theme=t;const m=document.querySelector('meta[name="theme-color"]');if(m)m.content=TC[t];
+document.querySelectorAll("[data-thm]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.thm===t));if(save)try{localStorage.setItem(K,t)}catch(e){}document.dispatchEvent(new Event("themechange"))}
+let t=QUIZ;try{t=localStorage.getItem(K)||QUIZ}catch(e){}set(t);
+const sh=document.getElementById("thSheet"),op=document.getElementById("thOpen"),tc=sh&&sh.querySelector(".thc"),td=sh&&sh.querySelector(".thd");
+function dots(){if(!tc||!td)return;const L=sh.querySelector('.tha.l'),Rr=sh.querySelector('.tha.r'),mx=tc.scrollWidth-tc.clientWidth;if(L)L.disabled=tc.scrollLeft<4;if(Rr)Rr.disabled=tc.scrollLeft>mx-4;const max=tc.scrollWidth-tc.clientWidth,n=Math.max(1,Math.ceil(tc.scrollWidth/tc.clientWidth)+0),k=max>0?Math.round(tc.scrollLeft/max*(n-1)):0;td.innerHTML=n>1?Array.from({length:n},(_,i)=>`<i class="${i===k?"on":""}"></i>`).join(""):""}
+tc&&tc.addEventListener("scroll",dots,{passive:true});
+function show(v){if(!sh)return;sh.hidden=!v;if(v){dots();document.getElementById("thClose").focus()}else op&&op.focus()}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-thm]");if(b){set(b.dataset.thm,true);return}
+const ar=e.target.closest(".tha");if(ar&&tc){const w=tc.querySelector(".tcard").getBoundingClientRect().width+8;tc.scrollBy({left:ar.classList.contains("l")?-w:w,behavior:"smooth"});return}
+if(e.target.closest("#thOpen"))show(true);else if(e.target.closest("#thClose")||e.target===sh)show(false)});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&sh&&!sh.hidden)show(false)})})();
+</script>
+</body>
+</html>
