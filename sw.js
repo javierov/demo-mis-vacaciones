@@ -1,10 +1,10 @@
 /* Mis Vacaciones: guarda la app en el móvil para usarla sin internet */
-const V = "mv-mis-vacaciones-v10", T = "mv-mis-vacaciones-mapa"; /* solo borra sus propias copias: en github.io todas las apps comparten el mismo sitio */
+const V = "mv-mis-vacaciones-v11", T = "mv-mis-vacaciones-mapa"; /* solo borra sus propias copias: en github.io todas las apps comparten el mismo sitio */
 const FILES = ["./", "index.html", "manifest.json", "icono.png", "icono-192.png", "favicon-32.png", "apple-touch-icon.png",
   "fotos/madrid.jpg", "fotos/barcelona.jpg", "fotos/praga-azul.jpg",
   "fotos/comer/madrid-dulce.webp", "fotos/comer/madrid-calle.webp", "fotos/comer/madrid-tapas.webp", "fotos/comer/barcelona-dulce.webp", "fotos/comer/barcelona-calle.webp", "fotos/comer/barcelona-tapas.webp", "fotos/comer/praga-dulce.webp", "fotos/comer/praga-calle.webp", "fotos/comer/praga-tapas.webp",
   "fotos/moda/madrid-museo.webp", "fotos/moda/madrid-tienda.webp", "fotos/moda/barcelona-museo.webp", "fotos/moda/barcelona-mercado.webp", "fotos/moda/barcelona-tienda.webp", "fotos/moda/praga-museo.webp", "fotos/moda/praga-mercado.webp", "fotos/moda/praga-tienda.webp", "fotos/moda/barcelona-tela.webp", "fotos/moda/praga-tela.webp",
-  "fotos/tiempo/sol.webp", "fotos/tiempo/solnube.webp", "fotos/tiempo/nubes.webp", "fotos/tiempo/lluvia.webp", "fotos/tiempo/tormenta.webp"];
+  "fotos/tiempo/sol.webp", "fotos/tiempo/solnube.webp", "fotos/tiempo/nubes.webp", "fotos/tiempo/lluvia.webp", "fotos/tiempo/tormenta.webp", "fotos/tiempo/niebla.webp", "fotos/tiempo/nieve.webp"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(FILES.map(f => new Request(f, { cache: "reload" })))).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith("mv-") && k !== V && k !== T).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {

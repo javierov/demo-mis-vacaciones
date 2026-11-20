@@ -451,6 +451,7 @@ button.ft{font:inherit}
 @keyframes wxshake{0%,90%,100%{transform:none}92%{transform:translateX(-1.5px)}94%{transform:translateX(1.5px)}96%{transform:translateX(-1px)}}
 @media (prefers-reduced-motion:reduce){.wim img{animation:none!important}}
 .wv2 .wim{margin-bottom:3px}.wv2 .wim img{filter:drop-shadow(0 2px 2px rgb(0 0 0/.18))}
+.w-niebla img{animation:wxdrift 6s ease-in-out infinite}.w-nieve img{animation:wxfloat 3.4s ease-in-out infinite}
 </style>
 <style>/* Leaflet 1.9.4 — BSD-2-Clause, © Volodymyr Agafonkin */
 /* required styles */
@@ -1465,7 +1466,7 @@ const GEO={Madrid:[40.4168,-3.7038],Barcelona:[41.3874,2.1686],Praga:[50.0755,14
 const NORM={Praga:{hi:5,lo:-1,code:3,pp:35,sr:"7:30",ss:"16:05"},Madrid:{hi:14,lo:5,code:2,pp:25,sr:"8:10",ss:"17:50"},Barcelona:{hi:17,lo:9,code:2,pp:25,sr:"7:45",ss:"17:25"}};
 const WMO=c=>c===0?["sunny","Despejado"]:c<=2?["psun","Algo nuboso"]:c===3?["cloud","Nublado"]:c<=48?["fog","Niebla"]:c<=57?["rain","Llovizna"]:c<=67?["rain","Lluvia"]:c<=77?["cloud","Nieve"]:c<=82?["rain","Chubascos"]:c<=86?["cloud","Nieve"]:["rain","Tormenta"];
 /* iconos ilustrados del cielo (los de la app de Cancún); si no cargan, se ve el dibujo de línea */
-const WIC=c=>c===0?"sol":c<=2?"solnube":c<=48?"nubes":(c>=71&&c<=77)||c===85||c===86?"nubes":c<=82?"lluvia":"tormenta";
+const WIC=c=>c===0?"sol":c<=2?"solnube":c===3?"nubes":c<=48?"niebla":(c>=71&&c<=77)||c===85||c===86?"nieve":c<=82?"lluvia":"tormenta";
 const wimg=(c,cls)=>`<span class="wim ${cls||""} w-${WIC(c)}"><img src="fotos/tiempo/${WIC(c)}.webp" alt="" onerror="this.parentNode.classList.add('noimg');this.remove()">${ico(WMO(c)[0],1.6)}</span>`;
 let WXD=LS("wxd");
 const wxCity=x=>x.cs[x.cs.length-1];
