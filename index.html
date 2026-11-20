@@ -438,6 +438,19 @@ button.ft{font:inherit}
 .bhm .bmed{flex:none;box-sizing:border-box;width:74px;height:74px;margin:-18px -6px -18px 4px;position:relative;z-index:1;border-radius:50%;border:3.5px solid #0a0a0a;box-shadow:0 3px 10px rgb(0 0 0/.45)}
 /* estilos claros: filete café tinta con línea dorada */
 :is([data-theme="calido"],[data-theme="cobalto"],[data-theme="luminoso"],[data-theme="mar"],[data-theme="nordico"],[data-theme="rosa"],[data-theme="sepia"]) .bhm .bmed{border:2.5px solid #3b2e20;box-shadow:0 0 0 1.5px #c9a45c,0 2px 6px rgb(0 0 0/.18)}
+/* tiempo: iconos ilustrados del cielo */
+.wim{display:inline-grid;place-items:center;flex:none;width:34px;height:34px}
+.wim img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 4px rgb(0 0 0/.18))}
+.wim>svg{display:none;width:70%;height:70%}.wim.noimg>svg{display:block}
+.wim.wbig{width:72px;height:72px}.wim.wsm{width:36px;height:36px}.wim.whw{width:30px;height:30px}.wim.wft{width:36px;height:36px}
+.hw{grid-template-columns:30px minmax(0,1fr)}
+.w-sol img{animation:wxspin 24s linear infinite}.w-solnube img{animation:wxfloat 4s ease-in-out infinite}.w-nubes img{animation:wxdrift 5s ease-in-out infinite}.w-lluvia img{animation:wxfloat 2.6s ease-in-out infinite}.w-tormenta img{animation:wxshake 3s infinite}
+@keyframes wxspin{to{transform:rotate(360deg)}}
+@keyframes wxfloat{50%{transform:translateY(-3px)}}
+@keyframes wxdrift{50%{transform:translateX(3px)}}
+@keyframes wxshake{0%,90%,100%{transform:none}92%{transform:translateX(-1.5px)}94%{transform:translateX(1.5px)}96%{transform:translateX(-1px)}}
+@media (prefers-reduced-motion:reduce){.wim img{animation:none!important}}
+.wv2 .wim{margin-bottom:3px}.wv2 .wim img{filter:drop-shadow(0 2px 2px rgb(0 0 0/.18))}
 </style>
 <style>/* Leaflet 1.9.4 — BSD-2-Clause, © Volodymyr Agafonkin */
 /* required styles */
@@ -1451,6 +1464,9 @@ function T(){if(SIM)return{ph:"trip",d:SIM};const n=new Date();if(n<start)return
 const GEO={Madrid:[40.4168,-3.7038],Barcelona:[41.3874,2.1686],Praga:[50.0755,14.4378]};
 const NORM={Praga:{hi:5,lo:-1,code:3,pp:35,sr:"7:30",ss:"16:05"},Madrid:{hi:14,lo:5,code:2,pp:25,sr:"8:10",ss:"17:50"},Barcelona:{hi:17,lo:9,code:2,pp:25,sr:"7:45",ss:"17:25"}};
 const WMO=c=>c===0?["sunny","Despejado"]:c<=2?["psun","Algo nuboso"]:c===3?["cloud","Nublado"]:c<=48?["fog","Niebla"]:c<=57?["rain","Llovizna"]:c<=67?["rain","Lluvia"]:c<=77?["cloud","Nieve"]:c<=82?["rain","Chubascos"]:c<=86?["cloud","Nieve"]:["rain","Tormenta"];
+/* iconos ilustrados del cielo (los de la app de Cancún); si no cargan, se ve el dibujo de línea */
+const WIC=c=>c===0?"sol":c<=2?"solnube":c<=48?"nubes":(c>=71&&c<=77)||c===85||c===86?"nubes":c<=82?"lluvia":"tormenta";
+const wimg=(c,cls)=>`<span class="wim ${cls||""} w-${WIC(c)}"><img src="fotos/tiempo/${WIC(c)}.webp" alt="" onerror="this.parentNode.classList.add('noimg');this.remove()">${ico(WMO(c)[0],1.6)}</span>`;
 let WXD=LS("wxd");
 const wxCity=x=>x.cs[x.cs.length-1];
 function dayWx(x){const c=wxCity(x),r=WXD&&WXD[c]&&WXD[c][iso(x.d)];return r?{c,code:r[0],hi:Math.round(r[1]),lo:Math.round(r[2]),pp:r[3]==null?null:r[3],real:1}:{c,...NORM[c],real:0}}
@@ -1470,8 +1486,8 @@ async function loadWx(){if(WXD&&Date.now()-WXD.at<2*3600e3)return;
 function refreshWx(){if(!$("s-tiempo").hidden)renderWx();if(!$("s-viaje").hidden)renderHome()}
 function renderWx(){const t=T(),today=t.ph==="trip"?dayOf(t.d):DAYS[0];
   const w=dayWx(today),[ic,txt]=WMO(w.code),n=NORM[w.c];
-  $("wxtoday").innerHTML=`<div class="wc" style="width:100%"><div class="cty">${ico("pin",2)}${w.c}</div><div class="when">${t.ph==="trip"?"Hoy, ":""}${wdl(today.d)} ${today.d} de ${MES}</div><div class="mid"><span class="tmp">${w.hi}°</span><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${P[ic]}</svg></div><div class="cond">${w.real?txt:"Lo normal en noviembre"}</div><div class="hl">↑ ${w.hi}° / ↓ ${w.lo}°${w.pp!=null?` · lluvia ${w.pp}%`:""}</div><p class="wtip">${ico("shirt",1.8)}<span>${ropa(w)}</span></p><div class="grid3"><span><b>${n.sr}</b>amanece</span><span><b>${n.ss}</b>anochece</span><span><b>${w.real?"Previsión":"Normal"}</b>${w.real?"real":"de noviembre"}</span></div></div>`;
-  $("wl").innerHTML=DAYS.map(x=>{const v=dayWx(x),[i2,t2]=WMO(v.code);return `<div class="wr${t.ph==="trip"&&t.d===x.d?" today":""}"><span class="db"><b>${x.d}</b><small>${wd(x.d)}</small></span><span class="wt"><b>${v.c}${v.real?` · ${t2}`:""}</b><small>${ropaC(v)}</small></span><span class="wv2">${ico(i2,1.7)}<b>${v.hi}°</b><small>${v.lo}°${v.pp!=null?` · ${ico("drop",2)}${v.pp}%`:""}</small></span></div>`}).join("");
+  $("wxtoday").innerHTML=`<div class="wc" style="width:100%"><div class="cty">${ico("pin",2)}${w.c}</div><div class="when">${t.ph==="trip"?"Hoy, ":""}${wdl(today.d)} ${today.d} de ${MES}</div><div class="mid"><span class="tmp">${w.hi}°</span>${wimg(w.code,"wbig")}</div><div class="cond">${w.real?txt:"Lo normal en noviembre"}</div><div class="hl">↑ ${w.hi}° / ↓ ${w.lo}°${w.pp!=null?` · lluvia ${w.pp}%`:""}</div><p class="wtip">${ico("shirt",1.8)}<span>${ropa(w)}</span></p><div class="grid3"><span><b>${n.sr}</b>amanece</span><span><b>${n.ss}</b>anochece</span><span><b>${w.real?"Previsión":"Normal"}</b>${w.real?"real":"de noviembre"}</span></div></div>`;
+  $("wl").innerHTML=DAYS.map(x=>{const v=dayWx(x),[i2,t2]=WMO(v.code);return `<div class="wr${t.ph==="trip"&&t.d===x.d?" today":""}"><span class="db"><b>${x.d}</b><small>${wd(x.d)}</small></span><span class="wt"><b>${v.c}${v.real?` · ${t2}`:""}</b><small>${ropaC(v)}</small></span><span class="wv2">${wimg(v.code,"wsm")}<b>${v.hi}°</b><small>${v.lo}°${v.pp!=null?` · ${ico("drop",2)}${v.pp}%`:""}</small></span></div>`}).join("");
   const real=DAYS.some(x=>dayWx(x).real);
   $("wxsrc").textContent=real?`Previsión actualizada a las ${new Date(WXD.at).toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"})}. Los días lejanos pueden cambiar.`:"Sin conexión: se muestran los valores normales de noviembre. Con internet aparece la previsión real.";
   $("ropa").innerHTML=[["shirt","Ropa en capas: mañanas frescas, mediodías templados y noches frías."],["case","Una chaqueta de abrigo para salir de noche."],["shoe","Calzado cómodo: vas a caminar mucho, y hay calles de piedra en el Gótico."],["umb","Paraguas plegable en el bolso: en noviembre algún día llueve."],["hanger","Para Praga, ropa de invierno de verdad: abrigo, gorro, bufanda y guantes. Allí anochece hacia las 16:05."]].map(([i,tx])=>`<li><span class="ic">${ico(i)}</span><span>${tx}</span></li>`).join("")}
@@ -1509,7 +1525,7 @@ function hoyBox(t){const x=dayOf(t.d);if(!x)return "";
   const w=dayWx(x),[ic]=WMO(w.code);
   return `<div class="box hoy"><h3 class="bh"><span class="bi">${ico(p==="n"?"moon":"sunny",2)}</span>${G0}, ${esc(NOMBRE)}</h3>
     <p class="hsub">${wdl(x.d)} ${x.d} de ${MES} · ${esc(where)}</p><p class="hl3">${intro}</p>${its.length?`<ul class="list">${its.map(([i,tx])=>`<li><span class="ic">${ico(EM[i])}</span><span>${esc(tx)}</span></li>`).join("")}</ul>`:""}${after?`<p class="nxt">${after}</p>`:""}
-    <button type="button" class="hw" data-go="tiempo">${ico(ic,1.8)}<span><b>${w.hi}° / ${w.lo}°</b> · ${ropaC(w)}</span></button>
+    <button type="button" class="hw" data-go="tiempo">${wimg(w.code,"whw")}<span><b>${w.hi}° / ${w.lo}°</b> · ${ropaC(w)}</span></button>
     <div class="acts"><button class="btn" type="button" data-open="${x.c}" data-day="${x.d}">Ver el día</button><button class="btn ghost" type="button" data-go="gastos">Anotar gasto</button></div></div>`}
 function renderHome(){
   const t=T();let h="";
@@ -1675,7 +1691,7 @@ function ftCity(){const t=T();if(t.ph==="trip"){const x=dayOf(t.d);if(x)return w
 function drawFt(c,w){const n=NORM[c];let ic,txt,now,hi,lo,sub;
   if(w){[ic,txt]=WMO(w.code);now=Math.round(w.t);hi=Math.round(w.hi);lo=Math.round(w.lo);const d=new Date(w.at);sub=`a las ${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}`}
   else{[ic,txt]=WMO(n.code);now=null;hi=n.hi;lo=n.lo;sub="normal en noviembre"}
-  $("ft").innerHTML=`<svg class="wi2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${P[ic]}</svg><span><b>${now!==null?`<span class="now">${now}°</span>`:""}${c}</b><span class="t2">${txt} · ${sub}</span></span><span class="hl2">↑${hi}° ↓${lo}°</span>`}
+  $("ft").innerHTML=`${wimg(w?w.code:n.code,"wft")}<span><b>${now!==null?`<span class="now">${now}°</span>`:""}${c}</b><span class="t2">${txt} · ${sub}</span></span><span class="hl2">↑${hi}° ↓${lo}°</span>`}
 async function renderFt(){const c=ftCity(),key="wx-"+C[c].slug,old=LS(key);drawFt(c,old&&Date.now()-old.at<6*3600e3?old:null);
   if(old&&Date.now()-old.at<30*60e3)return;
   try{const [la,lo]=GEO[c],r=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=auto`);
