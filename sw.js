@@ -1,7 +1,8 @@
 /* Mis Vacaciones: guarda la app en el móvil para usarla sin internet */
-const V = "mv-mis-vacaciones-v6", T = "mv-mis-vacaciones-mapa"; /* solo borra sus propias copias: en github.io todas las apps comparten el mismo sitio */
+const V = "mv-mis-vacaciones-v7", T = "mv-mis-vacaciones-mapa"; /* solo borra sus propias copias: en github.io todas las apps comparten el mismo sitio */
 const FILES = ["./", "index.html", "manifest.json", "icono.png", "icono-192.png", "favicon-32.png", "apple-touch-icon.png",
-  "fotos/madrid.jpg", "fotos/barcelona.jpg", "fotos/praga-azul.jpg"];
+  "fotos/madrid.jpg", "fotos/barcelona.jpg", "fotos/praga-azul.jpg",
+  "fotos/comer/madrid-dulce.webp", "fotos/comer/madrid-calle.webp", "fotos/comer/madrid-tapas.webp", "fotos/comer/barcelona-dulce.webp", "fotos/comer/barcelona-calle.webp", "fotos/comer/barcelona-tapas.webp", "fotos/comer/praga-dulce.webp", "fotos/comer/praga-calle.webp", "fotos/comer/praga-tapas.webp"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(FILES.map(f => new Request(f, { cache: "reload" })))).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith("mv-") && k !== V && k !== T).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {

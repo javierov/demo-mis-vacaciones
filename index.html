@@ -432,6 +432,10 @@ button.ft{font:inherit}
 .memsg button{display:grid;place-items:center;width:26px;height:26px;padding:0;border:0;border-radius:50%;background:rgb(255 255 255/.12);color:#fff;cursor:pointer}
 #mapw .leaflet-control-attribution{font-size:9.5px;line-height:1.3;padding:1px 6px;background:rgb(255 255 255/.55);color:#555;border-radius:6px 0 0 0}
 #mapw .leaflet-control-attribution a{color:#555}
+/* Comer: medallón de grabado a la derecha de cada título */
+.bh.bhm{display:flex;align-items:center;gap:10px;min-height:44px}
+.bhm .bht{flex:1;min-width:0}
+.bhm .bmed{flex:none;width:58px;height:58px;margin:-10px -4px -10px 6px;border-radius:50%;box-shadow:0 3px 10px rgb(0 0 0/.4)}
 </style>
 <style>/* Leaflet 1.9.4 — BSD-2-Clause, © Volodymyr Agafonkin */
 /* required styles */
@@ -1606,7 +1610,7 @@ let rcity=null;
 function renderR(){if(rcity===null){const t=T(),x=t.ph==="trip"&&dayOf(t.d);rcity=x?wxCity(x):""}
   $("rchips").innerHTML=[["","Todo"],...Object.keys(C).map(c=>[c,c])].map(([k,l])=>`<button type="button" data-rc="${k}" class="${rcity===k?"on":""}">${l}</button>`).join("");
   const cities=rcity?[rcity]:Object.keys(C);
-  $("rlist").innerHTML=cities.map(c=>`${rcity?"":`<p class="rcity" style="--c:${C[c].c}"><i></i>${c}</p>`}`+Object.entries(RT).map(([k,[l,ic]])=>{const its=R.filter(r=>r[1]===c&&r[2]===k);return its.length?`<div class="box blk"><h3 class="bh"><span class="bi">${ico(ic,2)}</span>${l}</h3><ul class="res">${its.map(([n,,,pr,nt,q,ba])=>`<li><div class="rw2"><span><b>${esc(n)}</b><span class="ln">${esc(ba)} · <span class="pr">${pr}</span></span><small>${esc(nt)}</small></span><a class="go" href="${map(q)}" target="_blank" rel="noopener" aria-label="Ver ${esc(n)} en Google Maps">${ico("go",2)}</a></div></li>`).join("")}</ul>${c==="Barcelona"&&k==="dulce"?`<p class="note rtip">${ico("info",2)}<span>Para una mañana solo de pastelerías: Foix, Baixas y Oriol Balaguer están en la zona alta (Sarrià y Sant Gervasi), cerca entre sí. Se llega en los trenes FGC desde plaza Catalunya.</span></p>`:""}</div>`:""}).join("")).join("")}
+  $("rlist").innerHTML=cities.map(c=>`${rcity?"":`<p class="rcity" style="--c:${C[c].c}"><i></i>${c}</p>`}`+Object.entries(RT).map(([k,[l,ic]])=>{const its=R.filter(r=>r[1]===c&&r[2]===k);return its.length?`<div class="box blk"><h3 class="bh bhm"><span class="bi">${ico(ic,2)}</span><span class="bht">${l}</span><img class="bmed" src="fotos/comer/${c.toLowerCase()}-${k}.webp" alt="" width="58" height="58" loading="lazy" decoding="async"></h3><ul class="res">${its.map(([n,,,pr,nt,q,ba])=>`<li><div class="rw2"><span><b>${esc(n)}</b><span class="ln">${esc(ba)} · <span class="pr">${pr}</span></span><small>${esc(nt)}</small></span><a class="go" href="${map(q)}" target="_blank" rel="noopener" aria-label="Ver ${esc(n)} en Google Maps">${ico("go",2)}</a></div></li>`).join("")}</ul>${c==="Barcelona"&&k==="dulce"?`<p class="note rtip">${ico("info",2)}<span>Para una mañana solo de pastelerías: Foix, Baixas y Oriol Balaguer están en la zona alta (Sarrià y Sant Gervasi), cerca entre sí. Se llega en los trenes FGC desde plaza Catalunya.</span></p>`:""}</div>`:""}).join("")).join("")}
 $("rchips").onclick=e=>{const b=e.target.closest("[data-rc]");if(!b)return;rcity=b.dataset.rc;renderR()};
 
 /* ---------- moda y vintage ---------- */
@@ -1614,7 +1618,7 @@ let mcity=null;
 function renderM(){if(mcity===null){const t=T(),x=t.ph==="trip"&&dayOf(t.d);mcity=x?wxCity(x):""}
   $("mchips").innerHTML=[["","Todo"],...Object.keys(C).map(c=>[c,c])].map(([k,l])=>`<button type="button" data-mc="${k}" class="${mcity===k?"on":""}">${l}</button>`).join("");
   const cities=mcity?[mcity]:Object.keys(C);
-  $("mlist").innerHTML=cities.map(c=>`${mcity?"":`<p class="rcity" style="--c:${C[c].c}"><i></i>${c}</p>`}`+Object.entries(MT).map(([k,[l,ic]])=>{const its=MO.filter(r=>r[1]===c&&r[2]===k);return its.length?`<div class="box blk"><h3 class="bh"><span class="bi">${ico(ic,2)}</span>${l}</h3><ul class="res">${its.map(([n,,,nt,q,ba])=>`<li><div class="rw2"><span><b>${esc(n)}</b><span class="ln">${esc(ba)}</span><small>${esc(nt)}</small></span><a class="go" href="${map(q)}" target="_blank" rel="noopener" aria-label="Ver ${esc(n)} en Google Maps">${ico("go",2)}</a></div></li>`).join("")}</ul></div>`:""}).join("")+(MNOTE[c]?`<p class="note rtip">${ico("info",2)}<span>${MNOTE[c]}</span></p>`:"")).join("")}
+  $("mlist").innerHTML=cities.map(c=>`${mcity?"":`<p class="rcity" style="--c:${C[c].c}"><i></i>${c}</p>`}`+Object.entries(MT).map(([k,[l,ic]])=>{const its=MO.filter(r=>r[1]===c&&r[2]===k);return its.length?`<div class="box blk"><h3 class="bh bhm"><span class="bi">${ico(ic,2)}</span><span class="bht">${l}</span><img class="bmed" src="fotos/comer/${c.toLowerCase()}-${k}.webp" alt="" width="58" height="58" loading="lazy" decoding="async"></h3><ul class="res">${its.map(([n,,,nt,q,ba])=>`<li><div class="rw2"><span><b>${esc(n)}</b><span class="ln">${esc(ba)}</span><small>${esc(nt)}</small></span><a class="go" href="${map(q)}" target="_blank" rel="noopener" aria-label="Ver ${esc(n)} en Google Maps">${ico("go",2)}</a></div></li>`).join("")}</ul></div>`:""}).join("")+(MNOTE[c]?`<p class="note rtip">${ico("info",2)}<span>${MNOTE[c]}</span></p>`:"")).join("")}
 $("mchips").onclick=e=>{const b=e.target.closest("[data-mc]");if(!b)return;mcity=b.dataset.mc;renderM()};
 
 /* ---------- gastos ---------- */
