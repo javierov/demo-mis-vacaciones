@@ -1869,8 +1869,8 @@ $("nblist").onclick=e=>{if(e.target.closest("#nbclr")){NB&&NB.clearLayers();$("m
 
 /* ---------- opinión de después del viaje: «caluga» bajo el título desde el día después del regreso (nota encuesta-post-viaje.md) ---------- */
 var OP_APP="Mis Vacaciones";
-/* aparece el último día, cuando sale al aeropuerto (26 nov, 14:00) */
-var OP_DESDE=new Date(2026,10,26,14,0).getTime();
+/* aparece el último día, al llegar al aeropuerto de vuelta (26 nov, 15:00; vuelo 16:45) */
+var OP_DESDE=new Date(2026,10,26,15,0).getTime();
 var OP_URL="https://javierov.github.io/viajes-disenados-a-mano/opinion/?a="+encodeURIComponent(OP_APP)+"&n="+encodeURIComponent(NOMBRE);
 function opDone(){try{return !!localStorage.getItem("tvdm-opinion:"+OP_APP)}catch(e){return false}}
 function opCal(t){const el=$("opcal");if(!el||!OP_URL)return;
