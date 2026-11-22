@@ -1572,7 +1572,7 @@ function fitHoy(){const sv=$("s-viaje"),car=$("car");if(sv.hidden||!car.children
 window.mvFitHoy=fitHoy;addEventListener("resize",()=>requestAnimationFrame(fitHoy));
 /* saludo y planes según la hora: mañana (6–13), tarde (13–20) y noche (20–6) */
 let SIMH=null;try{const v=sessionStorage.getItem("mv-simh");SIMH=v===null?null:+v}catch(e){}
-const short=tx=>{const s=tx.split(/[.:(]/)[0].trim();return s.length>70?s.slice(0,68)+"…":s};
+const short=tx=>{let s=tx.replace(/^(Noche|Tarde|Mañana):\s*/,"").split(/\.\s|:\s|\(/)[0].replace(/\.$/,"").trim();s=s.charAt(0).toUpperCase()+s.slice(1);return s.length>70?s.slice(0,68)+"…":s};
 const partItems=(x,p)=>x.it.filter((_,i)=>(PARTS[x.d]||"")[i]===p);
 function hoyBox(t){const x=dayOf(t.d);if(!x)return "";
   const h=SIMH!==null?SIMH:new Date().getHours();
