@@ -1676,7 +1676,7 @@ function hideMe(){const m=$("memsg");if(!m)return;m.classList.remove("in");setTi
 function meControl(){const Ct=L.Control.extend({options:{position:"topright"},onAdd(){const b=L.DomUtil.create("button","mebtn");b.id="mebtn";b.type="button";b.setAttribute("aria-label","Dónde estoy");
   b.innerHTML='<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="8"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg>';b.title="Dónde estoy";
   L.DomEvent.disableClickPropagation(b);b.onclick=()=>{if(!meOn||WID==null)startMe();else if(ME)LM.setView(ME.getLatLng(),Math.max(LM.getZoom(),17))};return b}});LM.addControl(new Ct())}
-function cityMap(c){mcityM=c;
+function cityMap(c){if(mcityM&&c!==mcityM)try{if(nbLast)$("nbclr").click()}catch(e){}mcityM=c;
   $("mapchips").innerHTML=[["all","Todo"],["p","Planes"],["c","Comer"],["m","Moda"]].map(([k,l])=>`<button type="button" data-mk="${k}" class="${mk===k?"on":""}">${l}</button>`).join("");
   if(!window.L){$("mapw").innerHTML=`<p class="note" style="padding:20px">El mapa no se pudo cargar.</p>`;return}
   requestAnimationFrame(()=>{initMap();LM.invalidateSize();LG.clearLayers();
@@ -1689,7 +1689,7 @@ function cityMap(c){mcityM=c;
 let mtab=null;
 function mapTab(){if(mtab===null){const t=T(),x=t.ph==="trip"&&dayOf(t.d);mtab=x?wxCity(x):Object.keys(C)[0]}
   $("mapcity").innerHTML=Object.keys(C).map(c=>`<button type="button" data-mt="${c}" class="${mtab===c?"on":""}">${c}</button>`).join("");
-  $("mapslot").appendChild($("mapbox"));cityMap(mtab)}
+  $("mapcity").before($("nbbox"));$("mapslot").append($("mapbox"));$("mapslot").after($("nblist"));cityMap(mtab)}
 $("mapcity").onclick=e=>{const b=e.target.closest("[data-mt]");if(!b)return;mtab=b.dataset.mt;LM&&LM.closePopup();mapTab()};
 $("mapchips").onclick=e=>{const b=e.target.closest("[data-mk]");if(!b)return;mk=b.dataset.mk;LM&&LM.closePopup();cityMap(mcityM)};
 
@@ -1767,7 +1767,7 @@ function route_(){
   let h=decodeURIComponent(location.hash.slice(1));
   const m=h.match(/^prueba-(\d+)(?:-(\d+))?$/);if(m){SIM=dayOf(+m[1])?+m[1]:0;SIMH=SIM&&m[2]!==undefined?+m[2]:null;try{SIM?sessionStorage.setItem("mv-sim",SIM):sessionStorage.removeItem("mv-sim");SIMH!==null?sessionStorage.setItem("mv-simh",SIMH):sessionStorage.removeItem("mv-simh")}catch(e){}gsel=null;rcity=null;mcity=null;mtab=null;history.replaceState(null,"",location.pathname+location.search);h="";resetForm()}
   const city=Object.keys(C).find(c=>C[c].slug===h);
-  if(city){openCity(city,pend);pend=0;show("city");window.scrollTo({top:0});$("cmapslot").appendChild($("mapbox"));cityMap(city);$("ft").hidden=false;renderFt();return}
+  if(city){openCity(city,pend);pend=0;show("city");window.scrollTo({top:0});$("cmapslot").append($("nbbox"),$("mapbox"),$("nblist"));cityMap(city);$("ft").hidden=false;renderFt();return}
   const id=["mapa","comer","moda","tiempo","gastos"].includes(h)?h:"viaje";
   show(id);window.scrollTo({top:0});
   if(id==="viaje"){renderHome();requestAnimationFrame(()=>window.mvFitTitle&&window.mvFitTitle())}if(id==="gastos")renderG();if(id==="comer")renderR();if(id==="moda")renderM();if(id==="tiempo")renderWx();if(id==="mapa")mapTab();
@@ -1869,12 +1869,14 @@ $("nblist").onclick=e=>{if(e.target.closest("#nbclr")){NB&&NB.clearLayers();$("m
 
 /* ---------- opinión de después del viaje: «caluga» bajo el título desde el día después del regreso (nota encuesta-post-viaje.md) ---------- */
 var OP_APP="Mis Vacaciones";
+/* aparece el último día, cuando sale al aeropuerto (26 nov, 14:00) */
+var OP_DESDE=new Date(2026,10,26,14,0).getTime();
 var OP_URL="https://javierov.github.io/viajes-disenados-a-mano/opinion/?a="+encodeURIComponent(OP_APP)+"&n="+encodeURIComponent(NOMBRE);
 function opDone(){try{return !!localStorage.getItem("tvdm-opinion:"+OP_APP)}catch(e){return false}}
 function opCal(t){const el=$("opcal");if(!el||!OP_URL)return;
   const later=+(LS("opahora")||0);
   const ver=/[?&]veropinion\b/.test(location.search);
-  if(!ver&&(t.ph!=="after"||opDone()||Date.now()<later)){el.hidden=true;el.innerHTML="";return}
+  if(!ver&&(!(t.ph==="after"||Date.now()>=OP_DESDE)||opDone()||Date.now()<later)){el.hidden=true;el.innerHTML="";return}
   el.innerHTML=`<a class="opgo" href="${OP_URL}">${ico("heart",2)}<span>¿Qué tal tu viaje? Cuéntamelo en un minuto</span>${ico("chev",2)}</a><button type="button" class="opno" id="opno">Ahora no</button>`;
   el.hidden=false}
 document.addEventListener("click",e=>{if(e.target.closest("#opno")){SS("opahora",Date.now()+7*864e5);opCal(T());requestAnimationFrame(fitHoy)}});
