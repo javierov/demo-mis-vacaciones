@@ -505,6 +505,10 @@ button.ft{font:inherit}
 .opgo span{flex:1}.opgo svg{width:20px;height:20px;flex:none}
 .opno{flex:none;border:0;background:none;color:inherit;opacity:.75;font:inherit;font-size:14px;text-decoration:underline;padding:10px 4px;cursor:pointer}
 .cmapgo{margin:16px 0 4px}
+.nbqw{position:relative;min-width:0;display:block}.nbqw input{width:100%;padding-right:44px}
+.nbqw input::-webkit-search-cancel-button{-webkit-appearance:none;display:none}
+.nbform .nbx{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:var(--line2);color:inherit}
+.nbform .nbx[hidden]{display:none}.nbform .nbx svg{width:18px;height:18px}
 </style>
 <style>/* Leaflet 1.9.4 — BSD-2-Clause, © Volodymyr Agafonkin */
 /* required styles */
@@ -1217,7 +1221,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <section id="s-mapa" hidden>
   <div class="sheet"><h2>Mapa</h2>
     <div class="box nbbox" id="nbbox"><h3 class="bh"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></span>Cerca de mí</h3>
-      <form class="nbform" id="nbform" autocomplete="off"><input id="nbq" type="search" enterkeyhint="search" placeholder="Bar, farmacia, súper…" aria-label="Qué buscas cerca"><button type="button" class="nbmic" id="nbmic" aria-label="Buscar hablando"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></button><button type="submit" class="nbgo2" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></button></form>
+      <form class="nbform" id="nbform" autocomplete="off"><span class="nbqw"><input id="nbq" type="search" enterkeyhint="search" placeholder="Bar, farmacia, súper…" aria-label="Qué buscas cerca"><button type="button" class="nbx" id="nbx" aria-label="Borrar lo buscado" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"/></svg></button></span><button type="button" class="nbmic" id="nbmic" aria-label="Buscar hablando"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></button><button type="submit" class="nbgo2" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></button></form>
       <div class="chips nbcats" id="nbcats"></div></div>
     <div class="chips" id="mapcity"></div>
     <div id="mapslot"><div class="box blk mapbox" id="mapbox"><h3 class="bh"><span class="bi"><i data-ic="pin"></i></span>Mapa</h3>
@@ -1867,6 +1871,12 @@ $("nblist").onclick=e=>{if(e.target.closest("#nbclr")){NB&&NB.clearLayers();$("m
   let r=null;b.onclick=()=>{if(r){r.stop();return}r=new SR();r.lang="es-ES";r.interimResults=false;r.maxAlternatives=1;b.classList.add("rec");$("nbq").placeholder="Te escucho…";
     r.onresult=ev=>{const t=ev.results[0][0].transcript;$("nbq").value=t;nbSearch(null,t)};
     r.onend=()=>{b.classList.remove("rec");$("nbq").placeholder="Bar, farmacia, súper…";r=null};r.onerror=r.onend;try{r.start()}catch(e){r.onend()}}})();
+
+/* X para borrar lo buscado: se ve cuando hay texto o resultados */
+function nbX(){$("nbx").hidden=!($("nbq").value||nbLast)}
+$("nbq").addEventListener("input",nbX);
+$("nbx").onclick=()=>{$("nbq").value="";if(nbLast)$("nbclr").click();nbMsg("");document.querySelectorAll("#nbcats button").forEach(x=>x.classList.remove("on"));nbX();$("nbq").focus()};
+new MutationObserver(nbX).observe($("nblist"),{childList:true});
 
 /* ---------- opinión de después del viaje: «caluga» bajo el título desde el día después del regreso (nota encuesta-post-viaje.md) ---------- */
 var OP_APP="Mis Vacaciones";
