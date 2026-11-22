@@ -1,5 +1,5 @@
 /* Mis Vacaciones: guarda la app en el móvil para usarla sin internet */
-const V = "mv-mis-vacaciones-v12", T = "mv-mis-vacaciones-mapa"; /* solo borra sus propias copias: en github.io todas las apps comparten el mismo sitio */
+const V = "mv-mis-vacaciones-v13", T = "mv-mis-vacaciones-mapa"; /* solo borra sus propias copias: en github.io todas las apps comparten el mismo sitio */
 const FILES = ["./", "index.html", "manifest.json", "icono.png", "icono-192.png", "favicon-32.png", "apple-touch-icon.png",
   "fotos/madrid.jpg", "fotos/barcelona.jpg", "fotos/praga-azul.jpg",
   "fotos/comer/madrid-dulce.webp", "fotos/comer/madrid-calle.webp", "fotos/comer/madrid-tapas.webp", "fotos/comer/barcelona-dulce.webp", "fotos/comer/barcelona-calle.webp", "fotos/comer/barcelona-tapas.webp", "fotos/comer/praga-dulce.webp", "fotos/comer/praga-calle.webp", "fotos/comer/praga-tapas.webp",
