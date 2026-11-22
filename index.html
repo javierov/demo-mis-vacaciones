@@ -476,21 +476,6 @@ button.ft{font:inherit}
 .nbhoy{display:flex;align-items:center;gap:10px;width:100%;margin-top:12px;padding:12px 12px;border-radius:14px;border:0;background:none;box-shadow:inset 0 0 0 1px var(--line2);color:inherit;font:inherit;text-align:left;cursor:pointer}
 .nbhoy span{flex:1}.nbhoy svg{width:20px;height:20px;flex:none}
 #mapw.nbon .lpin:not(.nbpin){opacity:.35}
-/* encuesta */
-.enccard{display:flex;align-items:center;gap:12px;width:100%;margin-top:12px;padding:14px;border-radius:16px;border:0;background:var(--btn);color:var(--btnInk);font:inherit;text-align:left;cursor:pointer}
-.enccard.done{background:none;color:inherit;box-shadow:inset 0 0 0 1px var(--line2)}
-.enccard span{flex:1;display:grid;gap:2px}.enccard small{opacity:.85;font-size:14px}.enccard svg{width:22px;height:22px;flex:none}
-.encsheet .box{margin-bottom:10px}
-.encq{margin:0 0 10px;font-size:17px;line-height:1.35}.encq small{opacity:.7;font-size:14px}
-.encstars{display:flex;gap:6px}
-.encstars button{flex:1;height:48px;border-radius:12px;border:0;background:none;box-shadow:inset 0 0 0 1px var(--line2);color:var(--mute);font-size:26px;line-height:1;cursor:pointer}
-.encstars button.on{color:#f5b301;box-shadow:inset 0 0 0 1px #f5b30180}
-.encopt{display:flex;flex-wrap:wrap;gap:6px}
-.encopt button{border:0;border-radius:999px;padding:9px 14px;background:none;box-shadow:inset 0 0 0 1px var(--line2);color:inherit;font:inherit;font-size:15px;cursor:pointer}
-.encopt button.on{background:var(--btn);color:var(--btnInk);box-shadow:none}
-.encsheet textarea{width:100%;box-sizing:border-box;border-radius:12px;border:1px solid var(--line2);background:transparent;color:inherit;font:inherit;font-size:16px;padding:10px 12px;resize:vertical}
-.encsend{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px}.encsend svg{width:20px;height:20px}
-.encsheet{margin-top:14px}
 /* reorganizar la agenda */
 .steps li.hasm{grid-template-columns:36px minmax(0,1fr) 36px}
 .plm{width:36px;height:36px;margin-top:2px;display:grid;place-items:center;border:0;border-radius:10px;background:none;color:var(--mute);cursor:pointer;padding:0}
@@ -513,6 +498,12 @@ button.ft{font:inherit}
 .plfoot{display:grid;gap:4px}.plfoot .btn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}.plfoot .btn svg{width:18px;height:18px}
 .pltoast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translate(-50%,20px);opacity:0;z-index:60;max-width:calc(100% - 32px);padding:10px 16px;border-radius:14px;background:rgb(20 24 32/.92);color:#f2f4f8;font-size:14.5px;box-shadow:0 6px 18px rgb(0 0 0/.3);transition:opacity .25s,transform .25s;pointer-events:none}.pltoast.in{opacity:1;transform:translate(-50%,0)}
 .plwarn{display:block;margin-top:6px;color:var(--mute);font-size:13px}
+
+/* opinión de después del viaje */
+.opcal{display:flex;align-items:center;gap:8px;margin:10px 20px 0}
+.opgo{flex:1;display:flex;align-items:center;gap:10px;min-height:48px;padding:10px 14px;border-radius:14px;background:var(--btn);color:var(--btnInk);text-decoration:none;font-weight:600;font-size:15px;line-height:1.3}
+.opgo span{flex:1}.opgo svg{width:20px;height:20px;flex:none}
+.opno{flex:none;border:0;background:none;color:inherit;opacity:.75;font:inherit;font-size:14px;text-decoration:underline;padding:10px 4px;cursor:pointer}
 </style>
 <style>/* Leaflet 1.9.4 — BSD-2-Clause, © Volodymyr Agafonkin */
 /* required styles */
@@ -1191,7 +1182,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <div class="app">
 <section id="s-viaje">
   <div class="bnr" aria-hidden="true" id="bnr"></div>
-  <div class="hh"><h1 class="brand">Mis Vacaciones</h1><div class="ctr" id="count" hidden></div><div class="hs"><div><p class="sub">Madrid · Barcelona · Praga</p><p class="sub2">18 – 26 de noviembre de 2026</p></div><button type="button" class="thb" id="thOpen" aria-haspopup="dialog" aria-controls="thSheet"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.8 1.6-1.6 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.7-1.6 1.6-1.6H16a5 5 0 0 0 5-5c0-4-4-7.4-9-7.4Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10.5" cy="7.5" r="1"/><circle cx="15" cy="7.5" r="1"/></svg>Estilo app</button></div></div>
+  <div class="hh"><h1 class="brand">Mis Vacaciones</h1><div class="ctr" id="count" hidden></div><div class="hs"><div><p class="sub">Madrid · Barcelona · Praga</p><p class="sub2">18 – 26 de noviembre de 2026</p></div><button type="button" class="thb" id="thOpen" aria-haspopup="dialog" aria-controls="thSheet"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.8 1.6-1.6 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.7-1.6 1.6-1.6H16a5 5 0 0 0 5-5c0-4-4-7.4-9-7.4Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10.5" cy="7.5" r="1"/><circle cx="15" cy="7.5" r="1"/></svg>Estilo app</button></div></div><div id="opcal" class="opcal" hidden></div>
   <div class="carw"><div class="car" id="car"></div>
     <button type="button" class="arr l" id="arrL" aria-label="Ciudad anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
     <button type="button" class="arr r" id="arrR" aria-label="Ciudad siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -1233,10 +1224,6 @@ svg.leaflet-image-layer.leaflet-interactive path {
     <div class="chips" id="mapcity"></div>
     <div id="mapslot"></div>
     <div id="nblist" class="nblist" aria-live="polite"></div></div>
-</section>
-<section id="s-encuesta" hidden>
-  <div class="ptl"><h1>¿Cómo te fue?</h1><p>Seis preguntas rápidas sobre la app. Tus respuestas ayudan a mejorarla para los próximos viajes.</p></div>
-  <div class="sheet encsheet" id="encform"></div>
 </section>
 <section id="s-moda" hidden>
   <div class="ptl"><h1>Moda y vintage</h1><p>Museos de moda, mercadillos y tiendas de ropa antigua.</p></div>
@@ -1603,7 +1590,7 @@ function renderHome(){
   const t=T();let h="";
   if(t.ph==="trip")h=hoyBox(t);
   else if(t.ph==="after"){const tot=G.reduce((a,g)=>a+g.v,0);h=`<div class="box" style="margin-bottom:10px"><h3 class="bh"><span class="bi">${ico("heart",2)}</span>¡Buen regreso, ${esc(NOMBRE)}!</h3><p class="note">${tot?`Gastaste ${fmt(tot)} en todo el viaje. `:""}Aquí queda guardado el recuerdo de Madrid, Barcelona y Praga.</p></div>`}
-  if(encDue(t))h+=encCard();
+  opCal(t);
   $("nowbox").innerHTML=h;requestAnimationFrame(fitHoy);
   $("nxt-h").textContent=t.ph==="trip"?"Lo que viene":"Día a día";
   const list=t.ph==="trip"?DAYS.filter(x=>x.d>t.d):DAYS;
@@ -1781,9 +1768,9 @@ function route_(){
   const m=h.match(/^prueba-(\d+)(?:-(\d+))?$/);if(m){SIM=dayOf(+m[1])?+m[1]:0;SIMH=SIM&&m[2]!==undefined?+m[2]:null;try{SIM?sessionStorage.setItem("mv-sim",SIM):sessionStorage.removeItem("mv-sim");SIMH!==null?sessionStorage.setItem("mv-simh",SIMH):sessionStorage.removeItem("mv-simh")}catch(e){}gsel=null;rcity=null;mcity=null;mtab=null;history.replaceState(null,"",location.pathname+location.search);h="";resetForm()}
   const city=Object.keys(C).find(c=>C[c].slug===h);
   if(city){openCity(city,pend);pend=0;show("city");window.scrollTo({top:0});$("cmapslot").appendChild($("mapbox"));cityMap(city);$("ft").hidden=false;renderFt();return}
-  const id=["mapa","comer","moda","tiempo","gastos","encuesta"].includes(h)?h:"viaje";
+  const id=["mapa","comer","moda","tiempo","gastos"].includes(h)?h:"viaje";
   show(id);window.scrollTo({top:0});
-  if(id==="viaje"){renderHome();requestAnimationFrame(()=>window.mvFitTitle&&window.mvFitTitle())}if(id==="gastos")renderG();if(id==="comer")renderR();if(id==="moda")renderM();if(id==="tiempo")renderWx();if(id==="mapa")mapTab();if(id==="encuesta")renderEnc();
+  if(id==="viaje"){renderHome();requestAnimationFrame(()=>window.mvFitTitle&&window.mvFitTitle())}if(id==="gastos")renderG();if(id==="comer")renderR();if(id==="moda")renderM();if(id==="tiempo")renderWx();if(id==="mapa")mapTab();
   requestAnimationFrame(carState);
   $("ft").hidden=id!=="viaje";renderFt();
 }
@@ -1880,38 +1867,17 @@ $("nblist").onclick=e=>{if(e.target.closest("#nbclr")){NB&&NB.clearLayers();$("m
     r.onresult=ev=>{const t=ev.results[0][0].transcript;$("nbq").value=t;nbSearch(null,t)};
     r.onend=()=>{b.classList.remove("rec");$("nbq").placeholder="Bar, farmacia, súper…";r=null};r.onerror=r.onend;try{r.start()}catch(e){r.onend()}}})();
 
-/* ---------- encuesta al volver: corta, en la app; se envía por WhatsApp a Javier (y a una hoja de Google si hay dirección) ---------- */
-const ENC_WA="34652058047";      /* WhatsApp del negocio */
-const ENC_URL="";                /* dirección del Apps Script de encuestas (vacía = solo WhatsApp) */
-const ENC_APP="Mis Vacaciones";
-const ENC_USO=["El día de hoy","El mapa","Cerca de mí","Dónde estoy","Comer","Moda","El clima","Los gastos"];
-let ENC={nota:0,uso:[],sirvio:"",falto:"",cambios:"",reco:""};
-function encDue(t){const last=DAYS[DAYS.length-1].d;const hr=(typeof SIMH==="number"&&SIMH!==null)?SIMH:new Date().getHours();return t.ph==="after"||(t.ph==="trip"&&t.d===last&&hr>=12)}
-function encCard(){const done=LS("enc");return `<button type="button" class="enccard${done?" done":""}" data-go="encuesta">${ico(done?"heart":"list",2)}<span><b>${done?"¡Gracias por contarnos!":"¿Cómo te fue con la app?"}</b><small>${done?"Si quieres, puedes cambiar tus respuestas.":"Seis preguntas, un minuto. Nos ayuda a mejorarla."}</small></span>${ico("chev",2)}</button>`}
-function renderEnc(){const s=LS("encd");if(s)ENC=Object.assign(ENC,s);
-  const opt=(k,vals)=>`<div class="encopt" data-k="${k}">${vals.map(v=>`<button type="button" class="${ENC[k]===v?"on":""}" data-v="${esc(v)}">${esc(v)}</button>`).join("")}</div>`;
-  $("encform").innerHTML=`
-  <div class="box"><p class="encq"><b>1.</b> ¿Qué nota le pones a la app?</p><div class="encstars" role="radiogroup" aria-label="Nota de 1 a 5">${[1,2,3,4,5].map(n=>`<button type="button" role="radio" aria-checked="${ENC.nota===n}" aria-label="${n} de 5" data-star="${n}" class="${ENC.nota>=n?"on":""}">★</button>`).join("")}</div></div>
-  <div class="box"><p class="encq"><b>2.</b> ¿Qué usaste más? <small>Puedes marcar varias.</small></p><div class="encopt multi">${ENC_USO.map(v=>`<button type="button" class="${ENC.uso.includes(v)?"on":""}" data-u="${esc(v)}">${esc(v)}</button>`).join("")}</div></div>
-  <div class="box"><p class="encq"><b>3.</b> ¿Qué te sirvió más?</p><textarea id="enc-sirvio" rows="2" placeholder="Por ejemplo: el mapa sin internet">${esc(ENC.sirvio)}</textarea></div>
-  <div class="box"><p class="encq"><b>4.</b> ¿Qué te faltó o qué cambiarías?</p><textarea id="enc-falto" rows="2" placeholder="Lo que sea, aunque sea pequeño">${esc(ENC.falto)}</textarea></div>
-  <div class="box"><p class="encq"><b>5.</b> ¿Cambiaste la agenda durante el viaje?</p>${opt("cambios",["Nada","Algunos días","Casi todo"])}</div>
-  <div class="box"><p class="encq"><b>6.</b> ¿La recomendarías a alguien que va de viaje?</p>${opt("reco",["Sí","Tal vez","No"])}</div>
-  <button type="button" class="btn encsend" id="encsend">${ico("go",2)} Enviar a Javier por WhatsApp</button>
-  <p class="note">Se abre WhatsApp con tus respuestas ya escritas: solo tienes que tocar enviar.${LS("enc")?" Ya la enviaste una vez, ¡gracias!":""}</p>`}
-function encSave(){ENC.sirvio=($("enc-sirvio")||{}).value||"";ENC.falto=($("enc-falto")||{}).value||"";SS("encd",ENC)}
-$("encform").addEventListener("click",e=>{const s=e.target.closest("[data-star]");if(s){ENC.nota=+s.dataset.star;encSave();renderEnc();return}
-  const u=e.target.closest("[data-u]");if(u){const v=u.dataset.u;ENC.uso=ENC.uso.includes(v)?ENC.uso.filter(x=>x!==v):ENC.uso.concat(v);encSave();u.classList.toggle("on");return}
-  const o=e.target.closest(".encopt[data-k] [data-v]");if(o){const k=o.closest("[data-k]").dataset.k;ENC[k]=o.dataset.v;encSave();o.parentNode.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b===o));return}
-  if(e.target.closest("#encsend")){encSave();
-    if(!ENC.nota&&!ENC.uso.length&&!ENC.sirvio&&!ENC.falto){alertEnc("Responde al menos una pregunta antes de enviar.");return}
-    const txt=`Encuesta de «${ENC_APP}»\n⭐ Nota: ${ENC.nota?ENC.nota+" de 5":"—"}\n📱 Lo que más usé: ${ENC.uso.join(", ")||"—"}\n👍 Lo que más me sirvió: ${ENC.sirvio.trim()||"—"}\n🛠 Lo que me faltó o cambiaría: ${ENC.falto.trim()||"—"}\n🔄 ¿Cambié la agenda?: ${ENC.cambios||"—"}\n💬 ¿La recomendaría?: ${ENC.reco||"—"}`;
-    if(ENC_URL){try{fetch(ENC_URL,{method:"POST",mode:"no-cors",body:JSON.stringify(Object.assign({app:ENC_APP,fecha:new Date().toISOString()},ENC))}).catch(()=>{})}catch(err){}}
-    SS("enc",new Date().toISOString().slice(0,10));
-    window.open("https://wa.me/"+ENC_WA+"?text="+encodeURIComponent(txt),"_blank","noopener");
-    setTimeout(renderEnc,500)}});
-$("encform").addEventListener("input",e=>{if(e.target.matches("textarea"))encSave()});
-function alertEnc(t){const n=$("encform").querySelector(".encerr");if(n)n.remove();$("encsend").insertAdjacentHTML("beforebegin",`<p class="note encerr">${esc(t)}</p>`)}
+/* ---------- opinión de después del viaje: «caluga» bajo el título desde el día después del regreso (nota encuesta-post-viaje.md) ---------- */
+var OP_APP="Mis Vacaciones";
+var OP_URL="https://javierov.github.io/viajes-disenados-a-mano/opinion/?a="+encodeURIComponent(OP_APP)+"&n="+encodeURIComponent(NOMBRE);
+function opDone(){try{return !!localStorage.getItem("tvdm-opinion:"+OP_APP)}catch(e){return false}}
+function opCal(t){const el=$("opcal");if(!el||!OP_URL)return;
+  const later=+(LS("opahora")||0);
+  if(t.ph!=="after"||opDone()||Date.now()<later){el.hidden=true;el.innerHTML="";return}
+  el.innerHTML=`<a class="opgo" href="${OP_URL}">${ico("heart",2)}<span>¿Qué tal tu viaje? Cuéntamelo en un minuto</span>${ico("chev",2)}</a><button type="button" class="opno" id="opno">Ahora no</button>`;
+  el.hidden=false}
+document.addEventListener("click",e=>{if(e.target.closest("#opno")){SS("opahora",Date.now()+7*864e5);opCal(T());requestAnimationFrame(fitHoy)}});
+window.addEventListener("pageshow",()=>{try{opCal(T())}catch(e){}});
 
 /* ---------- reorganizar la agenda: mover o quitar planes, cambiar días entre sí, ideas sin día (se guarda en el celular) ---------- */
 var PLR=null,PL=null,PK0={},D0=null;
@@ -1935,7 +1901,7 @@ function plCityDays(c){return DAYS.filter(x=>x.c===c)}
 function planDayTools(x){if(!PLR)return "";const c=x.c,others=plCityDays(c).filter(y=>y.d!==x.d&&y.cs.length===1&&x.cs.length===1);
   return `<div class="pltools">${x.mod?`<span class="plmod">${ico("info",2)} Cambiaste este día</span>`:""}${others.length?`<details class="plsw"><summary>${ico("swap",2)} Cambiar este día con otro</summary><div class="plch">${others.map(y=>`<button type="button" data-swap="${x.d}:${y.d}">${wd(y.d)} ${y.d}</button>`).join("")}</div><small class="plwarn">Ojo con los horarios: algunos sitios cierran ciertos días.</small></details>`:""}</div>`}
 function planIdeas(c){if(!PLR)return "";const D=D0;const ks=PL.sk.filter(k=>{const it=plItem(k);return it&&it[4]===c});
-  const wa=`https://wa.me/${typeof ENC_WA!=="undefined"?ENC_WA:"34652058047"}?text=${encodeURIComponent("Hola Javier, quiero cambiar mi agenda de «Mis Vacaciones»: ")}`;
+  const wa=`https://wa.me/34652058047?text=${encodeURIComponent("Hola Javier, quiero cambiar mi agenda de «Mis Vacaciones»: ")}`;
   return `<div class="box blk plbox"><h3 class="bh"><span class="bi">${ico("swap",2)}</span>Tu agenda, a tu ritmo</h3>
   <p class="note">Toca ${ico("dots",2.4).replace("<svg",'<svg class="inl"')} en cualquier plan para pasarlo a otro día o quitarlo. Lo que quites queda aquí, en «Ideas sin día».</p>
   ${ks.length?`<p class="plh"><b>Ideas sin día</b> · ${ks.length}</p><ul class="plideas">${ks.map(k=>{const it=plItem(k);return `<li><span class="ic">${ico(EM[it[0]])}</span><span><span class="pltx">${esc(short(it[1]))}</span><span class="plch">${plCityDays(c).map(y=>`<button type="button" data-add="${k}:${y.d}">${wd(y.d)} ${y.d}</button>`).join("")}</span></span></li>`}).join("")}</ul>`:""}
@@ -2038,7 +2004,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&sh&&!sh.hidden)show
   /* visita */
   if(DE)ev("abrió la app");else send(url(location.pathname,false,document.title));
   /* pestañas */
-  const TAB={"":"Viaje",viaje:"Viaje",mapa:"Mapa",comer:"Comer",moda:"Moda",tiempo:"Clima",gastos:"Gastos",encuesta:"Encuesta",madrid:"Madrid",barcelona:"Barcelona",praga:"Praga"};let lastTab=null;
+  const TAB={"":"Viaje",viaje:"Viaje",mapa:"Mapa",comer:"Comer",moda:"Moda",tiempo:"Clima",gastos:"Gastos",madrid:"Madrid",barcelona:"Barcelona",praga:"Praga"};let lastTab=null;
   function tab(){const h=decodeURIComponent(location.hash.slice(1));const n=TAB[h];if(n&&n!==lastTab){lastTab=n;ev("pestaña "+n)}}
   window.addEventListener("hashchange",tab);tab();
   document.addEventListener("submit",e=>{if(e.target&&e.target.id==="nbform")ev("cerca: búsqueda escrita")},true);
@@ -2056,7 +2022,8 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&sh&&!sh.hidden)show
     const nk=t.closest("[data-nbk]");if(nk)ev("cerca: "+nk.textContent.trim().toLowerCase());
     if(t.closest("#nbmic"))ev1("cerca: usó la voz");
     if(t.closest(".nbgo,.nbmaps"))ev1("cerca: abrió un resultado");
-    if(t.closest("#encsend"))ev("envió la encuesta");
+    if(t.closest(".opgo"))ev("abrió la encuesta de opinión");
+    if(t.closest("#opno"))ev("encuesta: ahora no");
     if(t.closest("[data-mv]"))ev("agenda: pasó un plan a otro día");
     if(t.closest("[data-skip]"))ev("agenda: quitó un plan");
     if(t.closest("[data-add]"))ev("agenda: añadió una idea a un día");
