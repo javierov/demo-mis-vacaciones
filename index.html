@@ -522,6 +522,7 @@ button.ft{font:inherit}
 .hbbig[hidden]{display:none}.hbbig>div{display:grid;gap:18px;text-align:center}
 .hbbig b{font-size:clamp(34px,11vw,64px);line-height:1.15;overflow-wrap:anywhere}.hbbig small{font-size:20px;opacity:.6}.hbbig span{font-size:14px;opacity:.45;margin-top:20px}
 a.nbhoy{text-decoration:none}
+.credw{font-size:11px;opacity:.55;margin-top:10px;line-height:1.4}.credw a{color:inherit}
 </style>
 <style>/* Leaflet 1.9.4 — BSD-2-Clause, © Volodymyr Agafonkin */
 /* required styles */
@@ -1210,6 +1211,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   <div class="pad">
     <h2><span id="nxt-h">Día a día</span><button type="button" data-go="comer">Dónde comer</button></h2>
     <div class="rows" id="next"></div>
+    <p class="note credw" id="credw">Fotos de los días en Praga: Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:Tower_Clock_in_Old_Town_Square.JPG" target="_blank" rel="noopener">Igpinnato</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Prague_Castle_and_Charles_Bridge_over_Vltava.jpg" target="_blank" rel="noopener">Mattsjc</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Ludmila_church_Vinohrady_Prague.jpg" target="_blank" rel="noopener">Svobodat</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Letna_Prague_metronom_4575b.jpg" target="_blank" rel="noopener">Hynek Moravec</a> (CC BY 3.0).</p>
   </div>
 </section>
 
@@ -1521,6 +1523,8 @@ const SKY={
 Praga:`<circle cx="500" cy="52" r="20" fill="#fff4e0" fill-opacity=".5"/><g fill="#231a3a" fill-opacity=".6"><path d="M0 200v-64q70-34 160-34t150 22 60 8v68z"/><path d="M30 112v-26h210v26z"/><path d="M60 86v-14h40v14zM190 86v-12h36v12z"/><path d="M134 86V40l9-30 9 30v46z"/><path d="M160 86V52l6-20 6 20v34z"/><path d="M400 200v-84l12-26 12 26v84zM436 200v-62h44v62zM488 200v-96l10-22 10 22v96zM520 200v-58h50v58z"/></g><g fill="#ffe7b8" fill-opacity=".5"><rect x="70" y="96" width="6" height="8"/><rect x="92" y="96" width="6" height="8"/><rect x="200" y="96" width="6" height="8"/><rect x="446" y="150" width="6" height="8"/><rect x="464" y="150" width="6" height="8"/></g><rect y="178" width="600" height="22" fill="#2a3f66" fill-opacity=".45"/><path d="M0 176h600v6H0z" fill="#1c1630" fill-opacity=".6"/><g fill="#2a3f66" fill-opacity=".7">${[30,110,190,270,350,430,510].map(x=>`<path d="M${x} 200v-12a22 14 0 0 1 44 0v12z"/>`).join("")}</g>`,
 Madrid:`<circle cx="480" cy="58" r="24" fill="#fff3d6" fill-opacity=".55"/><g fill="#4a1c14" fill-opacity=".55"><path d="M0 200v-60h40v-14h30v74zM78 200v-82h38v82zM122 200v-56h40v56zM300 200v-70h26v-10h22v80zM356 200v-58h44v58zM408 200v-76h30v76zM446 200v-50h50v50zM504 200v-68h40v68zM552 200v-48h48v48z"/><path d="M172 200v-80h104v80z"/><path d="M188 122q36-52 72 0z"/><rect x="220" y="62" width="8" height="12"/><circle cx="224" cy="58" r="6"/></g><g fill="#ffe7b8" fill-opacity=".55"><rect x="88" y="132" width="7" height="10"/><rect x="100" y="132" width="7" height="10"/><rect x="186" y="140" width="8" height="12"/><rect x="206" y="140" width="8" height="12"/><rect x="226" y="140" width="8" height="12"/><rect x="246" y="140" width="8" height="12"/><rect x="366" y="152" width="7" height="10"/><rect x="380" y="152" width="7" height="10"/><rect x="516" y="146" width="7" height="10"/></g><rect x="0" y="192" width="600" height="8" fill="#3a120c" fill-opacity=".35"/>`,
 Barcelona:`<circle cx="120" cy="56" r="22" fill="#fff4d8" fill-opacity=".55"/><path d="M0 200v-44q90-28 180-12t140 2 160-18 120 8v64z" fill="#183e5c" fill-opacity=".35"/><g fill="#1a2b40" fill-opacity=".6">${[[262,84],[284,60],[306,44],[328,60],[350,84]].map(([x,t])=>`<path d="M${x} 200V${t}l9-34 9 34V200z"/>`).join("")}<path d="M250 200v-70h130v70z"/><path d="M40 200v-40h50v40zM100 200v-52h36v52zM430 200v-48h40v48zM480 200v-60h34v60zM524 200v-40h50v40z"/></g><g fill="#ffe7b8" fill-opacity=".5"><rect x="270" y="150" width="6" height="10"/><rect x="292" y="140" width="6" height="12"/><rect x="314" y="134" width="6" height="12"/><rect x="336" y="140" width="6" height="12"/><rect x="110" y="166" width="6" height="8"/><rect x="492" y="160" width="6" height="8"/></g><rect y="186" width="600" height="14" fill="#1d4d73" fill-opacity=".5"/>`};
+/* fotos de cada día en «Lo que viene» (Wikimedia Commons; créditos en CRED) */
+const DIMG={23:"praga-23",24:"praga-24",25:"praga-25",26:"praga-26"};
 const ph=(c,cls,extra)=>`<div class="ph ${cls||""}" style="--s1:${C[c].s1};--s2:${C[c].s2}"><svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true">${SKY[c]}</svg>${C[c].f?`<img src="fotos/${C[c].f}.jpg" alt="" loading="lazy">`:""}${extra||""}</div>`;
 function fixImgs(root){root.querySelectorAll(".ph img:not([data-k])").forEach(i=>{i.dataset.k=1;const ok=()=>i.naturalWidth?i.classList.add("ok"):i.remove();if(i.complete)ok();else{i.addEventListener("load",ok);i.addEventListener("error",()=>i.remove())}})}
 const WD=["dom","lun","mar","mié","jue","vie","sáb"],WDL=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
@@ -1614,7 +1618,7 @@ function renderHome(){
   $("nowbox").innerHTML=h;requestAnimationFrame(fitHoy);
   $("nxt-h").textContent=t.ph==="trip"?"Lo que viene":"Día a día";
   const list=t.ph==="trip"?DAYS.filter(x=>x.d>t.d):DAYS;
-  $("next").innerHTML=list.map(x=>`<button type="button" class="row" data-open="${x.cs[x.cs.length-1]}" data-day="${x.d}">${ph(x.c)}<span><span class="dt">${wd(x.d)} ${x.d} ${MC} · ${dayCities(x)}</span><b>${esc(x.t)}</b><small>${esc(x.w)}</small></span>${ico("chev",2)}</button>`).join("")||`<p class="note">Último día del viaje.</p>`;
+  $("next").innerHTML=list.map(x=>`<button type="button" class="row" data-open="${x.cs[x.cs.length-1]}" data-day="${x.d}">${DIMG[x.d]?ph(x.c).replace(/<img src="[^"]+"/,`<img src="fotos/dias/${DIMG[x.d]}.webp"`):ph(x.c)}<span><span class="dt">${wd(x.d)} ${x.d} ${MC} · ${dayCities(x)}</span><b>${esc(x.t)}</b><small>${esc(x.w)}</small></span>${ico("chev",2)}</button>`).join("")||`<p class="note">Último día del viaje.</p>`;
   if(t.ph==="trip"&&!carMoved){const x=dayOf(t.d),k2=x?STOPS.findIndex(n=>n[0]===wxCity(x)):0,car=$("car");if(k2>0)requestAnimationFrame(()=>{car.scrollLeft=car.children[k2].offsetLeft-car.firstElementChild.offsetLeft;carState()})}
 }
 $("car").innerHTML=STOPS.map(([c,n,a,b,s])=>`<button type="button" class="cc" data-open="${c}" aria-label="${c}, ${b}">${ph(c,"scrim")}<span class="n">${a} ${MC}</span><span class="tx"><b>${c}</b><span>${s}</span></span></button>`).join("");
