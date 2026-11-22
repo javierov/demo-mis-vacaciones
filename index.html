@@ -452,6 +452,67 @@ button.ft{font:inherit}
 @media (prefers-reduced-motion:reduce){.wim img{animation:none!important}}
 .wv2 .wim{margin-bottom:3px}.wv2 .wim img{filter:drop-shadow(0 2px 2px rgb(0 0 0/.18))}
 .w-niebla img{animation:wxdrift 6s ease-in-out infinite}.w-nieve img{animation:wxfloat 3.4s ease-in-out infinite}
+/* Cerca de mí */
+.nbbox{margin-bottom:12px}
+.nbform{display:grid;grid-template-columns:minmax(0,1fr) 44px 44px;gap:6px;margin:4px 0 10px}
+.nbform input{min-width:0;height:44px;border-radius:12px;border:1px solid var(--line2);background:transparent;color:inherit;padding:0 12px;font:inherit;font-size:16px}
+.nbform button{display:grid;place-items:center;height:44px;border-radius:12px;border:0;padding:0;cursor:pointer;background:var(--btn);color:var(--btnInk)}
+.nbform .nbmic{background:none;color:inherit;box-shadow:inset 0 0 0 1px var(--line2)}
+.nbform .nbmic.rec{background:#e5484d;color:#fff;box-shadow:none;animation:mebl 1s infinite}
+.nbform svg{width:22px;height:22px}
+.nbbox .nbcats{padding:0 0 2px;margin:0}
+.nbcats button{display:inline-flex;align-items:center;gap:6px}.nbcats svg{width:16px;height:16px}
+.nbbox.busy .nbcats,.nbbox.busy .nbform{opacity:.55;pointer-events:none}
+.nblist{margin-top:12px}.nblist .note{margin:8px 2px}.nbwarn{color:var(--mute)}
+.nbh{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:4px 2px 8px}.nbh b{font-size:17px}
+.nbclr{margin-left:auto;border:0;background:none;color:inherit;opacity:.75;text-decoration:underline;font:inherit;font-size:13.5px;cursor:pointer;padding:6px 0}
+.nbl{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.nbl li{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:6px;align-items:stretch}
+.nbgo{display:flex;gap:10px;align-items:flex-start;text-align:left;border:0;border-radius:14px;padding:10px 12px;background:var(--fill);box-shadow:inset 0 0 0 1px var(--line);color:inherit;font:inherit;cursor:pointer;min-width:0}
+.nbt{display:grid;gap:2px;min-width:0}.nbt b{overflow-wrap:anywhere}.nbt small{opacity:.8;font-size:13.5px;line-height:1.35}.nbhr{overflow-wrap:anywhere}
+.nbn{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#e5484d;color:#fff;font-weight:700;font-size:13px}
+.nbmaps{display:grid;place-items:center;border-radius:14px;background:var(--fill);box-shadow:inset 0 0 0 1px var(--line);color:inherit}.nbmaps svg{width:20px;height:20px}
+.lpin.nbpin span{background:#e5484d}
+.nbhoy{display:flex;align-items:center;gap:10px;width:100%;margin-top:12px;padding:12px 12px;border-radius:14px;border:0;background:none;box-shadow:inset 0 0 0 1px var(--line2);color:inherit;font:inherit;text-align:left;cursor:pointer}
+.nbhoy span{flex:1}.nbhoy svg{width:20px;height:20px;flex:none}
+#mapw.nbon .lpin:not(.nbpin){opacity:.35}
+/* encuesta */
+.enccard{display:flex;align-items:center;gap:12px;width:100%;margin-top:12px;padding:14px;border-radius:16px;border:0;background:var(--btn);color:var(--btnInk);font:inherit;text-align:left;cursor:pointer}
+.enccard.done{background:none;color:inherit;box-shadow:inset 0 0 0 1px var(--line2)}
+.enccard span{flex:1;display:grid;gap:2px}.enccard small{opacity:.85;font-size:14px}.enccard svg{width:22px;height:22px;flex:none}
+.encsheet .box{margin-bottom:10px}
+.encq{margin:0 0 10px;font-size:17px;line-height:1.35}.encq small{opacity:.7;font-size:14px}
+.encstars{display:flex;gap:6px}
+.encstars button{flex:1;height:48px;border-radius:12px;border:0;background:none;box-shadow:inset 0 0 0 1px var(--line2);color:var(--mute);font-size:26px;line-height:1;cursor:pointer}
+.encstars button.on{color:#f5b301;box-shadow:inset 0 0 0 1px #f5b30180}
+.encopt{display:flex;flex-wrap:wrap;gap:6px}
+.encopt button{border:0;border-radius:999px;padding:9px 14px;background:none;box-shadow:inset 0 0 0 1px var(--line2);color:inherit;font:inherit;font-size:15px;cursor:pointer}
+.encopt button.on{background:var(--btn);color:var(--btnInk);box-shadow:none}
+.encsheet textarea{width:100%;box-sizing:border-box;border-radius:12px;border:1px solid var(--line2);background:transparent;color:inherit;font:inherit;font-size:16px;padding:10px 12px;resize:vertical}
+.encsend{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px}.encsend svg{width:20px;height:20px}
+.encsheet{margin-top:14px}
+/* reorganizar la agenda */
+.steps li.hasm{grid-template-columns:36px minmax(0,1fr) 36px}
+.plm{width:36px;height:36px;margin-top:2px;display:grid;place-items:center;border:0;border-radius:10px;background:none;color:var(--mute);cursor:pointer;padding:0}
+.plm[aria-expanded=true]{background:var(--fill);color:var(--ink)}.plm svg{width:20px;height:20px}
+.steps li.plmenu{display:block;margin:-4px 0 2px 48px;padding:10px 12px;border-radius:14px;background:var(--fill);box-shadow:inset 0 0 0 1px var(--line)}
+.plmenu p{margin:0 0 8px;font-weight:700;font-size:14px}
+.plch{display:flex;flex-wrap:wrap;gap:6px}
+.plch button{border:0;border-radius:999px;padding:8px 13px;background:none;box-shadow:inset 0 0 0 1px var(--line2);color:inherit;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.plrow{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px}
+.pllink{border:0;background:none;color:inherit;font:inherit;font-size:14px;text-decoration:underline;opacity:.85;padding:6px 0;cursor:pointer;text-align:left}
+.pltools{margin-top:12px;display:grid;gap:8px}
+.plmod{display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--soft)}.plmod svg{width:16px;height:16px}
+.plsw summary{display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-weight:600;font-size:14.5px;list-style:none;padding:6px 0}.plsw summary::-webkit-details-marker{display:none}.plsw summary svg{width:18px;height:18px}
+.plsw .plch{margin-top:6px}
+.plbox .note{margin:0 0 10px}.plbox svg.inl{width:16px;height:16px;vertical-align:-3px}
+.plh{margin:6px 0 8px}
+.plideas{list-style:none;margin:0 0 10px;padding:0;display:grid;gap:10px}
+.plideas li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px}.plideas .ic svg{width:22px;height:22px}
+.plideas .pltx{display:block;margin-bottom:6px}
+.plfoot{display:grid;gap:4px}.plfoot .btn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}.plfoot .btn svg{width:18px;height:18px}
+.pltoast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translate(-50%,20px);opacity:0;z-index:60;max-width:calc(100% - 32px);padding:10px 16px;border-radius:14px;background:rgb(20 24 32/.92);color:#f2f4f8;font-size:14.5px;box-shadow:0 6px 18px rgb(0 0 0/.3);transition:opacity .25s,transform .25s;pointer-events:none}.pltoast.in{opacity:1;transform:translate(-50%,0)}
+.plwarn{display:block;margin-top:6px;color:var(--mute);font-size:13px}
 </style>
 <style>/* Leaflet 1.9.4 — BSD-2-Clause, © Volodymyr Agafonkin */
 /* required styles */
@@ -1151,7 +1212,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
       <div class="chips" id="mapchips"></div>
       <div class="mapw" id="mapw"><div class="mapoff" id="mapoff" hidden>Sin señal: las calles aparecerán con conexión. ✕</div><div class="memsg" id="memsg" role="status" hidden></div></div>
       <p class="note" style="margin-top:8px;font-size:13px">Toca un punto para ver qué es. Toca «Dónde estoy» (arriba a la derecha) para ver tu posición: el punto azul usa el GPS y la flecha la brújula del celular, también sin internet. El mapa se mueve con dos dedos; con uno se sigue bajando la página.</p></div></div>
-    <div id="cstay"></div>
+    <div id="cideas"></div><div id="cstay"></div>
     <h2>Día a día</h2>
     <div id="cdays"></div>
   </div>
@@ -1166,8 +1227,16 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 <section id="s-mapa" hidden>
   <div class="sheet"><h2>Mapa</h2>
+    <div class="box nbbox" id="nbbox"><h3 class="bh"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></span>Cerca de mí</h3>
+      <form class="nbform" id="nbform" autocomplete="off"><input id="nbq" type="search" enterkeyhint="search" placeholder="Bar, farmacia, súper…" aria-label="Qué buscas cerca"><button type="button" class="nbmic" id="nbmic" aria-label="Buscar hablando"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></button><button type="submit" class="nbgo2" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></button></form>
+      <div class="chips nbcats" id="nbcats"></div></div>
     <div class="chips" id="mapcity"></div>
-    <div id="mapslot"></div></div>
+    <div id="mapslot"></div>
+    <div id="nblist" class="nblist" aria-live="polite"></div></div>
+</section>
+<section id="s-encuesta" hidden>
+  <div class="ptl"><h1>¿Cómo te fue?</h1><p>Seis preguntas rápidas sobre la app. Tus respuestas ayudan a mejorarla para los próximos viajes.</p></div>
+  <div class="sheet encsheet" id="encform"></div>
 </section>
 <section id="s-moda" hidden>
   <div class="ptl"><h1>Moda y vintage</h1><p>Museos de moda, mercadillos y tiendas de ropa antigua.</p></div>
@@ -1435,7 +1504,7 @@ const STAY=[
  ["Nové Město (Ciudad Nueva)","Práctica y bien comunicada, algo más barata; aquí están Myšák y la plaza Náměstí Republiky."],
  ["Vinohrady","Barrio residencial y elegante, con tiendas vintage y el mercadillo de Náměstí Míru. Hoteles de 60 a 90 € la noche, a pocos minutos en tranvía o metro."]];
 const PRAC=[["info","Moneda: corona checa (CZK). 1 € son unas 23–25 coronas; casi todo se paga con tarjeta."],["train","Aeropuerto: trolebús 59 + metro A (billete de 90 min, 50 coronas) o el Airport Express a la estación central (200 coronas)."],["shirt","Hace frío de verdad: abrigo de invierno, gorro, bufanda y guantes."]];
-const P={scissors:'<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/>',plane:'<path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>',train:'<rect x="5" y="3" width="14" height="14" rx="4"/><path d="M5 10h14M9 21l1.5-4M15 21l-1.5-4"/><circle cx="9" cy="13.5" r=".8"/><circle cx="15" cy="13.5" r=".8"/>',walk:'<circle cx="13" cy="4" r="2"/><path d="M9 21l3-7 3 3v5M7 12l4-4h3l2 4 2 1M11 8l1 6"/>',bed:'<path d="M3 19V7M3 15h18v4M21 15v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="12" r="2"/>',art:'<path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.8 2-1.9 0-1.4-1.1-1.6-1.1-2.7 0-1 .8-1.6 1.8-1.6H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/>',cake:'<path d="M4 20h16v-7H4zM4 16c2 1.2 4 1.2 6 0s4-1.2 6 0 3 1.2 4 0M12 13V9M12 4c1 1 1 2.2 0 3-1-.8-1-2 0-3"/>',info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',castle:'<path d="M3 21h18M5 21V10M9.5 21V10M14.5 21V10M19 21V10M3 10l9-6 9 6z"/>',bag:'<path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/>',food:'<path d="M7 3v18M5 3v5a2 2 0 0 0 4 0V3M17 21V3c-2 1-3 4-3 7h3"/>',sun:'<path d="M3 18h18M7 18a5 5 0 0 1 10 0M12 6v3M5 10l2 2M19 10l-2 2M3 14h2M19 14h2"/>',moon:'<path d="M20 14A8 8 0 1 1 10 4a6 6 0 0 0 10 10z"/>',heart:'<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>',case:'<rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5h6v2M4 12h16"/>',church:'<path d="M12 2v5M10 4h4M6 21V12l6-5 6 5v9zM10 21v-4a2 2 0 0 1 4 0v4"/>',tree:'<path d="M12 21v-6M7 15h10l-5-12z"/><path d="M8.5 11h7"/>',cup:'<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/>',pin:'<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',back:'<path d="M15 5l-7 7 7 7"/>',chev:'<path d="M9 6l6 6-6 6"/>',go:'<path d="M3 11l18-8-8 18-2-8z"/>',cal:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',drop:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',shirt:'<path d="M8 3l-5 3 2 5 3-1v11h8V10l3 1 2-5-5-3a4 4 0 0 1-8 0z"/>',umb:'<path d="M3 12a9 9 0 0 1 18 0zM12 12v7a2 2 0 0 1-4 0M12 3v0"/>',shoe:'<path d="M3 17v-6l5 1 3-4 3 3c2 1 5 1.5 7 2.5V17zM3 17h18v2H3z"/>'};
+const P={dots:'<circle cx="5" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="19" cy="12" r="1.3" fill="currentColor"/>',swap:'<path d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/>',scissors:'<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/>',plane:'<path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>',train:'<rect x="5" y="3" width="14" height="14" rx="4"/><path d="M5 10h14M9 21l1.5-4M15 21l-1.5-4"/><circle cx="9" cy="13.5" r=".8"/><circle cx="15" cy="13.5" r=".8"/>',walk:'<circle cx="13" cy="4" r="2"/><path d="M9 21l3-7 3 3v5M7 12l4-4h3l2 4 2 1M11 8l1 6"/>',bed:'<path d="M3 19V7M3 15h18v4M21 15v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="12" r="2"/>',art:'<path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.8 2-1.9 0-1.4-1.1-1.6-1.1-2.7 0-1 .8-1.6 1.8-1.6H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/>',cake:'<path d="M4 20h16v-7H4zM4 16c2 1.2 4 1.2 6 0s4-1.2 6 0 3 1.2 4 0M12 13V9M12 4c1 1 1 2.2 0 3-1-.8-1-2 0-3"/>',info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',castle:'<path d="M3 21h18M5 21V10M9.5 21V10M14.5 21V10M19 21V10M3 10l9-6 9 6z"/>',bag:'<path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/>',food:'<path d="M7 3v18M5 3v5a2 2 0 0 0 4 0V3M17 21V3c-2 1-3 4-3 7h3"/>',sun:'<path d="M3 18h18M7 18a5 5 0 0 1 10 0M12 6v3M5 10l2 2M19 10l-2 2M3 14h2M19 14h2"/>',moon:'<path d="M20 14A8 8 0 1 1 10 4a6 6 0 0 0 10 10z"/>',heart:'<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>',case:'<rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5h6v2M4 12h16"/>',church:'<path d="M12 2v5M10 4h4M6 21V12l6-5 6 5v9zM10 21v-4a2 2 0 0 1 4 0v4"/>',tree:'<path d="M12 21v-6M7 15h10l-5-12z"/><path d="M8.5 11h7"/>',cup:'<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/>',pin:'<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',back:'<path d="M15 5l-7 7 7 7"/>',chev:'<path d="M9 6l6 6-6 6"/>',go:'<path d="M3 11l18-8-8 18-2-8z"/>',cal:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',drop:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',shirt:'<path d="M8 3l-5 3 2 5 3-1v11h8V10l3 1 2-5-5-3a4 4 0 0 1-8 0z"/>',umb:'<path d="M3 12a9 9 0 0 1 18 0zM12 12v7a2 2 0 0 1-4 0M12 3v0"/>',shoe:'<path d="M3 17v-6l5 1 3-4 3 3c2 1 5 1.5 7 2.5V17zM3 17h18v2H3z"/>'};
 Object.assign(P,{hanger:'<path d="M12 6.5a2 2 0 1 1 2-2M12 6.5V8L3 15a1.5 1.5 0 0 0 1 2.7h16a1.5 1.5 0 0 0 1-2.7l-9-7"/>',ticket:'<path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M13 6v12"/>',cloud:'<path d="M7 18h10a4 4 0 0 0 .6-8A6 6 0 0 0 6 11a3.5 3.5 0 0 0 1 7z"/>',rain:'<path d="M7 14h10a4 4 0 0 0 .6-8A6 6 0 0 0 6 7a3.5 3.5 0 0 0 1 7zM8 18l-1 3M12 18l-1 3M16 18l-1 3"/>',fog:'<path d="M7 13h10a4 4 0 0 0 .6-8A6 6 0 0 0 6 6a3.5 3.5 0 0 0 1 7zM4 17h16M6 21h12"/>',sunny:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',psun:'<path d="M12 3v1.5M5.6 5.6l1 1M3 12h1.5M18.4 5.6l-1 1"/><path d="M8.5 11a4 4 0 0 1 7.3-2"/><path d="M8 20h9a3.5 3.5 0 0 0 .5-7 5 5 0 0 0-9.6 1A3 3 0 0 0 8 20z"/>',plus:'<circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/>',list:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',chart:'<circle cx="12" cy="12" r="9"/><path d="M12 3v9l6.4 6.4"/>'});
 const EM={"✈️":"plane","👗":"hanger","🎄":"tree","🏰":"castle","☕":"cup","🏨":"bed","🚶":"walk","🥪":"food","🌅":"sun","🖼️":"art","🍸":"moon","🌳":"tree","🥐":"cake","🍽️":"food","🍫":"cup","🎫":"ticket","🚄":"train","⛪":"church","🏛️":"castle","🧳":"case"};
 const ico=(k,w)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w||1.9}" stroke-linecap="round" stroke-linejoin="round">${P[k]||P.info}</svg>`;
@@ -1529,11 +1598,12 @@ function hoyBox(t){const x=dayOf(t.d);if(!x)return "";
   return `<div class="box hoy"><h3 class="bh"><span class="bi">${ico(p==="n"?"moon":"sunny",2)}</span>${G0}, ${esc(NOMBRE)}</h3>
     <p class="hsub">${wdl(x.d)} ${x.d} de ${MES} · ${esc(where)}</p><p class="hl3">${intro}</p>${its.length?`<ul class="list">${its.map(([i,tx])=>`<li><span class="ic">${ico(EM[i])}</span><span>${esc(tx)}</span></li>`).join("")}</ul>`:""}${after?`<p class="nxt">${after}</p>`:""}
     <button type="button" class="hw" data-go="tiempo">${wimg(w.code,"whw")}<span><b>${w.hi}° / ${w.lo}°</b> · ${ropaC(w)}</span></button>
-    <div class="acts"><button class="btn" type="button" data-open="${x.c}" data-day="${x.d}">Ver el día</button><button class="btn ghost" type="button" data-go="gastos">Anotar gasto</button></div></div>`}
+    <div class="acts"><button class="btn" type="button" data-open="${x.c}" data-day="${x.d}">Ver el día</button><button class="btn ghost" type="button" data-go="gastos">Anotar gasto</button></div><button type="button" class="nbhoy" data-go="mapa" data-nbfocus="1">${ico("pin",2)}<span>¿Buscas algo cerca? Bar, farmacia, súper…</span>${ico("chev",2)}</button></div>`}
 function renderHome(){
   const t=T();let h="";
   if(t.ph==="trip")h=hoyBox(t);
   else if(t.ph==="after"){const tot=G.reduce((a,g)=>a+g.v,0);h=`<div class="box" style="margin-bottom:10px"><h3 class="bh"><span class="bi">${ico("heart",2)}</span>¡Buen regreso, ${esc(NOMBRE)}!</h3><p class="note">${tot?`Gastaste ${fmt(tot)} en todo el viaje. `:""}Aquí queda guardado el recuerdo de Madrid, Barcelona y Praga.</p></div>`}
+  if(encDue(t))h+=encCard();
   $("nowbox").innerHTML=h;requestAnimationFrame(fitHoy);
   $("nxt-h").textContent=t.ph==="trip"?"Lo que viene":"Día a día";
   const list=t.ph==="trip"?DAYS.filter(x=>x.d>t.d):DAYS;
@@ -1551,7 +1621,7 @@ new ResizeObserver(carState).observe($("car"));
 let carMoved=false;
 
 /* ---------- ciudad ---------- */
-const plan=([ic,tx,q,tg])=>`<li><span class="ic">${ico(EM[ic])}</span><span class="tx">${esc(tx)}${tg?`<span class="tag${tg===4?" pc":""}">${TAG[tg]}</span>`:""}${q?`<span class="adr">${ico("pin",2)}<a href="${map(q)}" target="_blank" rel="noopener">Ver en Google Maps</a></span>`:""}</span></li>`;
+const plan=([ic,tx,q,tg,cy,k])=>`<li${k?` data-k="${k}"`:""}${k&&!PLFIX(ic)?` class="hasm"`:""}><span class="ic">${ico(EM[ic])}</span><span class="tx">${esc(tx)}${tg?`<span class="tag${tg===4?" pc":""}">${TAG[tg]}</span>`:""}${q?`<span class="adr">${ico("pin",2)}<a href="${map(q)}" target="_blank" rel="noopener">Ver en Google Maps</a></span>`:""}</span>${k&&!PLFIX(ic)?`<button type="button" class="plm" data-plm="${k}" aria-label="Mover o quitar este plan" aria-expanded="false">${ico("dots",2.4)}</button>`:""}</li>`;
 function openCity(c,d){
   const [,n,,b]=STOPS.find(x=>x[0]===c),days=DAYS.filter(x=>x.cs.includes(c)),t=T();
   if(!d||!days.some(x=>x.d===d))d=t.ph==="trip"&&days.some(x=>x.d===t.d)?t.d:days[0].d;
@@ -1559,10 +1629,10 @@ function openCity(c,d){
   $("hero").innerHTML=`<svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true">${SKY[c]}</svg>${C[c].f?`<img src="fotos/${C[c].f}.jpg" alt="">`:""}<button type="button" class="back" id="back" aria-label="Volver">${ico("back",2.2)}</button><div class="tx"><b>${c}</b><span>${b} · ${n} noche${n===1?"":"s"}</span></div>`;
   const its=days.flatMap(x=>x.it).filter(i=>i[4]===c);
   $("stats").innerHTML=`<div><small>Noches</small><b>${n}</b></div><div><small>Planes</small><b>${its.length}</b></div><div><small>Comer</small><b>${R.filter(r=>r[1]===c).length}</b></div>`;
-  $("cstay").innerHTML=c==="Praga"?`<div class="box blk"><h3 class="bh"><span class="bi">${ico("bed",2)}</span>Dónde alojarse</h3><ul class="list">${STAY.map(([b,t],i)=>`<li><span class="ic">${ico(i?"pin":"heart")}</span><span><b>${b}</b>${i?"":" · la que te recomiendo"}<br><small class="sm">${t}</small></span></li>`).join("")}</ul></div><div class="box blk"><h3 class="bh"><span class="bi">${ico("info",2)}</span>Práctico</h3><ul class="list">${PRAC.map(([i,t])=>`<li><span class="ic">${ico(i)}</span><span>${t}</span></li>`).join("")}</ul></div>`:"";
+  $("cideas").innerHTML=planIdeas(c);$("cstay").innerHTML=c==="Praga"?`<div class="box blk"><h3 class="bh"><span class="bi">${ico("bed",2)}</span>Dónde alojarse</h3><ul class="list">${STAY.map(([b,t],i)=>`<li><span class="ic">${ico(i?"pin":"heart")}</span><span><b>${b}</b>${i?"":" · la que te recomiendo"}<br><small class="sm">${t}</small></span></li>`).join("")}</ul></div><div class="box blk"><h3 class="bh"><span class="bi">${ico("info",2)}</span>Práctico</h3><ul class="list">${PRAC.map(([i,t])=>`<li><span class="ic">${ico(i)}</span><span>${t}</span></li>`).join("")}</ul></div>`:"";
   $("cdays").innerHTML=days.map(x=>{const i=DAYS.indexOf(x),pv=DAYS[i-1],nx=DAYS[i+1];return `<article class="day${x.d===d?" open":""}${t.ph==="trip"&&t.d===x.d?" today":""}" id="d${x.d}"><button type="button" class="dh" aria-expanded="${x.d===d}"><span class="db"><b>${x.d}</b><small>${wd(x.d)}</small></span><span class="t"><b>${esc(x.t)}</b><small>${esc(x.w)}</small></span>${ico("chev",2.2).replace("<svg","<svg class=\"chev\"")}</button>
   <div class="det"><ul class="steps">${x.it.map((it,j)=>{const nc=it[4]!==(x.it[j-1]||[])[4]&&x.cs.length>1;return (nc?`<li class="cty" style="--c:${C[it[4]].c}"><i></i>${it[4]}</li>`:"")+plan(it)}).join("")}</ul>
-  <div class="dnav"><button type="button" data-gd="${pv?pv.d:""}"${pv?"":" disabled"}>← ${pv?wd(pv.d)+" "+pv.d:""}</button><button type="button" data-gd="${nx?nx.d:""}"${nx?"":" disabled"}>${nx?wd(nx.d)+" "+nx.d:""} →</button></div></div></article>`}).join("");
+  ${planDayTools(x)}<div class="dnav"><button type="button" data-gd="${pv?pv.d:""}"${pv?"":" disabled"}>← ${pv?wd(pv.d)+" "+pv.d:""}</button><button type="button" data-gd="${nx?nx.d:""}"${nx?"":" disabled"}>${nx?wd(nx.d)+" "+nx.d:""} →</button></div></div></article>`}).join("");
   if(d!==days[0].d)setTimeout(()=>goTo($("d"+d)),150);
 }
 $("s-city").addEventListener("click",e=>{
@@ -1711,9 +1781,9 @@ function route_(){
   const m=h.match(/^prueba-(\d+)(?:-(\d+))?$/);if(m){SIM=dayOf(+m[1])?+m[1]:0;SIMH=SIM&&m[2]!==undefined?+m[2]:null;try{SIM?sessionStorage.setItem("mv-sim",SIM):sessionStorage.removeItem("mv-sim");SIMH!==null?sessionStorage.setItem("mv-simh",SIMH):sessionStorage.removeItem("mv-simh")}catch(e){}gsel=null;rcity=null;mcity=null;mtab=null;history.replaceState(null,"",location.pathname+location.search);h="";resetForm()}
   const city=Object.keys(C).find(c=>C[c].slug===h);
   if(city){openCity(city,pend);pend=0;show("city");window.scrollTo({top:0});$("cmapslot").appendChild($("mapbox"));cityMap(city);$("ft").hidden=false;renderFt();return}
-  const id=["mapa","comer","moda","tiempo","gastos"].includes(h)?h:"viaje";
+  const id=["mapa","comer","moda","tiempo","gastos","encuesta"].includes(h)?h:"viaje";
   show(id);window.scrollTo({top:0});
-  if(id==="viaje"){renderHome();requestAnimationFrame(()=>window.mvFitTitle&&window.mvFitTitle())}if(id==="gastos")renderG();if(id==="comer")renderR();if(id==="moda")renderM();if(id==="tiempo")renderWx();if(id==="mapa")mapTab();
+  if(id==="viaje"){renderHome();requestAnimationFrame(()=>window.mvFitTitle&&window.mvFitTitle())}if(id==="gastos")renderG();if(id==="comer")renderR();if(id==="moda")renderM();if(id==="tiempo")renderWx();if(id==="mapa")mapTab();if(id==="encuesta")renderEnc();
   requestAnimationFrame(carState);
   $("ft").hidden=id!=="viaje";renderFt();
 }
@@ -1732,6 +1802,151 @@ function preTiles(){try{if(LS("tiles")===2)return;const t=(la,lo,z)=>{const n=2*
   const u=[...set];window.mvTiles=u.length;let i=0,ok=0;const next=()=>{if(i>=u.length){if(ok>u.length*.9)SS("tiles",2);return}if(!navigator.onLine){setTimeout(next,15000);return}fetch(u[i++],{mode:"cors"}).then(r=>{if(r.ok)ok++}).catch(()=>{}).finally(()=>setTimeout(next,150))};next()}catch(e){}}
 /* sin conexión: solo en la web publicada */
 if("serviceWorker" in navigator&&/github\.io$|pages\.dev$/.test(location.hostname)){try{navigator.serviceWorker.register("sw.js").then(()=>navigator.serviceWorker.ready).then(()=>{if(navigator.onLine)setTimeout(preTiles,4000)}).catch(()=>{})}catch(e){}}
+
+
+/* ---------- «Cerca de mí»: buscar bares, farmacias, súper… alrededor (OpenStreetMap, sin claves) ---------- */
+const NBC={
+ bar:{l:"Bar",ls:"Bares",ic:"moon",q:['nwr["amenity"~"^(bar|pub|biergarten)$"]']},
+ cafe:{l:"Café",ls:"Cafés",ic:"cup",q:['nwr["amenity"="cafe"]']},
+ rest:{l:"Restaurante",ls:"Restaurantes",ic:"food",q:['nwr["amenity"~"^(restaurant|fast_food)$"]']},
+ farm:{l:"Farmacia",ls:"Farmacias",ic:"plus",q:['nwr["amenity"="pharmacy"]']},
+ sup:{l:"Supermercado",ls:"Súper",ic:"bag",q:['nwr["shop"~"^(supermarket|convenience)$"]']},
+ atm:{l:"Cajero",ls:"Cajeros",ic:"info",q:['nwr["amenity"="atm"]','nwr["amenity"="bank"]["atm"="yes"]']},
+ wc:{l:"Baño público",ls:"Baños",ic:"info",q:['nwr["amenity"="toilets"]']},
+ dulce:{l:"Pastelería",ls:"Pastelerías",ic:"cake",q:['nwr["shop"~"^(pastry|confectionery|bakery)$"]']},
+ tela:{l:"Telas y mercería",ls:"Telas",ic:"scissors",q:['nwr["shop"~"^(fabric|haberdashery|sewing)$"]']}};
+const NBW=[[/cerve|chela|birra|pub|\bbar|copa|trago|vino|vermut/,"bar"],[/caf[eé]|cafeter/,"cafe"],[/comer|restaur|almuerz|cena|comida|tapas|menu|menú/,"rest"],[/farmac|remedio|medicamento/,"farm"],[/s[uú]per|almac[eé]n|minimarket|mercad(o|ito)$|tienda de comida/,"sup"],[/cajero|plata|dinero|efectivo|banco/,"atm"],[/ba[ñn]o|\bwc\b|servicio|toilet/,"wc"],[/pastel|panader|dulce|torta|queque|bolle/,"dulce"],[/tela|merc[eé]r|costur|hilo|bot[oó]n/,"tela"]];
+const OVP=["https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter"];
+let NB=null,NBME=null,nbLast=null,nbBusy=false;
+function nbMsg(t,warn){$("nblist").innerHTML=t?`<p class="note${warn?" nbwarn":""}">${t}</p>`:""}
+function nbDist(a,b){const R=6371000,r=Math.PI/180,dl=(b[0]-a[0])*r,dg=(b[1]-a[1])*r;const x=Math.sin(dl/2)**2+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin(dg/2)**2;return 2*R*Math.asin(Math.sqrt(x))}
+function nbWhere(){return new Promise(res=>{
+  const near=ll=>Object.keys(C).some(c=>nbDist(ll,cityCenter(c))<15000);
+  const fallback=why=>{const c=LM?LM.getCenter():null;res({ll:c?[c.lat,c.lng]:cityCenter(mcityM||Object.keys(C)[0]),note:why})};
+  if(typeof ME!=="undefined"&&ME){const p=ME.getLatLng();const ll=[p.lat,p.lng];return near(ll)?res({ll,gps:1}):fallback("Estás lejos de las ciudades del viaje: busco cerca del centro del mapa.")}
+  if(!navigator.geolocation)return fallback("Este celular no da la ubicación: busco cerca del centro del mapa.");
+  navigator.geolocation.getCurrentPosition(p=>{const ll=[p.coords.latitude,p.coords.longitude];near(ll)?res({ll,gps:1}):fallback("Estás lejos de las ciudades del viaje: busco cerca del centro del mapa.")},
+    e=>fallback(e.code===1?"Sin permiso de ubicación: busco cerca del centro del mapa. Puedes mover el mapa y buscar de nuevo.":"No encuentro la señal de GPS: busco cerca del centro del mapa."),
+    {enableHighAccuracy:true,timeout:12000,maximumAge:60000})})}
+async function nbQuery(parts,ll,R){const body="[out:json][timeout:20];("+parts.map(x=>`${x}(around:${R},${ll[0]},${ll[1]});`).join("")+");out center tags 60;";
+  let err;for(const u of OVP){try{const r=await fetch(u,{method:"POST",body:"data="+encodeURIComponent(body),headers:{"Content-Type":"application/x-www-form-urlencoded"}});if(!r.ok)throw new Error(r.status);return (await r.json()).elements||[]}catch(e){err=e}}throw err}
+function nbCat(txt){const t=txt.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");for(const [re,k] of NBW)if(re.test(t)||re.test(txt.toLowerCase()))return k;return null}
+async function nbSearch(kind,txt){if(nbBusy)return;
+  if(!navigator.onLine){nbMsg("Para buscar lo que hay cerca necesitas internet. Los puntos del viaje y el mapa guardado sí funcionan sin señal.",1);return}
+  nbBusy=true;$("nbbox").classList.add("busy");nbMsg("Buscando cerca de ti…");
+  initMap();
+  try{const w=await nbWhere();let k=kind||nbCat(txt||""),parts,label;
+    if(k){parts=NBC[k].q;label=NBC[k].ls}else{const s=(txt||"").trim().replace(/[\\^$.*+?()[\]{}|"]/g,"");if(s.length<2){nbMsg("Escribe qué buscas, por ejemplo «cerveza» o «farmacia».");return}parts=[`nwr["name"~"${s}",i]`];label="«"+txt.trim()+"»"}
+    let els=await nbQuery(parts,w.ll,700);if(els.length<4)els=await nbQuery(parts,w.ll,1600);
+    const list=els.map(e=>{const la=e.lat??e.center?.lat,lo=e.lon??e.center?.lon;if(la==null)return null;const t=e.tags||{};
+      return{n:t.name||t.brand||"",k,la,lo,d:nbDist(w.ll,[la,lo]),h:t.opening_hours||"",a:[t["addr:street"],t["addr:housenumber"]].filter(Boolean).join(" ")}}).filter(Boolean)
+      .filter(x=>x.n||k==="atm"||k==="wc").sort((a,b)=>a.d-b.d).slice(0,20);
+    nbLast={w,list,label,k};nbShow();
+  }catch(e){nbMsg("No se pudo buscar ahora (el servicio de mapas no responde). Prueba de nuevo en un momento.",1)}
+  finally{nbBusy=false;$("nbbox").classList.remove("busy")}}
+function nbShow(){const {w,list,label,k}=nbLast;
+  if(!NB)NB=L.layerGroup().addTo(LM);NB.clearLayers();$("mapw").classList.add("nbon");
+  if(!w.gps||!(typeof ME!=="undefined"&&ME))NB.addLayer(L.circleMarker(w.ll,{radius:7,color:"#fff",weight:2.5,fillColor:"#2f80ff",fillOpacity:1}));
+  const mins=d=>Math.max(1,Math.round(d/80));
+  const fmt=d=>d<1000?Math.round(d/10)*10+" m":(d/1000).toFixed(1).replace(".",",")+" km";
+  list.forEach((x,i)=>{x.m=L.marker([x.la,x.lo],{icon:L.divIcon({className:"lpin nbpin",html:`<span>${i+1}</span>`,iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-14]}),title:x.n,zIndexOffset:500})
+    .bindPopup(`<div class="lpop"><b>${esc(x.n||NBC[x.k||k]?.l||"Lugar")}</b><small>${fmt(x.d)} · ${mins(x.d)} min a pie</small><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=${x.la},${x.lo}" target="_blank" rel="noopener" aria-label="Ver ${esc(x.n||"el lugar")} en Google Maps">Ver en Google Maps</a></div>`).addTo(NB)});
+  if(list.length){const b=L.latLngBounds(list.slice(0,8).map(x=>[x.la,x.lo]).concat([w.ll]));LM.fitBounds(b,{padding:[30,30],maxZoom:17})}
+  const lab=k?NBC[k].l:"";
+  $("nblist").innerHTML=(w.note?`<p class="note nbwarn">${w.note}</p>`:"")+(list.length?`<p class="nbh"><b>${label}</b> cerca de ${w.gps?"ti":"este punto"} · ${list.length}<button type="button" class="nbclr" id="nbclr">Quitar del mapa</button></p><ol class="nbl">${list.map((x,i)=>`<li><button type="button" class="nbgo" data-nb="${i}"><span class="nbn">${i+1}</span><span class="nbt"><b>${esc(x.n||lab||"Lugar")}</b><small>${fmt(x.d)} · ${mins(x.d)} min a pie${x.a?` · ${esc(x.a)}`:""}</small>${x.h?`<small class="nbhr">Horario: ${esc(x.h.replace(/Mo/g,"lu").replace(/Tu/g,"ma").replace(/We/g,"mi").replace(/Th/g,"ju").replace(/Fr/g,"vi").replace(/Sa/g,"sá").replace(/Su/g,"do").replace(/PH/g,"festivos").replace(/off/g,"cerrado"))}</small>`:""}</span></button><a class="nbmaps" href="https://www.google.com/maps/search/?api=1&query=${x.la},${x.lo}" target="_blank" rel="noopener" aria-label="Ver ${esc(x.n||lab||"el lugar")} en Google Maps">${ico("go",2)}</a></li>`).join("")}</ol><p class="note">Datos de OpenStreetMap: a veces falta el horario o algún local. Antes de ir lejos, mira la ficha en Google Maps.</p>`
+     :`<p class="note">No encontré ${label} a menos de 1,6 km. Prueba con otra palabra o mueve el mapa y busca de nuevo.</p>`);
+  $("nblist").scrollIntoView&&0}
+$("nbcats").innerHTML=Object.entries(NBC).map(([k,c])=>`<button type="button" data-nbk="${k}">${ico(c.ic,2)}${c.ls}</button>`).join("");
+$("nbcats").onclick=e=>{const b=e.target.closest("[data-nbk]");if(!b)return;document.querySelectorAll("#nbcats button").forEach(x=>x.classList.toggle("on",x===b));$("nbq").value="";nbSearch(b.dataset.nbk)};
+$("nbform").onsubmit=e=>{e.preventDefault();const v=$("nbq").value.trim();if(!v)return;document.querySelectorAll("#nbcats button").forEach(x=>x.classList.remove("on"));$("nbq").blur();nbSearch(null,v)};
+$("nblist").onclick=e=>{if(e.target.closest("#nbclr")){NB&&NB.clearLayers();$("mapw").classList.remove("nbon");nbLast=null;nbMsg("");document.querySelectorAll("#nbcats button").forEach(x=>x.classList.remove("on"));return}
+  const b=e.target.closest("[data-nb]");if(!b||!nbLast)return;const x=nbLast.list[+b.dataset.nb];goTo($("mapw"),90);setTimeout(()=>{LM.setView([x.la,x.lo],Math.max(LM.getZoom(),17));x.m.openPopup()},350)};
+/* voz: si el navegador sabe escuchar (Chrome en Android sí; en iPhone, mejor el micrófono del teclado) */
+(function(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;const b=$("nbmic");if(!SR){b.remove();return}
+  let r=null;b.onclick=()=>{if(r){r.stop();return}r=new SR();r.lang="es-ES";r.interimResults=false;r.maxAlternatives=1;b.classList.add("rec");$("nbq").placeholder="Te escucho…";
+    r.onresult=ev=>{const t=ev.results[0][0].transcript;$("nbq").value=t;nbSearch(null,t)};
+    r.onend=()=>{b.classList.remove("rec");$("nbq").placeholder="Bar, farmacia, súper…";r=null};r.onerror=r.onend;try{r.start()}catch(e){r.onend()}}})();
+
+/* ---------- encuesta al volver: corta, en la app; se envía por WhatsApp a Javier (y a una hoja de Google si hay dirección) ---------- */
+const ENC_WA="34652058047";      /* WhatsApp del negocio */
+const ENC_URL="";                /* dirección del Apps Script de encuestas (vacía = solo WhatsApp) */
+const ENC_APP="Mis Vacaciones";
+const ENC_USO=["El día de hoy","El mapa","Cerca de mí","Dónde estoy","Comer","Moda","El clima","Los gastos"];
+let ENC={nota:0,uso:[],sirvio:"",falto:"",cambios:"",reco:""};
+function encDue(t){const last=DAYS[DAYS.length-1].d;const hr=(typeof SIMH==="number"&&SIMH!==null)?SIMH:new Date().getHours();return t.ph==="after"||(t.ph==="trip"&&t.d===last&&hr>=12)}
+function encCard(){const done=LS("enc");return `<button type="button" class="enccard${done?" done":""}" data-go="encuesta">${ico(done?"heart":"list",2)}<span><b>${done?"¡Gracias por contarnos!":"¿Cómo te fue con la app?"}</b><small>${done?"Si quieres, puedes cambiar tus respuestas.":"Seis preguntas, un minuto. Nos ayuda a mejorarla."}</small></span>${ico("chev",2)}</button>`}
+function renderEnc(){const s=LS("encd");if(s)ENC=Object.assign(ENC,s);
+  const opt=(k,vals)=>`<div class="encopt" data-k="${k}">${vals.map(v=>`<button type="button" class="${ENC[k]===v?"on":""}" data-v="${esc(v)}">${esc(v)}</button>`).join("")}</div>`;
+  $("encform").innerHTML=`
+  <div class="box"><p class="encq"><b>1.</b> ¿Qué nota le pones a la app?</p><div class="encstars" role="radiogroup" aria-label="Nota de 1 a 5">${[1,2,3,4,5].map(n=>`<button type="button" role="radio" aria-checked="${ENC.nota===n}" aria-label="${n} de 5" data-star="${n}" class="${ENC.nota>=n?"on":""}">★</button>`).join("")}</div></div>
+  <div class="box"><p class="encq"><b>2.</b> ¿Qué usaste más? <small>Puedes marcar varias.</small></p><div class="encopt multi">${ENC_USO.map(v=>`<button type="button" class="${ENC.uso.includes(v)?"on":""}" data-u="${esc(v)}">${esc(v)}</button>`).join("")}</div></div>
+  <div class="box"><p class="encq"><b>3.</b> ¿Qué te sirvió más?</p><textarea id="enc-sirvio" rows="2" placeholder="Por ejemplo: el mapa sin internet">${esc(ENC.sirvio)}</textarea></div>
+  <div class="box"><p class="encq"><b>4.</b> ¿Qué te faltó o qué cambiarías?</p><textarea id="enc-falto" rows="2" placeholder="Lo que sea, aunque sea pequeño">${esc(ENC.falto)}</textarea></div>
+  <div class="box"><p class="encq"><b>5.</b> ¿Cambiaste la agenda durante el viaje?</p>${opt("cambios",["Nada","Algunos días","Casi todo"])}</div>
+  <div class="box"><p class="encq"><b>6.</b> ¿La recomendarías a alguien que va de viaje?</p>${opt("reco",["Sí","Tal vez","No"])}</div>
+  <button type="button" class="btn encsend" id="encsend">${ico("go",2)} Enviar a Javier por WhatsApp</button>
+  <p class="note">Se abre WhatsApp con tus respuestas ya escritas: solo tienes que tocar enviar.${LS("enc")?" Ya la enviaste una vez, ¡gracias!":""}</p>`}
+function encSave(){ENC.sirvio=($("enc-sirvio")||{}).value||"";ENC.falto=($("enc-falto")||{}).value||"";SS("encd",ENC)}
+$("encform").addEventListener("click",e=>{const s=e.target.closest("[data-star]");if(s){ENC.nota=+s.dataset.star;encSave();renderEnc();return}
+  const u=e.target.closest("[data-u]");if(u){const v=u.dataset.u;ENC.uso=ENC.uso.includes(v)?ENC.uso.filter(x=>x!==v):ENC.uso.concat(v);encSave();u.classList.toggle("on");return}
+  const o=e.target.closest(".encopt[data-k] [data-v]");if(o){const k=o.closest("[data-k]").dataset.k;ENC[k]=o.dataset.v;encSave();o.parentNode.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b===o));return}
+  if(e.target.closest("#encsend")){encSave();
+    if(!ENC.nota&&!ENC.uso.length&&!ENC.sirvio&&!ENC.falto){alertEnc("Responde al menos una pregunta antes de enviar.");return}
+    const txt=`Encuesta de «${ENC_APP}»\n⭐ Nota: ${ENC.nota?ENC.nota+" de 5":"—"}\n📱 Lo que más usé: ${ENC.uso.join(", ")||"—"}\n👍 Lo que más me sirvió: ${ENC.sirvio.trim()||"—"}\n🛠 Lo que me faltó o cambiaría: ${ENC.falto.trim()||"—"}\n🔄 ¿Cambié la agenda?: ${ENC.cambios||"—"}\n💬 ¿La recomendaría?: ${ENC.reco||"—"}`;
+    if(ENC_URL){try{fetch(ENC_URL,{method:"POST",mode:"no-cors",body:JSON.stringify(Object.assign({app:ENC_APP,fecha:new Date().toISOString()},ENC))}).catch(()=>{})}catch(err){}}
+    SS("enc",new Date().toISOString().slice(0,10));
+    window.open("https://wa.me/"+ENC_WA+"?text="+encodeURIComponent(txt),"_blank","noopener");
+    setTimeout(renderEnc,500)}});
+$("encform").addEventListener("input",e=>{if(e.target.matches("textarea"))encSave()});
+function alertEnc(t){const n=$("encform").querySelector(".encerr");if(n)n.remove();$("encsend").insertAdjacentHTML("beforebegin",`<p class="note encerr">${esc(t)}</p>`)}
+
+/* ---------- reorganizar la agenda: mover o quitar planes, cambiar días entre sí, ideas sin día (se guarda en el celular) ---------- */
+var PLR=null,PL=null,PK0={},D0=null;
+function PLFIX(ic){return ic==="✈️"||ic==="🧳"||ic==="🚄"}
+function plKey(){return "plan"}
+function plSave(){SS(plKey(),PL)}
+function plEdited(){return PL&&(Object.keys(PL.mv).length||PL.sk.length||PL.sw.length)}
+function applyPlan(){
+  if(!D0){D0=DAYS.map(x=>({d:x.d,t:x.t,w:x.w,it:x.it.map((it,i)=>{const k=x.d+":"+i;PK0[k]=(PARTS[x.d]||"")[i]||"t";return it.slice(0,5).concat([k])})}))}
+  PL=Object.assign({mv:{},sk:[],sw:[]},LS(plKey())||{});
+  const by={};D0.forEach(x=>by[x.d]={t:x.t,w:x.w,it:x.it.slice(),sw:0});
+  PL.sw.forEach(([a,b])=>{if(by[a]&&by[b]){const ta=by[a];by[a]=by[b];by[b]=ta;by[a].sw=b;by[b].sw=a}});
+  const all={};D0.forEach(x=>x.it.forEach(it=>all[it[5]]=it));
+  Object.values(by).forEach(v=>v.it=v.it.filter(it=>!PL.sk.includes(it[5])&&!PL.mv[it[5]]));
+  Object.entries(PL.mv).forEach(([k,d])=>{if(all[k]&&by[d]&&!PL.sk.includes(k))by[d].it.push(all[k])});
+  const po={m:0,t:1,n:2};
+  DAYS.forEach(x=>{const v=by[x.d];const it=v.it.map((a,i)=>[a,i]).sort((p,q)=>po[PK0[p[0][5]]]-po[PK0[q[0][5]]]||p[1]-q[1]).map(p=>p[0]);
+    x.t=v.t;x.w=v.w;x.it=it;x.sw=v.sw;x.mod=!!v.sw||it.some(a=>PL.mv[a[5]])||D0.find(y=>y.d===x.d).it.some(a=>PL.sk.includes(a[5])||PL.mv[a[5]]);PARTS[x.d]=it.map(a=>PK0[a[5]]).join("")});
+  PLR=1}
+function plCityDays(c){return DAYS.filter(x=>x.c===c)}
+function planDayTools(x){if(!PLR)return "";const c=x.c,others=plCityDays(c).filter(y=>y.d!==x.d&&y.cs.length===1&&x.cs.length===1);
+  return `<div class="pltools">${x.mod?`<span class="plmod">${ico("info",2)} Cambiaste este día</span>`:""}${others.length?`<details class="plsw"><summary>${ico("swap",2)} Cambiar este día con otro</summary><div class="plch">${others.map(y=>`<button type="button" data-swap="${x.d}:${y.d}">${wd(y.d)} ${y.d}</button>`).join("")}</div><small class="plwarn">Ojo con los horarios: algunos sitios cierran ciertos días.</small></details>`:""}</div>`}
+function planIdeas(c){if(!PLR)return "";const D=D0;const ks=PL.sk.filter(k=>{const it=plItem(k);return it&&it[4]===c});
+  const wa=`https://wa.me/${typeof ENC_WA!=="undefined"?ENC_WA:"34652058047"}?text=${encodeURIComponent("Hola Javier, quiero cambiar mi agenda de «Mis Vacaciones»: ")}`;
+  return `<div class="box blk plbox"><h3 class="bh"><span class="bi">${ico("swap",2)}</span>Tu agenda, a tu ritmo</h3>
+  <p class="note">Toca ${ico("dots",2.4).replace("<svg",'<svg class="inl"')} en cualquier plan para pasarlo a otro día o quitarlo. Lo que quites queda aquí, en «Ideas sin día».</p>
+  ${ks.length?`<p class="plh"><b>Ideas sin día</b> · ${ks.length}</p><ul class="plideas">${ks.map(k=>{const it=plItem(k);return `<li><span class="ic">${ico(EM[it[0]])}</span><span><span class="pltx">${esc(short(it[1]))}</span><span class="plch">${plCityDays(c).map(y=>`<button type="button" data-add="${k}:${y.d}">${wd(y.d)} ${y.d}</button>`).join("")}</span></span></li>`}).join("")}</ul>`:""}
+  <div class="plfoot"><a class="btn ghost" href="${wa}" target="_blank" rel="noopener">${ico("go",2)} Pedir cambio de ciudad o fechas</a>${plEdited()?`<button type="button" class="pllink" data-reset="1">Volver a la agenda original</button>`:""}</div></div>`}
+let plT=null;function plToast(t){let n=$("pltoast");if(!n){document.body.insertAdjacentHTML("beforeend",`<div id="pltoast" class="pltoast" role="status"></div>`);n=$("pltoast")}n.textContent=t;n.classList.add("in");clearTimeout(plT);plT=setTimeout(()=>n.classList.remove("in"),2600)}
+function plItem(k){for(const x of D0)for(const it of x.it)if(it[5]===k)return it;return null}
+function plRedraw(keepDay){const h=decodeURIComponent(location.hash.slice(1));const city=Object.keys(C).find(c=>C[c].slug===h);const y=scrollY;
+  if(city){openCity(city,keepDay);requestAnimationFrame(()=>window.scrollTo(0,y));cityMap(city)}renderFt&&renderFt()}
+$("s-city").addEventListener("click",e=>{if(!PLR)return;
+  const m=e.target.closest("[data-plm]");if(m){e.stopPropagation();const li=m.closest("li");const open=li.nextElementSibling&&li.nextElementSibling.classList.contains("plmenu");
+    document.querySelectorAll(".plmenu").forEach(x=>x.remove());document.querySelectorAll("[data-plm]").forEach(b=>b.setAttribute("aria-expanded","false"));if(open)return;
+    const k=m.dataset.plm,it=plItem(k),cur=DAYS.find(x=>x.it.some(a=>a[5]===k));
+    const ds=plCityDays(it[4]).filter(y=>y.d!==cur.d);
+    li.insertAdjacentHTML("afterend",`<li class="plmenu"><div><p>Pasar a otro día</p><div class="plch">${ds.map(y=>`<button type="button" data-mv="${k}:${y.d}">${wd(y.d)} ${y.d}</button>`).join("")||"<small>No hay otro día en esta ciudad.</small>"}</div><div class="plrow"><button type="button" class="pllink" data-skip="${k}">Quitar del día (queda en «Ideas sin día»)</button>${PL.mv[k]?`<button type="button" class="pllink" data-back="${k}">Devolver a su día</button>`:""}</div></div></li>`);
+    m.setAttribute("aria-expanded","true");return}
+  const mv=e.target.closest("[data-mv]");if(mv){const [k,d]=mv.dataset.mv.split(/:(?=\d+$)/);const orig=+k.split(":")[0];const here=+(mv.closest("article")||{id:"d0"}).id.slice(1);if(+d===orig)delete PL.mv[k];else PL.mv[k]=+d;plSave();applyPlan();plRedraw(here);plToast("Pasado al "+wdl(+d)+" "+d);return}
+  const sk=e.target.closest("[data-skip]");if(sk){const k=sk.dataset.skip;if(!PL.sk.includes(k))PL.sk.push(k);delete PL.mv[k];plSave();const d=+(sk.closest("article")||{id:"d0"}).id.slice(1);applyPlan();plRedraw(d);plToast("Quitado: queda en «Ideas sin día», arriba");return}
+  const bk=e.target.closest("[data-back]");if(bk){delete PL.mv[bk.dataset.back];plSave();applyPlan();plRedraw(+bk.dataset.back.split(":")[0]);return}
+  const ad=e.target.closest("[data-add]");if(ad){const [k,d]=ad.dataset.add.split(/:(?=\d+$)/);PL.sk=PL.sk.filter(x=>x!==k);if(+d!==+k.split(":")[0])PL.mv[k]=+d;else delete PL.mv[k];plSave();applyPlan();plRedraw(+d);setTimeout(()=>goTo($("d"+d)),200);plToast("Añadido al "+wdl(+d)+" "+d);return}
+  const sw=e.target.closest("[data-swap]");if(sw){const [a,b]=sw.dataset.swap.split(":").map(Number);const i=PL.sw.findIndex(p=>p.includes(a)||p.includes(b));
+    const ex=PL.sw.find(p=>p.includes(a)&&p.includes(b));if(ex)PL.sw=PL.sw.filter(p=>p!==ex);else{PL.sw=PL.sw.filter(p=>!p.includes(a)&&!p.includes(b));PL.sw.push([a,b])}plSave();applyPlan();plRedraw(a);plToast("Días cambiados");return}
+  if(e.target.closest("[data-reset]")){if(!confirm("¿Volver a la agenda original? Se deshacen todos los cambios."))return;PL={mv:{},sk:[],sw:[]};plSave();applyPlan();plRedraw();return}
+},true);
+applyPlan();route_();
 
 }
 </script>
@@ -1810,9 +2025,10 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&sh&&!sh.hidden)show
   /* visita */
   if(DE)ev("abrió la app");else send(url(location.pathname,false,document.title));
   /* pestañas */
-  const TAB={"":"Viaje",viaje:"Viaje",mapa:"Mapa",comer:"Comer",moda:"Moda",tiempo:"Clima",gastos:"Gastos",madrid:"Madrid",barcelona:"Barcelona",praga:"Praga"};let lastTab=null;
+  const TAB={"":"Viaje",viaje:"Viaje",mapa:"Mapa",comer:"Comer",moda:"Moda",tiempo:"Clima",gastos:"Gastos",encuesta:"Encuesta",madrid:"Madrid",barcelona:"Barcelona",praga:"Praga"};let lastTab=null;
   function tab(){const h=decodeURIComponent(location.hash.slice(1));const n=TAB[h];if(n&&n!==lastTab){lastTab=n;ev("pestaña "+n)}}
   window.addEventListener("hashchange",tab);tab();
+  document.addEventListener("submit",e=>{if(e.target&&e.target.id==="nbform")ev("cerca: búsqueda escrita")},true);
   /* toques */
   const once={};const ev1=n=>{if(once[n])return;once[n]=1;ev(n)};
   document.addEventListener("click",e=>{const t=e.target;
@@ -1824,6 +2040,16 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&sh&&!sh.hidden)show
     if(t.closest("[data-mk2]"))ev1("filtro del mapa");
     if(t.closest(".mebtn"))ev1("usó «Dónde estoy»");
     if(t.closest("#thBtn,[aria-controls=thSheet],.thbtn"))ev1("abrió «Estilo app»");
+    const nk=t.closest("[data-nbk]");if(nk)ev("cerca: "+nk.textContent.trim().toLowerCase());
+    if(t.closest("#nbmic"))ev1("cerca: usó la voz");
+    if(t.closest(".nbgo,.nbmaps"))ev1("cerca: abrió un resultado");
+    if(t.closest("#encsend"))ev("envió la encuesta");
+    if(t.closest("[data-mv]"))ev("agenda: pasó un plan a otro día");
+    if(t.closest("[data-skip]"))ev("agenda: quitó un plan");
+    if(t.closest("[data-add]"))ev("agenda: añadió una idea a un día");
+    if(t.closest("[data-swap]"))ev("agenda: cambió dos días");
+    if(t.closest("[data-reset]"))ev("agenda: volvió a la original");
+    if(t.closest(".plfoot a[href*='wa.me']"))ev("agenda: pidió cambio por WhatsApp");
   },true);
   /* «Dónde estoy» y cambio de estilo */
   let th=document.documentElement.dataset.theme;
