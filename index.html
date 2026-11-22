@@ -1815,6 +1815,7 @@ const NBC={
  wc:{l:"Baño público",ls:"Baños",ic:"info",q:['nwr["amenity"="toilets"]']},
  dulce:{l:"Pastelería",ls:"Pastelerías",ic:"cake",q:['nwr["shop"~"^(pastry|confectionery|bakery)$"]']},
  tela:{l:"Telas y mercería",ls:"Telas",ic:"scissors",q:['nwr["shop"~"^(fabric|haberdashery|sewing)$"]']}};
+const NBP={bar:["amenity:bar","amenity:pub","amenity:biergarten"],cafe:["amenity:cafe"],rest:["amenity:restaurant","amenity:fast_food"],farm:["amenity:pharmacy"],sup:["shop:supermarket","shop:convenience"],atm:["amenity:atm","amenity:bank"],wc:["amenity:toilets"],dulce:["shop:pastry","shop:confectionery","shop:bakery"],tela:["shop:fabric","shop:haberdashery","shop:sewing"]};
 const NBW=[[/cerve|chela|birra|pub|\bbar|copa|trago|vino|vermut/,"bar"],[/caf[eé]|cafeter/,"cafe"],[/comer|restaur|almuerz|cena|comida|tapas|menu|menú/,"rest"],[/farmac|remedio|medicamento/,"farm"],[/s[uú]per|almac[eé]n|minimarket|mercad(o|ito)$|tienda de comida/,"sup"],[/cajero|plata|dinero|efectivo|banco/,"atm"],[/ba[ñn]o|\bwc\b|servicio|toilet/,"wc"],[/pastel|panader|dulce|torta|queque|bolle/,"dulce"],[/tela|merc[eé]r|costur|hilo|bot[oó]n/,"tela"]];
 const OVP=["https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter"];
 let NB=null,NBME=null,nbLast=null,nbBusy=false;
@@ -1830,6 +1831,13 @@ function nbWhere(){return new Promise(res=>{
     {enableHighAccuracy:true,timeout:12000,maximumAge:60000})})}
 async function nbQuery(parts,ll,R){const body="[out:json][timeout:20];("+parts.map(x=>`${x}(around:${R},${ll[0]},${ll[1]});`).join("")+");out center tags 60;";
   let err;for(const u of OVP){try{const r=await fetch(u,{method:"POST",body:"data="+encodeURIComponent(body),headers:{"Content-Type":"application/x-www-form-urlencoded"}});if(!r.ok)throw new Error(r.status);return (await r.json()).elements||[]}catch(e){err=e}}throw err}
+/* Photon (OpenStreetMap, rápido): lo más cercano por tipo, o por nombre */
+async function nbPhoton(k,txt,ll,km){const ac=new AbortController();const to=setTimeout(()=>ac.abort(),9000);
+  try{const u=k?`https://photon.komoot.io/reverse?lat=${ll[0]}&lon=${ll[1]}&radius=${km}&limit=30&${NBP[k].map(t=>"osm_tag="+t).join("&")}`
+      :`https://photon.komoot.io/api/?q=${encodeURIComponent(txt)}&lat=${ll[0]}&lon=${ll[1]}&limit=30&location_bias_scale=0.1&zoom=16`;
+    const r=await fetch(u,{signal:ac.signal});if(!r.ok)throw new Error(r.status);const j=await r.json();
+    return (j.features||[]).map(f=>{const p=f.properties||{},c=f.geometry.coordinates;return{n:p.name||"",la:c[1],lo:c[0],h:"",a:[p.street,p.housenumber].filter(Boolean).join(" ")}})}
+  finally{clearTimeout(to)}}
 function nbCat(txt){const t=txt.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");for(const [re,k] of NBW)if(re.test(t)||re.test(txt.toLowerCase()))return k;return null}
 async function nbSearch(kind,txt){if(nbBusy)return;
   if(!navigator.onLine){nbMsg("Para buscar lo que hay cerca necesitas internet. Los puntos del viaje y el mapa guardado sí funcionan sin señal.",1);return}
@@ -1837,10 +1845,15 @@ async function nbSearch(kind,txt){if(nbBusy)return;
   initMap();
   try{const w=await nbWhere();let k=kind||nbCat(txt||""),parts,label;
     if(k){parts=NBC[k].q;label=NBC[k].ls}else{const s=(txt||"").trim().replace(/[\\^$.*+?()[\]{}|"]/g,"");if(s.length<2){nbMsg("Escribe qué buscas, por ejemplo «cerveza» o «farmacia».");return}parts=[`nwr["name"~"${s}",i]`];label="«"+txt.trim()+"»"}
-    let els=await nbQuery(parts,w.ll,700);if(els.length<4)els=await nbQuery(parts,w.ll,1600);
-    const list=els.map(e=>{const la=e.lat??e.center?.lat,lo=e.lon??e.center?.lon;if(la==null)return null;const t=e.tags||{};
-      return{n:t.name||t.brand||"",k,la,lo,d:nbDist(w.ll,[la,lo]),h:t.opening_hours||"",a:[t["addr:street"],t["addr:housenumber"]].filter(Boolean).join(" ")}}).filter(Boolean)
-      .filter(x=>x.n||k==="atm"||k==="wc").sort((a,b)=>a.d-b.d).slice(0,20);
+    let raw=null;
+    try{raw=await nbPhoton(k,(txt||"").trim(),w.ll,0.8);if(k&&raw.length<4)raw=await nbPhoton(k,"",w.ll,2)}catch(e){raw=null}
+    if(!raw){let els=await nbQuery(parts,w.ll,700);if(els.length<4)els=await nbQuery(parts,w.ll,1600);
+      raw=els.map(e=>{const la=e.lat??e.center?.lat,lo=e.lon??e.center?.lon;if(la==null)return null;const t=e.tags||{};
+        return{n:t.name||t.brand||"",la,lo,h:t.opening_hours||"",a:[t["addr:street"],t["addr:housenumber"]].filter(Boolean).join(" ")}}).filter(Boolean)}
+    const seen=new Set();
+    const list=raw.map(x=>Object.assign(x,{k,d:nbDist(w.ll,[x.la,x.lo])})).filter(x=>x.d<(k?2100:3000))
+      .filter(x=>x.n||k==="atm"||k==="wc").filter(x=>{const id=x.n+"|"+x.la.toFixed(4)+x.lo.toFixed(4);if(seen.has(id))return false;seen.add(id);return true})
+      .sort((a,b)=>a.d-b.d).slice(0,20);
     nbLast={w,list,label,k};nbShow();
   }catch(e){nbMsg("No se pudo buscar ahora (el servicio de mapas no responde). Prueba de nuevo en un momento.",1)}
   finally{nbBusy=false;$("nbbox").classList.remove("busy")}}
@@ -1854,7 +1867,7 @@ function nbShow(){const {w,list,label,k}=nbLast;
   if(list.length){const b=L.latLngBounds(list.slice(0,8).map(x=>[x.la,x.lo]).concat([w.ll]));LM.fitBounds(b,{padding:[30,30],maxZoom:17})}
   const lab=k?NBC[k].l:"";
   $("nblist").innerHTML=(w.note?`<p class="note nbwarn">${w.note}</p>`:"")+(list.length?`<p class="nbh"><b>${label}</b> cerca de ${w.gps?"ti":"este punto"} · ${list.length}<button type="button" class="nbclr" id="nbclr">Quitar del mapa</button></p><ol class="nbl">${list.map((x,i)=>`<li><button type="button" class="nbgo" data-nb="${i}"><span class="nbn">${i+1}</span><span class="nbt"><b>${esc(x.n||lab||"Lugar")}</b><small>${fmt(x.d)} · ${mins(x.d)} min a pie${x.a?` · ${esc(x.a)}`:""}</small>${x.h?`<small class="nbhr">Horario: ${esc(x.h.replace(/Mo/g,"lu").replace(/Tu/g,"ma").replace(/We/g,"mi").replace(/Th/g,"ju").replace(/Fr/g,"vi").replace(/Sa/g,"sá").replace(/Su/g,"do").replace(/PH/g,"festivos").replace(/off/g,"cerrado"))}</small>`:""}</span></button><a class="nbmaps" href="https://www.google.com/maps/search/?api=1&query=${x.la},${x.lo}" target="_blank" rel="noopener" aria-label="Ver ${esc(x.n||lab||"el lugar")} en Google Maps">${ico("go",2)}</a></li>`).join("")}</ol><p class="note">Datos de OpenStreetMap: a veces falta el horario o algún local. Antes de ir lejos, mira la ficha en Google Maps.</p>`
-     :`<p class="note">No encontré ${label} a menos de 1,6 km. Prueba con otra palabra o mueve el mapa y busca de nuevo.</p>`);
+     :`<p class="note">No encontré ${label} a menos de 2 km. Prueba con otra palabra o mueve el mapa y busca de nuevo.</p>`);
   $("nblist").scrollIntoView&&0}
 $("nbcats").innerHTML=Object.entries(NBC).map(([k,c])=>`<button type="button" data-nbk="${k}">${ico(c.ic,2)}${c.ls}</button>`).join("");
 $("nbcats").onclick=e=>{const b=e.target.closest("[data-nbk]");if(!b)return;document.querySelectorAll("#nbcats button").forEach(x=>x.classList.toggle("on",x===b));$("nbq").value="";nbSearch(b.dataset.nbk)};
