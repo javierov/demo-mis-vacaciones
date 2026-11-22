@@ -1228,7 +1228,7 @@ const C={
  Barcelona:{c:"var(--bcn2)",s1:"#c4e4f2",s2:"#2c5f8a",slug:"barcelona",f:"barcelona"},
  Praga:{c:"var(--prg)",s1:"#e6d8f2",s2:"#43356a",slug:"praga",f:"praga-azul"}};
 /* ciudades: nombre, noches, etiqueta corta, fechas largas, texto de la tarjeta */
-const STOPS=[["Madrid",2,"18 – 20","18 – 20 de noviembre","2 noches"],["Barcelona",5,"20 – 25","20 – 25 de noviembre","5 noches"],["Praga",1,"25 – 26","25 – 26 de noviembre","1 noche"]];
+const STOPS=[["Madrid",2,"18 – 20","18 – 20 de noviembre","2 noches"],["Barcelona",2,"20 – 22","20 – 22 de noviembre","2 noches"],["Praga",4,"22 – 26","22 – 26 de noviembre","4 noches"]];
 const map=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
 const route=q=>"https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(q);
 /* días: cada plan = [icono, texto, búsqueda en Maps, etiqueta, ciudad] */
@@ -1262,39 +1262,37 @@ const DAYS=[
   ["👗","Tarde en la Riera Baixa (Raval): los sábados las tiendas vintage sacan la ropa a la calle. Lullaby, en el número 22.","Carrer de la Riera Baixa Barcelona",0,"Barcelona"],
   ["🥐","Chocolate con churros en la Granja La Pallaresa, en la calle Petritxol.","Granja La Pallaresa Barcelona",0,"Barcelona"],
   ["🍸","Noche en el Raval o el Born, a un paso.","Rambla del Raval Barcelona",0,"Barcelona"]]},
- {d:22,c:"Barcelona",cs:["Barcelona"],t:"Gaudí, Gràcia y los miradores",w:"Sagrada Família, vermut y los Búnkers",it:[
-  ["⛪","Sagrada Família. Reservar la entrada en la web oficial: se agota.","Sagrada Família",2,"Barcelona"],
-  ["🥐","De la Sagrada Família a Gràcia por el Passeig de Sant Joan: parada en la Pastisseria Carrió, premiada por sus panellets (mirar horario del domingo).","Pastisseria Carrió Passeig de Sant Joan Barcelona",0,"Barcelona"],
-  ["🚶","Paseo por Gràcia: plazas pequeñas, cafés y la Casa Vicens por fuera.","Plaça del Sol Barcelona",0,"Barcelona"],
-  ["🍽️","Vermut del domingo con tapas en una plaza de Gràcia, muy de aquí.","vermut Gràcia Barcelona",0,"Barcelona"],
-  ["🌅","Atardecer en los Búnkers del Carmel, gratis: toda la ciudad y el mar. Anochece hacia las 17:25.","Búnkers del Carmel Barcelona",0,"Barcelona"],
-  ["🍸","Noche de domingo, más tranquila: una copa en las plazas de Gràcia.","Plaça de la Virreina Barcelona",0,"Barcelona"]]},
- {d:23,c:"Barcelona",cs:["Barcelona"],t:"Mercado, modernismo y pasteles",w:"La Boqueria, Passeig de Gràcia, Mauri y L'Atelier",it:[
-  ["🥪","Mercat de la Boqueria a primera hora, antes de que se llene: zumos, fruta y algo en la barra.","Mercat de la Boqueria",0,"Barcelona"],
-  ["🏛️","Passeig de Gràcia: Casa Batlló y La Pedrera. Por fuera, gratis; por dentro, con entrada.","Casa Batlló Barcelona",1,"Barcelona"],
-  ["🥐","Merienda en la Pastisseria Mauri, salón de té de 1929 en la Rambla de Catalunya, muy cerca.","Pastisseria Mauri Rambla de Catalunya 102",0,"Barcelona"],
-  ["🥐","De camino a Montjuïc, L'Atelier (calle Viladomat): elegida la mejor pastelería de Cataluña.","L'Atelier Barcelona Viladomat 140",0,"Barcelona"],
-  ["🖼️","CaixaForum, en Montjuïc: exposiciones en una antigua fábrica modernista. Abre los lunes, cuando muchos museos cierran.","CaixaForum Barcelona",0,"Barcelona"],
-  ["🍸","Noche de pintxos en la calle Blai (Poble-sec): baratos y con mucho ambiente.","Carrer de Blai Barcelona",0,"Barcelona"]]},
- {d:24,c:"Barcelona",cs:["Barcelona"],t:"Último día en Barcelona",w:"Pastelerías de la zona alta y noche tranquila",it:[
-  ["🥐","Desayuno dulce en Escribà, la pastelería modernista de La Rambla.","Escribà La Rambla Barcelona",0,"Barcelona"],
-  ["🥐","Mañana de pastelerías en la zona alta: Foix de Sarrià, Baixas y Oriol Balaguer, cerca entre sí. Se llega en los trenes FGC desde plaza Catalunya.","Foix de Sarrià Major de Sarrià 57",0,"Barcelona"],
-  ["🚶","Tarde libre para lo que quedó pendiente: Passeig de Gràcia, el Born o la Barceloneta.","Platja de la Barceloneta",0,"Barcelona"],
-  ["🧳","Noche tranquila y maleta hecha: mañana vuela temprano a Praga. Al aeropuerto: Aerobús desde plaza Catalunya (unos 35 min) o metro L9.","Aeropuerto de Barcelona-El Prat",0,"Barcelona"]]},
- {d:25,c:"Praga",cs:["Barcelona","Praga"],t:"Praga: Ciudad Vieja y barrio judío",w:"Reloj Astronómico, Josefov y moda en el UPM",it:[
-  ["✈️","Vuelo temprano de Barcelona a Praga; llegada hacia las 10:00. Del aeropuerto al centro: trolebús 59 hasta Nádraží Veleslavín y metro A, con un billete de 90 minutos (50 coronas; 46 en la app PID Lítačka).","Nádraží Veleslavín",4,"Praga"],
+ {d:22,c:"Barcelona",cs:["Barcelona","Praga"],t:"Último día en Barcelona y vuelo a Praga",w:"Museu del Disseny, cervezas en Glòries y vuelo a las 20:00",it:[
+  ["🧳","Mañana tranquila y maleta lista. Si hay que dejar el alojamiento a mediodía, preguntar si guardan la maleta hasta la tarde.","",0,"Barcelona"],
+  ["👗","Museu del Disseny, en Glòries: la sala «El cuerpo vestido» recorre la moda de 1550 a 2015. Los domingos la entrada es gratis desde las 15:00; abre hasta las 20:00.","Museu del Disseny de Barcelona",0,"Barcelona"],
+  ["🍸","16:00 · Cervezas con Javier cerca de Glòries.","Plaça de les Glòries Catalanes Barcelona",0,"Barcelona"],
+  ["🧳","Hacia las 17:00, al aeropuerto: en taxi, unos 30 min desde Glòries, o en Aerobús desde plaza Catalunya, unos 35 min. Llegar hacia las 18:00 y mirar la terminal en la tarjeta de embarque.","Aeropuerto de Barcelona-El Prat",0,"Barcelona"],
+  ["✈️","20:00 · Vuelo a Praga, unas 2 h 15 min. Del aeropuerto al centro de noche y con maletas, lo más cómodo es Uber, Bolt o el taxi de la parada oficial. El trolebús 59 y el metro A funcionan hasta cerca de medianoche.","Letiště Václava Havla Praha",0,"Praga"]]},
+ {d:23,c:"Praga",cs:["Praga"],t:"Ciudad Vieja y barrio judío",w:"Reloj Astronómico, Josefov y telas",it:[
   ["⛪","Plaza de la Ciudad Vieja y el Reloj Astronómico, que se mueve a cada hora en punto.","Staroměstské náměstí Praha",0,"Praga"],
   ["🏛️","Barrio judío (Josefov): sinagogas y el antiguo cementerio, con entrada conjunta. Cierra los sábados.","Jewish Museum in Prague",1,"Praga"],
-  ["👗","Museo de Artes Decorativas (UPM), a un paso: textiles y moda, vidrio y joyas. De miércoles a domingo, de 10:00 a 18:00; entrada 350 coronas.","Uměleckoprůmyslové museum v Praze",1,"Praga"],
+  ["🍽️","Almuerzo checo en Lokál Dlouhááá (Dlouhá 33): gulash, svíčková y cerveza de tanque.","Lokál Dlouhá Praha",0,"Praga"],
+  ["👗","Telas y mercería, a cinco minutos una de otra: Filium, en el centro Palladium (todos los días, de 9:00 a 21:00), y Stoklasa, en Senovážné náměstí (de lunes a viernes, de 9:00 a 19:00).","Filium galanterie Palladium Praha",0,"Praga"],
   ["🥐","Merienda en la Cukrárna Myšák (Vodičkova 31), pastelería de 1911.","Cukrárna Myšák Praha",0,"Praga"],
-  ["🎄","Mercadillo de Navidad de Náměstí Republiky: abre justo el 25 de noviembre (10:00–20:00).","Náměstí Republiky Praha",0,"Praga"],
-  ["🍸","Noche: el Puente de Carlos iluminado y una cerveza checa en el centro.","Karlův most",0,"Praga"]]},
- {d:26,c:"Praga",cs:["Praga"],t:"El Castillo, Malá Strana y salida",w:"Mañana completa y vuelo a Viena a las 16:45",it:[
+  ["🍸","Noche: el Puente de Carlos iluminado (anochece hacia las 16:05) y una cerveza checa en el centro.","Karlův most",0,"Praga"]]},
+ {d:24,c:"Praga",cs:["Praga"],t:"El Castillo, Malá Strana y el UPM",w:"Castillo temprano y museo de moda abierto hasta las 20:00",it:[
   ["🏰","Castillo de Praga temprano, antes de que se llene: catedral de San Vito y el Callejón del Oro (con entrada).","Pražský hrad",1,"Praga"],
-  ["🚶","Bajada por la calle Nerudova hasta Malá Strana y el Puente de Carlos de día.","Nerudova Praha",0,"Praga"],
-  ["☕","Café Savoy (Vítězná 5), café clásico junto a Malá Strana: un café y una tarta.","Café Savoy Praha",0,"Praga"],
-  ["👗","Vintage antes de comer: Laly (Štupartská 3), en la Ciudad Vieja, o Quasimodo (Vladislavova 17).","Laly vintage Štupartská 3 Praha",0,"Praga"],
-  ["✈️","Vuelo a Viena a las 16:45: estar en el aeropuerto hacia las 15:00. Salir del centro sobre las 14:00 (metro A hasta Nádraží Veleslavín y trolebús 59, unos 40 min) o en el Airport Express desde la estación central.","Letiště Václava Havla Praha",0,"Praga"]]}];
+  ["🚶","Bajada por la calle Nerudova hasta Malá Strana.","Nerudova Praha",0,"Praga"],
+  ["☕","Café Savoy (Vítězná 5), café clásico junto a Malá Strana: un café y su strudel de manzana.","Café Savoy Praha",0,"Praga"],
+  ["🌳","Isla de Kampa y el Puente de Carlos de día, cruzando a la Ciudad Vieja.","Kampa Praha",0,"Praga"],
+  ["👗","Museo de Artes Decorativas (UPM): textiles y moda, vidrio y joyas. Los martes abre hasta las 20:00; entrada 350 coronas.","Uměleckoprůmyslové museum v Praze",1,"Praga"],
+  ["🍸","Noche tranquila en Malá Strana: una cena checa en una taberna junto al río.","pivnice Malá Strana Praha",0,"Praga"]]},
+ {d:25,c:"Praga",cs:["Praga"],t:"Vinohrady, vintage y mercadillos",w:"Mercadillos de Navidad y tiendas vintage",it:[
+  ["🎄","Mercadillo de Navidad de Náměstí Míru, en Vinohrady, frente a la iglesia de Santa Ludmila: de 10:00 a 19:00 (metro A, estación Náměstí Míru).","Náměstí Míru Praha",0,"Praga"],
+  ["👗","Vintage: Quasimodo (Vladislavova 17, escondida en un patio) y Laly (Štupartská 3), en la Ciudad Vieja.","Quasimodo Vintage Fashion Praha",0,"Praga"],
+  ["☕","Merienda en el Café Louvre (Národní 22), gran café abierto desde 1902.","Café Louvre Praha",0,"Praga"],
+  ["🎄","Mercadillo de Navidad de Náměstí Republiky: abre justo hoy, de 10:00 a 20:00.","Náměstí Republiky Praha",0,"Praga"],
+  ["🍸","Última noche en Praga: cena checa y una cerveza en la Ciudad Vieja.","Staroměstské náměstí Praha",0,"Praga"]]},
+ {d:26,c:"Praga",cs:["Praga"],t:"Letná y salida",w:"Mirador de Letná y vuelo a Viena a las 16:45",it:[
+  ["🌳","Parque Letná: desde el gran metrónomo se ven todos los puentes del Moldava.","Pražský metronom Letná",0,"Praga"],
+  ["🥐","Erhartova cukrárna (Milady Horákové 56), pastelería de 1937 con el interior original: todos los días, de 10:00 a 19:00.","Erhartova cukrárna Letná Praha",0,"Praga"],
+  ["👗","Kuráž (Veletržní 48): ropa y complementos de diseñadores jóvenes checos y eslovacos. De lunes a viernes, de 11:00 a 19:00.","Kuráž Veletržní 48 Praha",0,"Praga"],
+  ["✈️","Vuelo a Viena a las 16:45: estar en el aeropuerto hacia las 15:00. Salir de Letná sobre las 14:00: tranvía hasta Hradčanská, metro A hasta Nádraží Veleslavín y trolebús 59.","Letiště Václava Havla Praha",0,"Praga"]]}];
 const NOMBRE="Claudia";
 /* puntos del mapa: nombre, ciudad, tipo (p = plan, c = comer, m = moda), lat, lng, día (si es un plan), búsqueda en Maps */
 const PTS=[
@@ -1324,48 +1322,52 @@ const PTS=[
  ["Ribes & Casals","Barcelona","m",41.39015,2.17257,0,"Ribes & Casals Roger de Llúria 7 Barcelona"],
  ["Mercería Santa Anna","Barcelona","m",41.38726,2.17292,0,"Mercería Santa Anna Carrer de les Moles 22 Barcelona"],
  ["Antigua Pasamanería J. Soler","Barcelona","m",41.38234,2.17350,0,"Antigua Pasamanería J. Soler Plaça del Pi Barcelona"],
- ["Filium (mercería)","Praga","m",50.08943,14.42964,25,"Filium galanterie Palladium Praha"],
- ["Stoklasa (telas)","Praga","m",50.08604,14.43134,25,"Stoklasa Senovážné náměstí Praha"],
+ ["Filium (mercería)","Praga","m",50.08943,14.42964,23,"Filium galanterie Palladium Praha"],
+ ["Stoklasa (telas)","Praga","m",50.08604,14.43134,23,"Stoklasa Senovážné náměstí Praha"],
  ["Els Encants","Barcelona","m",41.40095,2.18623,21,"Mercat dels Encants Barcelona"],
- ["Museu del Disseny","Barcelona","m",41.40260,2.18805,21,"Museu del Disseny de Barcelona"],
+ ["Museu del Disseny","Barcelona","m",41.40260,2.18805,22,"Museu del Disseny de Barcelona"],
  ["Riera Baixa (vintage)","Barcelona","m",41.38028,2.16815,21,"Carrer de la Riera Baixa Barcelona"],
  ["Mahalo Vintage","Barcelona","m",41.40406,2.15585,0,"Mahalo Vintage Plaça del Diamant Barcelona"],
- ["Sagrada Família","Barcelona","p",41.40350,2.17443,22,"Sagrada Família"],
- ["Plaça del Sol (Gràcia)","Barcelona","p",41.40162,2.15671,22,"Plaça del Sol Barcelona"],
- ["Búnkers del Carmel","Barcelona","p",41.41939,2.16170,22,"Búnkers del Carmel Barcelona"],
- ["Mercat de la Boqueria","Barcelona","c",41.38174,2.17155,23,"Mercat de la Boqueria"],
- ["Casa Batlló","Barcelona","p",41.39154,2.16470,23,"Casa Batlló Barcelona"],
- ["La Pedrera","Barcelona","p",41.39540,2.16176,23,"La Pedrera Barcelona"],
- ["CaixaForum","Barcelona","p",41.37148,2.14972,23,"CaixaForum Barcelona"],
- ["Calle Blai (pintxos)","Barcelona","c",41.37308,2.16611,23,"Carrer de Blai Barcelona"],
+ ["Sagrada Família","Barcelona","p",41.40350,2.17443,0,"Sagrada Família"],
+ ["Plaça del Sol (Gràcia)","Barcelona","p",41.40162,2.15671,0,"Plaça del Sol Barcelona"],
+ ["Búnkers del Carmel","Barcelona","p",41.41939,2.16170,0,"Búnkers del Carmel Barcelona"],
+ ["Mercat de la Boqueria","Barcelona","c",41.38174,2.17155,0,"Mercat de la Boqueria"],
+ ["Casa Batlló","Barcelona","p",41.39154,2.16470,0,"Casa Batlló Barcelona"],
+ ["La Pedrera","Barcelona","p",41.39540,2.16176,0,"La Pedrera Barcelona"],
+ ["CaixaForum","Barcelona","p",41.37148,2.14972,0,"CaixaForum Barcelona"],
+ ["Calle Blai (pintxos)","Barcelona","c",41.37308,2.16611,0,"Carrer de Blai Barcelona"],
  ["Pastisseria Hofmann","Barcelona","c",41.38505,2.18267,20,"Pastisseria Hofmann Barcelona"],
  ["Bubó","Barcelona","c",41.38313,2.18185,20,"Bubó Born Caputxes 10 Barcelona"],
  ["La Colmena","Barcelona","c",41.38379,2.17823,20,"La Colmena Plaça de l'Àngel Barcelona"],
  ["Granja La Pallaresa","Barcelona","c",41.38289,2.17289,21,"Granja La Pallaresa Barcelona"],
- ["Pastisseria Mauri","Barcelona","c",41.39390,2.15994,23,"Pastisseria Mauri Rambla de Catalunya 102"],
- ["Escribà","Barcelona","c",41.38153,2.17270,24,"Escribà La Rambla Barcelona"],
- ["Foix de Sarrià","Barcelona","c",41.39800,2.12257,24,"Foix de Sarrià Major de Sarrià 57"],
- ["Pastisseria Baixas","Barcelona","c",41.39763,2.14463,24,"Pastisseria Baixas Muntaner 331 Barcelona"],
- ["Oriol Balaguer","Barcelona","c",41.39486,2.13818,24,"Oriol Balaguer Plaça Sant Gregori Taumaturg Barcelona"],
+ ["Pastisseria Mauri","Barcelona","c",41.39390,2.15994,0,"Pastisseria Mauri Rambla de Catalunya 102"],
+ ["Escribà","Barcelona","c",41.38153,2.17270,0,"Escribà La Rambla Barcelona"],
+ ["Foix de Sarrià","Barcelona","c",41.39800,2.12257,0,"Foix de Sarrià Major de Sarrià 57"],
+ ["Pastisseria Baixas","Barcelona","c",41.39763,2.14463,0,"Pastisseria Baixas Muntaner 331 Barcelona"],
+ ["Oriol Balaguer","Barcelona","c",41.39486,2.13818,0,"Oriol Balaguer Plaça Sant Gregori Taumaturg Barcelona"],
  ["La Cova Fumada","Barcelona","c",41.37930,2.18919,0,"La Cova Fumada Barcelona"],
  ["El Xampanyet","Barcelona","c",41.38450,2.18174,0,"El Xampanyet Barcelona"],
- ["Plaza de la Ciudad Vieja y Reloj Astronómico","Praga","p",50.08698,14.42071,25,"Staroměstské náměstí Praha"],
- ["Barrio judío (Josefov)","Praga","p",50.08882,14.41887,25,"Jewish Museum in Prague"],
- ["Museo de Artes Decorativas (UPM)","Praga","m",50.08991,14.41645,25,"Uměleckoprůmyslové museum v Praze"],
+ ["Plaza de la Ciudad Vieja y Reloj Astronómico","Praga","p",50.08698,14.42071,23,"Staroměstské náměstí Praha"],
+ ["Barrio judío (Josefov)","Praga","p",50.08882,14.41887,23,"Jewish Museum in Prague"],
+ ["Museo de Artes Decorativas (UPM)","Praga","m",50.08991,14.41645,24,"Uměleckoprůmyslové museum v Praze"],
  ["Mercadillo de Náměstí Republiky","Praga","m",50.08880,14.43064,25,"Náměstí Republiky Praha"],
- ["Puente de Carlos","Praga","p",50.08700,14.40795,25,"Karlův most"],
- ["Castillo de Praga","Praga","p",50.09081,14.40052,26,"Pražský hrad"],
- ["Calle Nerudova","Praga","p",50.08854,14.40082,26,"Nerudova Praha"],
- ["Mercadillo de Náměstí Míru","Praga","m",50.07510,14.43737,0,"Náměstí Míru Praha"],
- ["Quasimodo Vintage Fashion","Praga","m",50.08085,14.42101,26,"Quasimodo Vintage Fashion Praha"],
- ["Laly","Praga","m",50.08771,14.42367,26,"Laly vintage Štupartská 3 Praha"],
- ["Cukrárna Myšák","Praga","c",50.08126,14.42432,25,"Cukrárna Myšák Praha"],
- ["Café Savoy","Praga","c",50.08093,14.40722,26,"Café Savoy Praha"],
- ["Café Louvre","Praga","c",50.08207,14.41873,0,"Café Louvre Praha"],
- ["Lokál Dlouhááá","Praga","c",50.09070,14.42576,0,"Lokál Dlouhá Praha"]];
+ ["Puente de Carlos","Praga","p",50.08700,14.40795,23,"Karlův most"],
+ ["Castillo de Praga","Praga","p",50.09081,14.40052,24,"Pražský hrad"],
+ ["Calle Nerudova","Praga","p",50.08854,14.40082,24,"Nerudova Praha"],
+ ["Mercadillo de Náměstí Míru","Praga","m",50.07510,14.43737,25,"Náměstí Míru Praha"],
+ ["Quasimodo Vintage Fashion","Praga","m",50.08085,14.42101,25,"Quasimodo Vintage Fashion Praha"],
+ ["Laly","Praga","m",50.08771,14.42367,25,"Laly vintage Štupartská 3 Praha"],
+ ["Cukrárna Myšák","Praga","c",50.08126,14.42432,23,"Cukrárna Myšák Praha"],
+ ["Café Savoy","Praga","c",50.08093,14.40722,24,"Café Savoy Praha"],
+ ["Café Louvre","Praga","c",50.08207,14.41873,25,"Café Louvre Praha"],
+ ["Isla de Kampa","Praga","p",50.08388,14.40766,24,"Kampa Praha"],
+ ["Mirador de Letná (metrónomo)","Praga","p",50.09474,14.41594,26,"Pražský metronom Letná"],
+ ["Erhartova cukrárna (Letná)","Praga","c",50.10010,14.42550,26,"Erhartova cukrárna Letná Praha"],
+ ["Kuráž","Praga","m",50.10079,14.42500,26,"Kuráž Veletržní 48 Praha"],
+ ["Lokál Dlouhááá","Praga","c",50.09070,14.42576,23,"Lokál Dlouhá Praha"]];
 const PK={p:["Planes","var(--steel2)"],c:["Comer","#d98a3d"],m:["Moda","#c95f9a"]};
 /* momento del día de cada plan: m = mañana, t = tarde, n = noche (uno por plan, en orden) */
-const PARTS={18:"mmttnn",19:"mtttnn",20:"mmmttttn",21:"mmttn",22:"mmtttn",23:"mmtttn",24:"mmtn",25:"mmttttn",26:"mmmtt"};
+const PARTS={18:"mmttnn",19:"mtttnn",20:"mmmttttn",21:"mmttn",22:"mtttn",23:"mmtttn",24:"mmtttn",25:"mtttn",26:"mmmt"};
 const TAG=["","Con entrada","Reservar ya","Comprar billete","Por confirmar"];
 
 /* dónde comer: nombre, ciudad, tipo, precio, nota, búsqueda, barrio */
@@ -1422,7 +1424,7 @@ const MO=[
  ["Mercadillo de Náměstí Míru","Praga","mercado","Mercado de Navidad frente a la iglesia de Santa Ludmila. Desde el 20 de noviembre, de 10:00 a 19:00.","Náměstí Míru Praha","Vinohrady"],
  ["Quasimodo Vintage Fashion","Praga","tienda","Ropa vintage y de segunda mano con muchos complementos, escondida en un patio (Vladislavova 17).","Quasimodo Vintage Fashion Praha","Nové Město"],
  ["Laly","Praga","tienda","Boutique de la Ciudad Vieja con vintage elegido a mano (Štupartská 3).","Laly vintage Štupartská 3 Praha","Staré Město"],
- ["Kuzmarkt","Praga","tienda","Tienda vintage y de segunda mano en Letná, el barrio más bohemio.","Kuzmarkt Praha","Letná"]];
+ ["Kuráž","Praga","tienda","Ropa, complementos y regalos de diseñadores jóvenes checos y eslovacos. De lunes a viernes, de 11:00 a 19:00; sábado, de 11:00 a 16:00.","Kuráž Veletržní 48 Praha","Letná"]];
 const MT={museo:["Museos de moda","hanger"],mercado:["Mercadillos","bag"],tienda:["Tiendas vintage","shirt"],tela:["Telas y mercerías","scissors"]};
 const MNOTE={Madrid:"El Rastro solo abre los domingos y esta vez no coincide.",Praga:"El gran mercado de Navidad de la Plaza de la Ciudad Vieja abre el 28 de noviembre, después de tu viaje: los de Náměstí Republiky y Náměstí Míru ya estarán abiertos."};
 const RT={dulce:["Pastelerías y dulces","cake"],calle:["De calle","food"],tapas:["Tapas y noche","moon"]};
