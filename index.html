@@ -1204,9 +1204,10 @@ svg.leaflet-image-layer.leaflet-interactive path {
   <div class="ph scrim hero" id="hero"></div>
   <div class="sheet">
     <div class="stats" id="stats"></div>
-    <div id="cideas"></div><div id="cstay"></div>
+    <div id="cstay"></div>
     <h2>Día a día</h2>
     <div id="cdays"></div>
+    <div id="cideas"></div>
     <div id="cmapslot"></div>
   </div>
 </section>
@@ -1917,9 +1918,9 @@ function planDayTools(x){if(!PLR)return "";const c=x.c,others=plCityDays(c).filt
 function planIdeas(c){if(!PLR)return "";const D=D0;const ks=PL.sk.filter(k=>{const it=plItem(k);return it&&it[4]===c});
   const wa=`https://wa.me/34652058047?text=${encodeURIComponent("Hola Javier, quiero cambiar mi agenda de «Mis Vacaciones»: ")}`;
   return `<div class="box blk plbox"><h3 class="bh"><span class="bi">${ico("swap",2)}</span>Tu agenda, a tu ritmo</h3>
-  <p class="note">Toca ${ico("dots",2.4).replace("<svg",'<svg class="inl"')} en cualquier plan para pasarlo a otro día o quitarlo. Lo que quites queda aquí, en «Ideas sin día».</p>
+  <p class="note">Toca ${ico("dots",2.4).replace("<svg",'<svg class="inl"')} en cualquier plan para pasarlo a otro día o quitarlo. Lo que quites queda aquí, en «Ideas sin día». Para cambiar de ciudad o de fechas, escríbeme.</p>
   ${ks.length?`<p class="plh"><b>Ideas sin día</b> · ${ks.length}</p><ul class="plideas">${ks.map(k=>{const it=plItem(k);return `<li><span class="ic">${ico(EM[it[0]])}</span><span><span class="pltx">${esc(short(it[1]))}</span><span class="plch">${plCityDays(c).map(y=>`<button type="button" data-add="${k}:${y.d}">${wd(y.d)} ${y.d}</button>`).join("")}</span></span></li>`}).join("")}</ul>`:""}
-  <div class="plfoot"><a class="btn ghost" href="${wa}" target="_blank" rel="noopener">${ico("go",2)} Pedir cambio de ciudad o fechas</a>${plEdited()?`<button type="button" class="pllink" data-reset="1">Volver a la agenda original</button>`:""}</div></div>`}
+  <div class="plfoot"><a class="btn ghost" href="${wa}" target="_blank" rel="noopener">${ico("go",2)} Pedir otro cambio</a>${plEdited()?`<button type="button" class="pllink" data-reset="1">Volver a la agenda original</button>`:""}</div></div>`}
 let plT=null;function plToast(t){let n=$("pltoast");if(!n){document.body.insertAdjacentHTML("beforeend",`<div id="pltoast" class="pltoast" role="status"></div>`);n=$("pltoast")}n.textContent=t;n.classList.add("in");clearTimeout(plT);plT=setTimeout(()=>n.classList.remove("in"),2600)}
 function plItem(k){for(const x of D0)for(const it of x.it)if(it[5]===k)return it;return null}
 function plRedraw(keepDay){const h=decodeURIComponent(location.hash.slice(1));const city=Object.keys(C).find(c=>C[c].slug===h);const y=scrollY;
