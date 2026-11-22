@@ -509,6 +509,19 @@ button.ft{font:inherit}
 .nbqw input::-webkit-search-cancel-button{-webkit-appearance:none;display:none}
 .nbform .nbx{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:var(--line2);color:inherit}
 .nbform .nbx[hidden]{display:none}.nbform .nbx svg{width:18px;height:18px}
+.hbbox{margin-top:18px}.hbt{margin:16px 0 6px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.7}
+.hbl{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.hbl li{display:grid;grid-template-columns:minmax(0,1fr) 48px;gap:8px;align-items:stretch}
+.hbf{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;padding:10px 12px;border-radius:14px;border:0;background:none;box-shadow:inset 0 0 0 1px var(--line2);color:inherit;font:inherit;cursor:pointer;min-width:0}
+.hbf small{font-size:13px;opacity:.7}.hbf b{font-size:18px;line-height:1.25;overflow-wrap:anywhere}.hbf i{font-size:13px;opacity:.65;font-style:normal}
+.hbs{display:grid;place-items:center;border-radius:14px;border:0;background:var(--btn);color:var(--btnInk);cursor:pointer}.hbs svg{width:24px;height:24px}
+.hbsteps{margin:4px 0 12px;padding-left:20px;display:grid;gap:6px;font-size:15px;line-height:1.45}
+.hbgo{display:flex;justify-content:center;text-align:center;width:100%;white-space:normal}
+.hbnov{color:#e0a84d}
+.hbbig{position:fixed;inset:0;z-index:9999;background:#fff;color:#111;display:grid;place-items:center;padding:24px;cursor:pointer}
+.hbbig[hidden]{display:none}.hbbig>div{display:grid;gap:18px;text-align:center}
+.hbbig b{font-size:clamp(34px,11vw,64px);line-height:1.15;overflow-wrap:anywhere}.hbbig small{font-size:20px;opacity:.6}.hbbig span{font-size:14px;opacity:.45;margin-top:20px}
+a.nbhoy{text-decoration:none}
 </style>
 <style>/* Leaflet 1.9.4 — BSD-2-Clause, © Volodymyr Agafonkin */
 /* required styles */
@@ -1209,6 +1222,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
     <div id="cdays"></div>
     <div id="cideas"></div>
     <div id="cmapslot"></div>
+    <div id="chablar"></div>
   </div>
 </section>
 
@@ -1591,7 +1605,7 @@ function hoyBox(t){const x=dayOf(t.d);if(!x)return "";
   return `<div class="box hoy"><h3 class="bh"><span class="bi">${ico(p==="n"?"moon":"sunny",2)}</span>${G0}, ${esc(NOMBRE)}</h3>
     <p class="hsub">${wdl(x.d)} ${x.d} de ${MES} · ${esc(where)}</p><p class="hl3">${intro}</p>${its.length?`<ul class="list">${its.map(([i,tx])=>`<li><span class="ic">${ico(EM[i])}</span><span>${esc(tx)}</span></li>`).join("")}</ul>`:""}${after?`<p class="nxt">${after}</p>`:""}
     <button type="button" class="hw" data-go="tiempo">${wimg(w.code,"whw")}<span><b>${w.hi}° / ${w.lo}°</b> · ${ropaC(w)}</span></button>
-    <div class="acts"><button class="btn" type="button" data-open="${x.c}" data-day="${x.d}">Ver el día</button><button class="btn ghost" type="button" data-go="gastos">Anotar gasto</button></div><button type="button" class="nbhoy" data-go="mapa" data-nbfocus="1">${ico("pin",2)}<span>¿Buscas algo cerca? Bar, farmacia, súper…</span>${ico("chev",2)}</button></div>`}
+    <div class="acts"><button class="btn" type="button" data-open="${x.c}" data-day="${x.d}">Ver el día</button><button class="btn ghost" type="button" data-go="gastos">Anotar gasto</button></div><button type="button" class="nbhoy" data-go="mapa" data-nbfocus="1">${ico("pin",2)}<span>¿Buscas algo cerca? Bar, farmacia, súper…</span>${ico("chev",2)}</button>${talkHoy(x)}</div>`}
 function renderHome(){
   const t=T();let h="";
   if(t.ph==="trip")h=hoyBox(t);
@@ -1773,7 +1787,7 @@ function route_(){
   let h=decodeURIComponent(location.hash.slice(1));
   const m=h.match(/^prueba-(\d+)(?:-(\d+))?$/);if(m){SIM=dayOf(+m[1])?+m[1]:0;SIMH=SIM&&m[2]!==undefined?+m[2]:null;try{SIM?sessionStorage.setItem("mv-sim",SIM):sessionStorage.removeItem("mv-sim");SIMH!==null?sessionStorage.setItem("mv-simh",SIMH):sessionStorage.removeItem("mv-simh")}catch(e){}gsel=null;rcity=null;mcity=null;mtab=null;history.replaceState(null,"",location.pathname+location.search);h="";resetForm()}
   const city=Object.keys(C).find(c=>C[c].slug===h);
-  if(city){openCity(city,pend);pend=0;show("city");window.scrollTo({top:0});$("cmapslot").innerHTML=`<button type="button" class="nbhoy cmapgo" data-go="mapa" data-mt="${city}">${ico("pin",2)}<span>Ver ${city} en el mapa y buscar cerca</span>${ico("chev",2)}</button>`;$("ft").hidden=false;renderFt();return}
+  if(city){openCity(city,pend);pend=0;show("city");window.scrollTo({top:0});$("cmapslot").innerHTML=`<button type="button" class="nbhoy cmapgo" data-go="mapa" data-mt="${city}">${ico("pin",2)}<span>Ver ${city} en el mapa y buscar cerca</span>${ico("chev",2)}</button>`;$("chablar").innerHTML=talkBox(city);if(HBGO){HBGO=0;setTimeout(()=>goTo($("hbbox"),70),150)}$("ft").hidden=false;renderFt();return}
   const id=["mapa","comer","moda","tiempo","gastos"].includes(h)?h:"viaje";
   show(id);window.scrollTo({top:0});
   if(id==="viaje"){renderHome();requestAnimationFrame(()=>window.mvFitTitle&&window.mvFitTitle())}if(id==="gastos")renderG();if(id==="comer")renderR();if(id==="moda")renderM();if(id==="tiempo")renderWx();if(id==="mapa")mapTab();
@@ -1893,6 +1907,44 @@ function opCal(t){const el=$("opcal");if(!el||!OP_URL)return;
   el.hidden=false}
 document.addEventListener("click",e=>{if(e.target.closest("#opno")){SS("opahora",Date.now()+7*864e5);opCal(T());requestAnimationFrame(fitHoy)}});
 window.addEventListener("pageshow",()=>{try{opCal(T())}catch(e){}});
+/* ---------- Hablar: frases en el idioma local (sin internet) + Google Traductor ---------- */
+var HB={
+ Barcelona:{l:"ca",n:"catalán",gt:"ca",
+  intro:"En Barcelona todos hablan castellano: el catalán es un gesto que siempre se agradece.",
+  g:[["Saludar",[["Buenos días","Bon dia","bon dí-a"],["Buenas tardes","Bona tarda","bó-na tár-da"],["Buenas noches","Bona nit","bó-na nit"],["Gracias","Gràcies","grá-si-es"],["Por favor","Si us plau","si us pláu"],["Perdone","Perdoni","per-dó-ni"],["Adiós","Adéu","a-déu"]]],
+     ["En el bar",[["Una caña, por favor","Una canya, si us plau","ú-na ká-ña, si us pláu"],["Un café con leche","Un cafè amb llet","un ka-fé am liet"],["La cuenta, por favor","El compte, si us plau","el kóm-te, si us pláu"],["¿Dónde está el baño?","On és el lavabo?","on es el la-vá-bu"],["¿Cuánto cuesta?","Quant costa?","kuan kós-ta"]]]]},
+ Praga:{l:"cs",n:"checo",gt:"cs",
+  intro:"En el centro mucha gente habla inglés, pero en tiendas de barrio, tranvías y bares chicos, unas palabras en checo abren puertas.",
+  g:[["Saludar",[["Buenos días / Hola","Dobrý den","dó-brii den"],["Buenas noches (al saludar)","Dobrý večer","dó-brii vé-cher"],["Gracias","Děkuji","dié-ku-yi"],["Por favor","Prosím","pró-siim"],["Perdone","Promiňte","pró-miñ-te"],["¿Habla inglés?","Mluvíte anglicky?","mlú-vii-te án-glits-ki"],["No entiendo","Nerozumím","né-ro-zu-miim"],["Adiós","Na shledanou","nas-jlé-da-nou"]]],
+     ["Comer y beber",[["Una cerveza, por favor","Jedno pivo, prosím","yéd-no pí-vo, pró-siim"],["Un café con leche, por favor","Kávu s mlékem, prosím","káa-vu s mlée-kem, pró-siim"],["Agua sin gas","Vodu bez bublinek","vó-du bez bú-bli-nek"],["Sin carne, por favor","Bez masa, prosím","bez má-sa, pró-siim"],["La cuenta, por favor","Zaplatím, prosím","zá-pla-tiim, pró-siim"],["¿Puedo pagar con tarjeta?","Můžu platit kartou?","múu-zhu plá-tit kár-tou"],["¿Dónde está el baño?","Kde je toaleta?","gde ye tó-a-le-ta"]]],
+     ["Comprar",[["¿Cuánto cuesta?","Kolik to stojí?","kó-lik to stó-yii"],["¿Lo tiene en otra talla?","Máte to v jiné velikosti?","máa-te to v yí-nee vé-li-kos-ti"],["Solo estoy mirando, gracias","Jen se dívám, děkuji","yen se díi-vaam, dié-ku-yi"],["¿A qué hora cierran?","V kolik zavíráte?","f kó-lik zá-vii-raa-te"]]],
+     ["Moverse",[["¿Dónde está el metro?","Kde je metro?","gde ye mé-tro"],["¿Dónde está la parada del tranvía?","Kde je zastávka tramvaje?","gde ye zás-taaf-ka trám-va-ye"],["Al aeropuerto, por favor","Na letiště, prosím","na lé-tish-tie, pró-siim"]]],
+     ["Si pasa algo",[["Necesito una farmacia","Potřebuji lékárnu","pó-trzhe-bu-yi lée-kaar-nu"],["Llame a un médico, por favor","Zavolejte lékaře, prosím","zá-vo-lei-te lée-ka-rzhe, pró-siim"],["¡Ayuda!","Pomoc!","pó-mots"]]]]}};
+var HBGO=0;
+function hbGT(c){return "https://translate.google.com/?sl=es&tl="+HB[c].gt+"&op=translate"}
+function hbVoice(l){try{return speechSynthesis.getVoices().find(v=>v.lang.replace("_","-").toLowerCase().startsWith(l))||null}catch(e){return null}}
+function talkBox(c){if(!HB)return "";const h=HB[c];if(!h)return "";let k=0;
+  const can="speechSynthesis" in window;
+  return `<div class="box blk hbbox" id="hbbox"><h3 class="bh"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M19 9h1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v3l-3-3"/></svg></span>Hablar en ${h.n}</h3>
+  <p class="note">${h.intro} Toca ${can?"el altavoz para que el teléfono lo diga, o ":""}la frase para mostrarla en grande. Funciona sin internet.</p>
+  <p class="note hbnov" id="hbnov" hidden>Tu teléfono no tiene voz en ${h.n}: muestra la frase en grande o léela como está escrita debajo.</p>
+  ${h.g.map(([t,fs])=>`<h4 class="hbt">${t}</h4><ul class="hbl">${fs.map(([es,lo,pr])=>{const i=k++;return `<li><button type="button" class="hbf" data-hbbig="${c}|${i}"><small>${esc(es)}</small><b lang="${h.l}">${esc(lo)}</b><i>${esc(pr)}</i></button>${can?`<button type="button" class="hbs" data-hbsay="${c}|${i}" aria-label="Decir «${esc(lo)}»"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h4l5 4V6L8 10z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg></button>`:""}</li>`}).join("")}</ul>`).join("")}
+  <div class="hbgt"><h4 class="hbt">Para todo lo demás: Google Traductor</h4>
+  <ol class="hbsteps"><li><b>Con wifi, antes:</b> en la app Google Traductor, elige ${h.n}, toca la flecha de descarga y bájalo. Así funciona <b>sin internet</b>.</li><li><b>Conversación:</b> el botón «Conversación» traduce por voz a los dos lados: tú en español y la otra persona en ${h.n}.</li><li><b>Letreros y cartas:</b> el botón «Cámara» traduce lo que apuntas.</li></ol>
+  <a class="btn ghost hbgo" href="${hbGT(c)}" target="_blank" rel="noopener">Abrir Google Traductor (español → ${h.n})</a></div></div>`}
+function hbItem(v){const [c,i]=v.split("|");return HB[c].g.flatMap(g=>g[1])[+i].concat(HB[c].l)}
+function hbSay(v){const [es,lo,pr,l]=hbItem(v);try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(lo),vo=hbVoice(l);u.lang=l==="cs"?"cs-CZ":"ca-ES";if(vo)u.voice=vo;u.rate=.85;speechSynthesis.speak(u);
+  if(!vo&&$("hbnov"))$("hbnov").hidden=false}catch(e){}}
+function hbBig(v){const [es,lo,pr,l]=hbItem(v);let o=$("hbbig");if(!o){o=document.createElement("div");o.id="hbbig";o.className="hbbig";o.setAttribute("role","dialog");document.body.appendChild(o)}
+  o.innerHTML=`<div><b lang="${l}">${esc(lo)}</b><small>${esc(es)}</small><span>Toca para cerrar</span></div>`;o.hidden=false;o.onclick=()=>{o.hidden=true}}
+document.addEventListener("click",e=>{const s=e.target.closest("[data-hbsay]");if(s){hbSay(s.dataset.hbsay);return}
+  const b=e.target.closest("[data-hbbig]");if(b){hbBig(b.dataset.hbbig);if("speechSynthesis" in window)hbSay(b.dataset.hbbig);return}
+  if(e.target.closest("[data-hbgo]"))HBGO=1},true);
+try{speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{}}catch(e){}
+/* en la portada: el día del viaje a una ciudad con otro idioma, aviso de descargarlo; ya allí, botón a las frases */
+function talkHoy(x){if(!HB)return "";const c=x.cs[x.cs.length-1],h=HB[c];if(!h)return "";
+  if(x.cs.length>1&&x.cs[0]!==c)return `<a class="nbhoy" href="${hbGT(c)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Antes de volar, con wifi:</b> descarga el ${h.n} en Google Traductor para usarlo sin internet</span>${ico("chev",2)}</a>`;
+  return `<button type="button" class="nbhoy" data-open="${c}" data-day="${x.d}" data-hbgo="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg><span>Hablar en ${h.n}: frases y traductor</span>${ico("chev",2)}</button>`}
 
 /* ---------- reorganizar la agenda: mover o quitar planes, cambiar días entre sí, ideas sin día (se guarda en el celular) ---------- */
 var PLR=null,PL=null,PK0={},D0=null;
