@@ -1351,8 +1351,8 @@ const DAYS=[
   ["🗺️","Día libre, para lo que quieras. Para buscar un café, una pastelería o una tienda cerca, usa «Cerca de mí» en el Mapa.","",0,"Praga"]]},
  {d:24,c:"Praga",cs:["Praga"],t:"Día libre en Praga",w:"Para lo que quieras",it:[
   ["🗺️","Día libre, para lo que quieras. Para buscar un café, una pastelería o una tienda cerca, usa «Cerca de mí» en el Mapa.","",0,"Praga"]]},
- {d:25,c:"Praga",cs:["Praga"],t:"Kampa, Puente de Carlos y Ciudad Vieja",w:"Llegas en tren a las 11:00; tarde de museo de moda y café",it:[
-  ["🚆","11:00 · Llegada en tren a la estación central (Praha hlavní nádraží). Al hotel: taxi o Bolt desde la salida, unos 15 min; o metro C una parada hasta Muzeum, línea A hasta Malostranská y unos 10 min a pie.","Praha hlavní nádraží",0,"Praga"],
+ {d:25,c:"Praga",cs:["Praga"],t:"Kampa, Puente de Carlos y Ciudad Vieja",w:"Llegas en tren desde Viena a las 11:00; tarde de museo de moda y café",it:[
+  ["🚆","11:00 · Llegada en tren desde Viena a la estación central (Praha hlavní nádraží). Al hotel: taxi o Bolt desde la salida, unos 15 min; o metro C una parada hasta Muzeum, línea A hasta Malostranská y unos 10 min a pie.","Praha hlavní nádraží",0,"Praga"],
   ["🧳","Hotel Čertovka (U Lužického semináře 2/85), en Malá Strana, al pie del Puente de Carlos: dejar las maletas si la habitación aún no está lista.","Hotel Čertovka Praha",0,"Praga"],
   ["🍽️","Almuerzo checo a dos calles del hotel: Lokál U Bílé kuželky (Míšeňská 12). Gulash, svíčková y cerveza de tanque.","Lokál U Bílé kuželky Praha",0,"Praga"],
   ["🌳","Isla de Kampa y el canal Čertovka, junto al hotel; después, el Puente de Carlos hacia la Ciudad Vieja.","Kampa Praha",0,"Praga"],
@@ -1360,14 +1360,14 @@ const DAYS=[
   ["👗","Museo de Artes Decorativas (UPM): textiles y moda, vidrio y joyas. Hoy abre hasta las 18:00; entrada 350 coronas.","Uměleckoprůmyslové museum v Praze",1,"Praga"],
   ["☕","Merienda en el Café Louvre (Národní 22), gran café abierto desde 1902: tartas y pasteles de la casa.","Café Louvre Praha",0,"Praga"],
   ["🍸","Noche: el Puente de Carlos iluminado de vuelta al hotel (anochece hacia las 16:05). Si quedan ganas de telas, Filium, en el centro Palladium, abre hasta las 21:00.","Karlův most",0,"Praga"]]},
- {d:26,c:"Praga",cs:["Praga"],t:"El Castillo, telas y salida",w:"Castillo temprano, telas y pastelería; salida a las 16:37",it:[
+ {d:26,c:"Praga",cs:["Praga"],t:"El Castillo, telas y tren a Viena",w:"Castillo temprano, telas y pastelería; tren a Viena a las 16:37",it:[
   ["☕","Desayuno en el Café Savoy (Vítězná 5), a 10 min a pie del hotel: café clásico de 1893 con pasteles hechos en casa.","Café Savoy Praha",0,"Praga"],
   ["🏰","Castillo de Praga, subiendo por la calle Nerudova: catedral de San Vito y el Callejón del Oro (con entrada). Abre a las 9:00.","Pražský hrad",1,"Praga"],
   ["🧳","Hacia las 11:30, de vuelta al hotel, salida y taxi con las maletas a la estación central (unos 15 min). Allí se pueden dejar en la consigna (úschovna) para tener la tarde libre.","Praha hlavní nádraží",0,"Praga"],
   ["🍽️","Almuerzo checo en Lokál Dlouhááá (Dlouhá 33): gulash, svíčková y cerveza de tanque.","Lokál Dlouhá Praha",0,"Praga"],
   ["👗","Telas y mercería, a cinco minutos una de otra y cerca de la estación: Filium, en el centro Palladium (de 9:00 a 21:00), y Stoklasa, en Senovážné náměstí (de lunes a viernes, de 9:00 a 19:00).","Filium galanterie Palladium Praha",0,"Praga"],
   ["🥐","Merienda en la Cukrárna Myšák (Vodičkova 31), pastelería de 1911.","Cukrárna Myšák Praha",0,"Praga"],
-  ["🚆","Salida a las 16:37: estar en la estación hacia las 16:00 para recoger las maletas y buscar el andén en las pantallas.","Praha hlavní nádraží",0,"Praga"]]}];
+  ["🚆","16:37 · Tren a Viena desde la estación central: estar allí hacia las 16:00 para recoger las maletas y buscar el andén en las pantallas (salidas: «Odjezdy»).","Praha hlavní nádraží",0,"Praga"]]}];
 const NOMBRE="Claudia";
 /* puntos del mapa: nombre, ciudad, tipo (p = plan, c = comer, m = moda), lat, lng, día (si es un plan), búsqueda en Maps */
 const PTS=[
@@ -1899,7 +1899,7 @@ new MutationObserver(nbX).observe($("nblist"),{childList:true});
 
 /* ---------- opinión de después del viaje: «caluga» bajo el título desde el día después del regreso (nota encuesta-post-viaje.md) ---------- */
 var OP_APP="Mis Vacaciones";
-/* aparece el último día, al salir hacia la estación (26 nov, 16:00; tren 16:37) */
+/* aparece el último día, al salir hacia la estación (26 nov, 16:00; tren a Viena 16:37) */
 var OP_DESDE=new Date(2026,10,26,16,0).getTime();
 var OP_URL="https://javierov.github.io/viajes-disenados-a-mano/opinion/?a="+encodeURIComponent(OP_APP)+"&n="+encodeURIComponent(NOMBRE);
 function opDone(){try{return !!localStorage.getItem("tvdm-opinion:"+OP_APP)}catch(e){return false}}
