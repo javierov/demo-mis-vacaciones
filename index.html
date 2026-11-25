@@ -523,6 +523,7 @@ button.ft{font:inherit}
 .hbbig b{font-size:clamp(34px,11vw,64px);line-height:1.15;overflow-wrap:anywhere}.hbbig small{font-size:20px;opacity:.6}.hbbig span{font-size:14px;opacity:.45;margin-top:20px}
 a.nbhoy{text-decoration:none}
 .credw{font-size:11px;opacity:.55;margin-top:10px;line-height:1.4}.credw a{color:inherit}
+.hotgo{display:inline-block;margin-top:6px;font-size:14px;font-weight:600;color:inherit}
 </style>
 <style>/* Leaflet 1.9.4 — BSD-2-Clause, © Volodymyr Agafonkin */
 /* required styles */
@@ -1211,7 +1212,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   <div class="pad">
     <h2><span id="nxt-h">Día a día</span><button type="button" data-go="comer">Dónde comer</button></h2>
     <div class="rows" id="next"></div>
-    <p class="note credw" id="credw">Fotos de los días en Praga: Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:Tower_Clock_in_Old_Town_Square.JPG" target="_blank" rel="noopener">Igpinnato</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Prague_Castle_and_Charles_Bridge_over_Vltava.jpg" target="_blank" rel="noopener">Mattsjc</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Ludmila_church_Vinohrady_Prague.jpg" target="_blank" rel="noopener">Svobodat</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Letna_Prague_metronom_4575b.jpg" target="_blank" rel="noopener">Hynek Moravec</a> (CC BY 3.0).</p>
+    <p class="note credw" id="credw">Fotos de los días en Praga: Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:Tower_Clock_in_Old_Town_Square.JPG" target="_blank" rel="noopener">Igpinnato</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Prague_Castle_and_Charles_Bridge_over_Vltava.jpg" target="_blank" rel="noopener">Mattsjc</a> (CC BY-SA 4.0).</p>
   </div>
 </section>
 
@@ -1360,17 +1361,23 @@ const DAYS=[
   ["🌳","Isla de Kampa y el Puente de Carlos de día, cruzando a la Ciudad Vieja.","Kampa Praha",0,"Praga"],
   ["👗","Museo de Artes Decorativas (UPM): textiles y moda, vidrio y joyas. Los martes abre hasta las 20:00; entrada 350 coronas.","Uměleckoprůmyslové museum v Praze",1,"Praga"],
   ["🍸","Noche tranquila en Malá Strana: una cena checa en una taberna junto al río.","pivnice Malá Strana Praha",0,"Praga"]]},
- {d:25,c:"Praga",cs:["Praga"],t:"Vinohrady, vintage y mercadillos",w:"Mercadillos de Navidad y tiendas vintage",it:[
-  ["🎄","Mercadillo de Navidad de Náměstí Míru, en Vinohrady, frente a la iglesia de Santa Ludmila: de 10:00 a 19:00 (metro A, estación Náměstí Míru).","Náměstí Míru Praha",0,"Praga"],
-  ["👗","Vintage: Quasimodo (Vladislavova 17, escondida en un patio) y Laly (Štupartská 3), en la Ciudad Vieja.","Quasimodo Vintage Fashion Praha",0,"Praga"],
-  ["☕","Merienda en el Café Louvre (Národní 22), gran café abierto desde 1902.","Café Louvre Praha",0,"Praga"],
-  ["🎄","Mercadillo de Navidad de Náměstí Republiky: abre justo hoy, de 10:00 a 20:00.","Náměstí Republiky Praha",0,"Praga"],
-  ["🍸","Última noche en Praga: cena checa y una cerveza en la Ciudad Vieja.","Staroměstské náměstí Praha",0,"Praga"]]},
- {d:26,c:"Praga",cs:["Praga"],t:"Letná y salida",w:"Mirador de Letná y vuelo a Viena a las 16:45",it:[
-  ["🌳","Parque Letná: desde el gran metrónomo se ven todos los puentes del Moldava.","Pražský metronom Letná",0,"Praga"],
-  ["🥐","Erhartova cukrárna (Milady Horákové 56), pastelería de 1937 con el interior original: todos los días, de 10:00 a 19:00.","Erhartova cukrárna Letná Praha",0,"Praga"],
-  ["👗","Kuráž (Veletržní 48): ropa y complementos de diseñadores jóvenes checos y eslovacos. De lunes a viernes, de 11:00 a 19:00.","Kuráž Veletržní 48 Praha",0,"Praga"],
-  ["✈️","Vuelo a Viena a las 16:45: estar en el aeropuerto hacia las 15:00. Salir de Letná sobre las 14:00: tranvía hasta Hradčanská, metro A hasta Nádraží Veleslavín y trolebús 59.","Letiště Václava Havla Praha",0,"Praga"]]}];
+ {d:25,c:"Praga",cs:["Praga"],t:"Llegada a Praga, Kampa y Ciudad Vieja",w:"Tren a las 11:00, Puente de Carlos y museo de moda",it:[
+  ["🚆","11:00 · Llegada en tren a la estación central (Praha hlavní nádraží). Al hotel: taxi o Bolt desde la salida, unos 15 min; o metro C una parada hasta Muzeum, línea A hasta Malostranská y unos 10 min a pie.","Praha hlavní nádraží",0,"Praga"],
+  ["🧳","Hotel Čertovka (U Lužického semináře 2/85), en Malá Strana, al pie del Puente de Carlos: dejar las maletas si la habitación aún no está lista.","Hotel Čertovka Praha",0,"Praga"],
+  ["🍽️","Almuerzo checo a dos calles del hotel: Lokál U Bílé kuželky (Míšeňská 12). Gulash, svíčková y cerveza de tanque.","Lokál U Bílé kuželky Praha",0,"Praga"],
+  ["🌳","Isla de Kampa y el canal Čertovka, junto al hotel; después, el Puente de Carlos hacia la Ciudad Vieja.","Kampa Praha",0,"Praga"],
+  ["⛪","Plaza de la Ciudad Vieja y el Reloj Astronómico, que se mueve a cada hora en punto.","Staroměstské náměstí Praha",0,"Praga"],
+  ["👗","Museo de Artes Decorativas (UPM): textiles y moda, vidrio y joyas. Hoy abre hasta las 18:00; entrada 350 coronas.","Uměleckoprůmyslové museum v Praze",1,"Praga"],
+  ["☕","Merienda en el Café Louvre (Národní 22), gran café abierto desde 1902: tartas y pasteles de la casa.","Café Louvre Praha",0,"Praga"],
+  ["🍸","Noche: el Puente de Carlos iluminado de vuelta al hotel (anochece hacia las 16:05). Si quedan ganas de telas, Filium, en el centro Palladium, abre hasta las 21:00.","Karlův most",0,"Praga"]]},
+ {d:26,c:"Praga",cs:["Praga"],t:"El Castillo, telas y salida",w:"Castillo temprano, telas y pastelería; salida a las 16:37",it:[
+  ["☕","Desayuno en el Café Savoy (Vítězná 5), a 10 min a pie del hotel: café clásico de 1893 con pasteles hechos en casa.","Café Savoy Praha",0,"Praga"],
+  ["🏰","Castillo de Praga, subiendo por la calle Nerudova: catedral de San Vito y el Callejón del Oro (con entrada). Abre a las 9:00.","Pražský hrad",1,"Praga"],
+  ["🧳","Hacia las 11:30, de vuelta al hotel, salida y taxi con las maletas a la estación central (unos 15 min). Allí se pueden dejar en la consigna (úschovna) para tener la tarde libre.","Praha hlavní nádraží",0,"Praga"],
+  ["🍽️","Almuerzo checo en Lokál Dlouhááá (Dlouhá 33): gulash, svíčková y cerveza de tanque.","Lokál Dlouhá Praha",0,"Praga"],
+  ["👗","Telas y mercería, a cinco minutos una de otra y cerca de la estación: Filium, en el centro Palladium (de 9:00 a 21:00), y Stoklasa, en Senovážné náměstí (de lunes a viernes, de 9:00 a 19:00).","Filium galanterie Palladium Praha",0,"Praga"],
+  ["🥐","Merienda en la Cukrárna Myšák (Vodičkova 31), pastelería de 1911.","Cukrárna Myšák Praha",0,"Praga"],
+  ["🚆","Salida a las 16:37: estar en la estación hacia las 16:00 para recoger las maletas y buscar el andén en las pantallas.","Praha hlavní nádraží",0,"Praga"]]}];
 const NOMBRE="Claudia";
 /* puntos del mapa: nombre, ciudad, tipo (p = plan, c = comer, m = moda), lat, lng, día (si es un plan), búsqueda en Maps */
 const PTS=[
@@ -1400,8 +1407,8 @@ const PTS=[
  ["Ribes & Casals","Barcelona","m",41.39015,2.17257,0,"Ribes & Casals Roger de Llúria 7 Barcelona"],
  ["Mercería Santa Anna","Barcelona","m",41.38726,2.17292,0,"Mercería Santa Anna Carrer de les Moles 22 Barcelona"],
  ["Antigua Pasamanería J. Soler","Barcelona","m",41.38234,2.17350,0,"Antigua Pasamanería J. Soler Plaça del Pi Barcelona"],
- ["Filium (mercería)","Praga","m",50.08943,14.42964,23,"Filium galanterie Palladium Praha"],
- ["Stoklasa (telas)","Praga","m",50.08604,14.43134,23,"Stoklasa Senovážné náměstí Praha"],
+ ["Filium (mercería)","Praga","m",50.08943,14.42964,26,"Filium galanterie Palladium Praha"],
+ ["Stoklasa (telas)","Praga","m",50.08604,14.43134,26,"Stoklasa Senovážné náměstí Praha"],
  ["Els Encants","Barcelona","m",41.40095,2.18623,21,"Mercat dels Encants Barcelona"],
  ["Museu del Disseny","Barcelona","m",41.40260,2.18805,22,"Museu del Disseny de Barcelona"],
  ["Riera Baixa (vintage)","Barcelona","m",41.38028,2.16815,21,"Carrer de la Riera Baixa Barcelona"],
@@ -1425,27 +1432,30 @@ const PTS=[
  ["Oriol Balaguer","Barcelona","c",41.39486,2.13818,0,"Oriol Balaguer Plaça Sant Gregori Taumaturg Barcelona"],
  ["La Cova Fumada","Barcelona","c",41.37930,2.18919,0,"La Cova Fumada Barcelona"],
  ["El Xampanyet","Barcelona","c",41.38450,2.18174,0,"El Xampanyet Barcelona"],
- ["Plaza de la Ciudad Vieja y Reloj Astronómico","Praga","p",50.08698,14.42071,23,"Staroměstské náměstí Praha"],
- ["Barrio judío (Josefov)","Praga","p",50.08882,14.41887,23,"Jewish Museum in Prague"],
- ["Museo de Artes Decorativas (UPM)","Praga","m",50.08991,14.41645,24,"Uměleckoprůmyslové museum v Praze"],
- ["Mercadillo de Náměstí Republiky","Praga","m",50.08880,14.43064,25,"Náměstí Republiky Praha"],
- ["Puente de Carlos","Praga","p",50.08700,14.40795,23,"Karlův most"],
- ["Castillo de Praga","Praga","p",50.09081,14.40052,24,"Pražský hrad"],
- ["Calle Nerudova","Praga","p",50.08854,14.40082,24,"Nerudova Praha"],
- ["Mercadillo de Náměstí Míru","Praga","m",50.07510,14.43737,25,"Náměstí Míru Praha"],
- ["Quasimodo Vintage Fashion","Praga","m",50.08085,14.42101,25,"Quasimodo Vintage Fashion Praha"],
- ["Laly","Praga","m",50.08771,14.42367,25,"Laly vintage Štupartská 3 Praha"],
- ["Cukrárna Myšák","Praga","c",50.08126,14.42432,23,"Cukrárna Myšák Praha"],
- ["Café Savoy","Praga","c",50.08093,14.40722,24,"Café Savoy Praha"],
+ ["Plaza de la Ciudad Vieja y Reloj Astronómico","Praga","p",50.08698,14.42071,25,"Staroměstské náměstí Praha"],
+ ["Barrio judío (Josefov)","Praga","p",50.08882,14.41887,0,"Jewish Museum in Prague"],
+ ["Museo de Artes Decorativas (UPM)","Praga","m",50.08991,14.41645,25,"Uměleckoprůmyslové museum v Praze"],
+ ["Mercadillo de Náměstí Republiky","Praga","m",50.08880,14.43064,0,"Náměstí Republiky Praha"],
+ ["Puente de Carlos","Praga","p",50.08700,14.40795,25,"Karlův most"],
+ ["Castillo de Praga","Praga","p",50.09081,14.40052,26,"Pražský hrad"],
+ ["Calle Nerudova","Praga","p",50.08854,14.40082,26,"Nerudova Praha"],
+ ["Mercadillo de Náměstí Míru","Praga","m",50.07510,14.43737,0,"Náměstí Míru Praha"],
+ ["Quasimodo Vintage Fashion","Praga","m",50.08085,14.42101,0,"Quasimodo Vintage Fashion Praha"],
+ ["Laly","Praga","m",50.08771,14.42367,0,"Laly vintage Štupartská 3 Praha"],
+ ["Cukrárna Myšák","Praga","c",50.08126,14.42432,26,"Cukrárna Myšák Praha"],
+ ["Café Savoy","Praga","c",50.08093,14.40722,26,"Café Savoy Praha"],
  ["Café Louvre","Praga","c",50.08207,14.41873,25,"Café Louvre Praha"],
- ["Isla de Kampa","Praga","p",50.08388,14.40766,24,"Kampa Praha"],
- ["Mirador de Letná (metrónomo)","Praga","p",50.09474,14.41594,26,"Pražský metronom Letná"],
- ["Erhartova cukrárna (Letná)","Praga","c",50.10010,14.42550,26,"Erhartova cukrárna Letná Praha"],
- ["Kuráž","Praga","m",50.10079,14.42500,26,"Kuráž Veletržní 48 Praha"],
- ["Lokál Dlouhááá","Praga","c",50.09070,14.42576,23,"Lokál Dlouhá Praha"]];
+ ["Isla de Kampa","Praga","p",50.08388,14.40766,25,"Kampa Praha"],
+ ["Mirador de Letná (metrónomo)","Praga","p",50.09474,14.41594,0,"Pražský metronom Letná"],
+ ["Erhartova cukrárna (Letná)","Praga","c",50.10010,14.42550,0,"Erhartova cukrárna Letná Praha"],
+ ["Kuráž","Praga","m",50.10079,14.42500,0,"Kuráž Veletržní 48 Praha"],
+ ["Lokál Dlouhááá","Praga","c",50.09070,14.42576,26,"Lokál Dlouhá Praha"],
+ ["Hotel Čertovka (tu hotel)","Praga","p",50.08728,14.40832,25,"Hotel Čertovka Praha"],
+ ["Lokál U Bílé kuželky","Praga","c",50.08768,14.40750,25,"Lokál U Bílé kuželky Praha"],
+ ["Estación central (hlavní nádraží)","Praga","p",50.08296,14.43609,25,"Praha hlavní nádraží"]];
 const PK={p:["Planes","var(--steel2)"],c:["Comer","#d98a3d"],m:["Moda","#c95f9a"]};
 /* momento del día de cada plan: m = mañana, t = tarde, n = noche (uno por plan, en orden) */
-const PARTS={18:"mmttnn",19:"mtttnn",20:"mmmttttn",21:"mmttn",22:"mtttn",23:"mmtttn",24:"mmtttn",25:"mtttn",26:"mmmt"};
+const PARTS={18:"mmttnn",19:"mtttnn",20:"mmmttttn",21:"mmttn",22:"mtttn",23:"mmtttn",24:"mmtttn",25:"mmtttttn",26:"mmmtttt"};
 const TAG=["","Con entrada","Reservar ya","Comprar billete","Por confirmar"];
 
 /* dónde comer: nombre, ciudad, tipo, precio, nota, búsqueda, barrio */
@@ -1512,7 +1522,7 @@ const STAY=[
  ["Malá Strana","Debajo del castillo, más tranquila y bonita por la noche. Se cruza a la Ciudad Vieja por el Puente de Carlos en unos 20 minutos."],
  ["Nové Město (Ciudad Nueva)","Práctica y bien comunicada, algo más barata; aquí están Myšák y la plaza Náměstí Republiky."],
  ["Vinohrady","Barrio residencial y elegante, con tiendas vintage y el mercadillo de Náměstí Míru. Hoteles de 60 a 90 € la noche, a pocos minutos en tranvía o metro."]];
-const PRAC=[["info","Moneda: corona checa (CZK). 1 € son unas 23–25 coronas; casi todo se paga con tarjeta."],["train","Aeropuerto: trolebús 59 + metro A (billete de 90 min, 50 coronas) o el Airport Express a la estación central (200 coronas)."],["shirt","Hace frío de verdad: abrigo de invierno, gorro, bufanda y guantes."]];
+const PRAC=[["info","Moneda: corona checa (CZK). 1 € son unas 23–25 coronas; casi todo se paga con tarjeta."],["train","Llegas y te vas por la estación central (Praha hlavní nádraží): de ahí al hotel, taxi o Bolt en unos 15 min, o metro C + A hasta Malostranská. Los billetes de transporte se compran en las máquinas amarillas o con la app PID Lítačka."],["shirt","Hace frío de verdad: abrigo de invierno, gorro, bufanda y guantes."]];
 const P={dots:'<circle cx="5" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="19" cy="12" r="1.3" fill="currentColor"/>',swap:'<path d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/>',scissors:'<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/>',plane:'<path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>',train:'<rect x="5" y="3" width="14" height="14" rx="4"/><path d="M5 10h14M9 21l1.5-4M15 21l-1.5-4"/><circle cx="9" cy="13.5" r=".8"/><circle cx="15" cy="13.5" r=".8"/>',walk:'<circle cx="13" cy="4" r="2"/><path d="M9 21l3-7 3 3v5M7 12l4-4h3l2 4 2 1M11 8l1 6"/>',bed:'<path d="M3 19V7M3 15h18v4M21 15v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="12" r="2"/>',art:'<path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.8 2-1.9 0-1.4-1.1-1.6-1.1-2.7 0-1 .8-1.6 1.8-1.6H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/>',cake:'<path d="M4 20h16v-7H4zM4 16c2 1.2 4 1.2 6 0s4-1.2 6 0 3 1.2 4 0M12 13V9M12 4c1 1 1 2.2 0 3-1-.8-1-2 0-3"/>',info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',castle:'<path d="M3 21h18M5 21V10M9.5 21V10M14.5 21V10M19 21V10M3 10l9-6 9 6z"/>',bag:'<path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/>',food:'<path d="M7 3v18M5 3v5a2 2 0 0 0 4 0V3M17 21V3c-2 1-3 4-3 7h3"/>',sun:'<path d="M3 18h18M7 18a5 5 0 0 1 10 0M12 6v3M5 10l2 2M19 10l-2 2M3 14h2M19 14h2"/>',moon:'<path d="M20 14A8 8 0 1 1 10 4a6 6 0 0 0 10 10z"/>',heart:'<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>',case:'<rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5h6v2M4 12h16"/>',church:'<path d="M12 2v5M10 4h4M6 21V12l6-5 6 5v9zM10 21v-4a2 2 0 0 1 4 0v4"/>',tree:'<path d="M12 21v-6M7 15h10l-5-12z"/><path d="M8.5 11h7"/>',cup:'<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/>',pin:'<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',back:'<path d="M15 5l-7 7 7 7"/>',chev:'<path d="M9 6l6 6-6 6"/>',go:'<path d="M3 11l18-8-8 18-2-8z"/>',cal:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',drop:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',shirt:'<path d="M8 3l-5 3 2 5 3-1v11h8V10l3 1 2-5-5-3a4 4 0 0 1-8 0z"/>',umb:'<path d="M3 12a9 9 0 0 1 18 0zM12 12v7a2 2 0 0 1-4 0M12 3v0"/>',shoe:'<path d="M3 17v-6l5 1 3-4 3 3c2 1 5 1.5 7 2.5V17zM3 17h18v2H3z"/>'};
 Object.assign(P,{hanger:'<path d="M12 6.5a2 2 0 1 1 2-2M12 6.5V8L3 15a1.5 1.5 0 0 0 1 2.7h16a1.5 1.5 0 0 0 1-2.7l-9-7"/>',ticket:'<path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M13 6v12"/>',cloud:'<path d="M7 18h10a4 4 0 0 0 .6-8A6 6 0 0 0 6 11a3.5 3.5 0 0 0 1 7z"/>',rain:'<path d="M7 14h10a4 4 0 0 0 .6-8A6 6 0 0 0 6 7a3.5 3.5 0 0 0 1 7zM8 18l-1 3M12 18l-1 3M16 18l-1 3"/>',fog:'<path d="M7 13h10a4 4 0 0 0 .6-8A6 6 0 0 0 6 6a3.5 3.5 0 0 0 1 7zM4 17h16M6 21h12"/>',sunny:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',psun:'<path d="M12 3v1.5M5.6 5.6l1 1M3 12h1.5M18.4 5.6l-1 1"/><path d="M8.5 11a4 4 0 0 1 7.3-2"/><path d="M8 20h9a3.5 3.5 0 0 0 .5-7 5 5 0 0 0-9.6 1A3 3 0 0 0 8 20z"/>',plus:'<circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/>',list:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',chart:'<circle cx="12" cy="12" r="9"/><path d="M12 3v9l6.4 6.4"/>'});
 const EM={"✈️":"plane","👗":"hanger","🎄":"tree","🏰":"castle","☕":"cup","🏨":"bed","🚶":"walk","🥪":"food","🌅":"sun","🖼️":"art","🍸":"moon","🌳":"tree","🥐":"cake","🍽️":"food","🍫":"cup","🎫":"ticket","🚄":"train","⛪":"church","🏛️":"castle","🧳":"case"};
@@ -1524,7 +1534,7 @@ Praga:`<circle cx="500" cy="52" r="20" fill="#fff4e0" fill-opacity=".5"/><g fill
 Madrid:`<circle cx="480" cy="58" r="24" fill="#fff3d6" fill-opacity=".55"/><g fill="#4a1c14" fill-opacity=".55"><path d="M0 200v-60h40v-14h30v74zM78 200v-82h38v82zM122 200v-56h40v56zM300 200v-70h26v-10h22v80zM356 200v-58h44v58zM408 200v-76h30v76zM446 200v-50h50v50zM504 200v-68h40v68zM552 200v-48h48v48z"/><path d="M172 200v-80h104v80z"/><path d="M188 122q36-52 72 0z"/><rect x="220" y="62" width="8" height="12"/><circle cx="224" cy="58" r="6"/></g><g fill="#ffe7b8" fill-opacity=".55"><rect x="88" y="132" width="7" height="10"/><rect x="100" y="132" width="7" height="10"/><rect x="186" y="140" width="8" height="12"/><rect x="206" y="140" width="8" height="12"/><rect x="226" y="140" width="8" height="12"/><rect x="246" y="140" width="8" height="12"/><rect x="366" y="152" width="7" height="10"/><rect x="380" y="152" width="7" height="10"/><rect x="516" y="146" width="7" height="10"/></g><rect x="0" y="192" width="600" height="8" fill="#3a120c" fill-opacity=".35"/>`,
 Barcelona:`<circle cx="120" cy="56" r="22" fill="#fff4d8" fill-opacity=".55"/><path d="M0 200v-44q90-28 180-12t140 2 160-18 120 8v64z" fill="#183e5c" fill-opacity=".35"/><g fill="#1a2b40" fill-opacity=".6">${[[262,84],[284,60],[306,44],[328,60],[350,84]].map(([x,t])=>`<path d="M${x} 200V${t}l9-34 9 34V200z"/>`).join("")}<path d="M250 200v-70h130v70z"/><path d="M40 200v-40h50v40zM100 200v-52h36v52zM430 200v-48h40v48zM480 200v-60h34v60zM524 200v-40h50v40z"/></g><g fill="#ffe7b8" fill-opacity=".5"><rect x="270" y="150" width="6" height="10"/><rect x="292" y="140" width="6" height="12"/><rect x="314" y="134" width="6" height="12"/><rect x="336" y="140" width="6" height="12"/><rect x="110" y="166" width="6" height="8"/><rect x="492" y="160" width="6" height="8"/></g><rect y="186" width="600" height="14" fill="#1d4d73" fill-opacity=".5"/>`};
 /* fotos de cada día en «Lo que viene» (Wikimedia Commons; créditos en CRED) */
-const DIMG={23:"praga-23",24:"praga-24",25:"praga-25",26:"praga-26"};
+const DIMG={25:"praga-23",26:"praga-24"};
 const ph=(c,cls,extra)=>`<div class="ph ${cls||""}" style="--s1:${C[c].s1};--s2:${C[c].s2}"><svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true">${SKY[c]}</svg>${C[c].f?`<img src="fotos/${C[c].f}.jpg" alt="" loading="lazy">`:""}${extra||""}</div>`;
 function fixImgs(root){root.querySelectorAll(".ph img:not([data-k])").forEach(i=>{i.dataset.k=1;const ok=()=>i.naturalWidth?i.classList.add("ok"):i.remove();if(i.complete)ok();else{i.addEventListener("load",ok);i.addEventListener("error",()=>i.remove())}})}
 const WD=["dom","lun","mar","mié","jue","vie","sáb"],WDL=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
@@ -1640,7 +1650,7 @@ function openCity(c,d){
   $("hero").innerHTML=`<svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true">${SKY[c]}</svg>${C[c].f?`<img src="fotos/${C[c].f}.jpg" alt="">`:""}<button type="button" class="back" id="back" aria-label="Volver">${ico("back",2.2)}</button><div class="tx"><b>${c}</b><span>${b} · ${n} noche${n===1?"":"s"}</span></div>`;
   const its=days.flatMap(x=>x.it).filter(i=>i[4]===c);
   $("stats").innerHTML=`<div><small>Noches</small><b>${n}</b></div><div><small>Planes</small><b>${its.length}</b></div><div><small>Comer</small><b>${R.filter(r=>r[1]===c).length}</b></div>`;
-  $("cideas").innerHTML=planIdeas(c);$("cstay").innerHTML=c==="Praga"?`<div class="box blk"><h3 class="bh"><span class="bi">${ico("bed",2)}</span>Dónde alojarse</h3><ul class="list">${STAY.map(([b,t],i)=>`<li><span class="ic">${ico(i?"pin":"heart")}</span><span><b>${b}</b>${i?"":" · la que te recomiendo"}<br><small class="sm">${t}</small></span></li>`).join("")}</ul></div><div class="box blk"><h3 class="bh"><span class="bi">${ico("info",2)}</span>Práctico</h3><ul class="list">${PRAC.map(([i,t])=>`<li><span class="ic">${ico(i)}</span><span>${t}</span></li>`).join("")}</ul></div>`:"";
+  $("cideas").innerHTML=planIdeas(c);$("cstay").innerHTML=c==="Praga"?`<div class="box blk"><h3 class="bh"><span class="bi">${ico("bed",2)}</span>Tu hotel</h3><ul class="list"><li><span class="ic">${ico("heart")}</span><span><b>Hotel Čertovka</b><br><small class="sm">U Lužického semináře 2/85, Malá Strana · al pie del Puente de Carlos, junto a la isla de Kampa.</small><br><a class="hotgo" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Hotel Čertovka, U Lužického semináře 2/85, Praha")}" target="_blank" rel="noopener">Ver en Google Maps</a></span></li></ul></div><div class="box blk"><h3 class="bh"><span class="bi">${ico("info",2)}</span>Práctico</h3><ul class="list">${PRAC.map(([i,t])=>`<li><span class="ic">${ico(i)}</span><span>${t}</span></li>`).join("")}</ul></div>`:"";
   $("cdays").innerHTML=days.map(x=>{const i=DAYS.indexOf(x),pv=DAYS[i-1],nx=DAYS[i+1];return `<article class="day${x.d===d?" open":""}${t.ph==="trip"&&t.d===x.d?" today":""}" id="d${x.d}"><button type="button" class="dh" aria-expanded="${x.d===d}"><span class="db"><b>${x.d}</b><small>${wd(x.d)}</small></span><span class="t"><b>${esc(x.t)}</b><small>${esc(x.w)}</small></span>${ico("chev",2.2).replace("<svg","<svg class=\"chev\"")}</button>
   <div class="det"><ul class="steps">${x.it.map((it,j)=>{const nc=it[4]!==(x.it[j-1]||[])[4]&&x.cs.length>1;return (nc?`<li class="cty" style="--c:${C[it[4]].c}"><i></i>${it[4]}</li>`:"")+plan(it)}).join("")}</ul>
   ${planDayTools(x)}<div class="dnav"><button type="button" data-gd="${pv?pv.d:""}"${pv?"":" disabled"}>← ${pv?wd(pv.d)+" "+pv.d:""}</button><button type="button" data-gd="${nx?nx.d:""}"${nx?"":" disabled"}>${nx?wd(nx.d)+" "+nx.d:""} →</button></div></div></article>`}).join("");
@@ -1899,8 +1909,8 @@ new MutationObserver(nbX).observe($("nblist"),{childList:true});
 
 /* ---------- opinión de después del viaje: «caluga» bajo el título desde el día después del regreso (nota encuesta-post-viaje.md) ---------- */
 var OP_APP="Mis Vacaciones";
-/* aparece el último día, al llegar al aeropuerto de vuelta (26 nov, 15:00; vuelo 16:45) */
-var OP_DESDE=new Date(2026,10,26,15,0).getTime();
+/* aparece el último día, al salir hacia la estación (26 nov, 16:00; tren 16:37) */
+var OP_DESDE=new Date(2026,10,26,16,0).getTime();
 var OP_URL="https://javierov.github.io/viajes-disenados-a-mano/opinion/?a="+encodeURIComponent(OP_APP)+"&n="+encodeURIComponent(NOMBRE);
 function opDone(){try{return !!localStorage.getItem("tvdm-opinion:"+OP_APP)}catch(e){return false}}
 function opCal(t){const el=$("opcal");if(!el||!OP_URL)return;
@@ -1947,7 +1957,7 @@ document.addEventListener("click",e=>{const s=e.target.closest("[data-hbsay]");i
 try{speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{}}catch(e){}
 /* en la portada: el día del viaje a una ciudad con otro idioma, aviso de descargarlo; ya allí, botón a las frases */
 function talkHoy(x){if(!HB)return "";const c=x.cs[x.cs.length-1],h=HB[c];if(!h)return "";
-  if(x.cs.length>1&&x.cs[0]!==c)return `<a class="nbhoy" href="${hbGT(c)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Antes de volar, con wifi:</b> descarga el ${h.n} en Google Traductor para usarlo sin internet</span>${ico("chev",2)}</a>`;
+  if(x.cs.length>1&&x.cs[0]!==c)return `<a class="nbhoy" href="${hbGT(c)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Con wifi, antes de llegar:</b> descarga el ${h.n} en Google Traductor para usarlo sin internet</span>${ico("chev",2)}</a>`;
   return `<button type="button" class="nbhoy" data-open="${c}" data-day="${x.d}" data-hbgo="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg><span>Hablar en ${h.n}: frases y traductor</span>${ico("chev",2)}</button>`}
 
 /* ---------- reorganizar la agenda: mover o quitar planes, cambiar días entre sí, ideas sin día (se guarda en el celular) ---------- */
